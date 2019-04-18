@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Java基础,">
 
 
 
@@ -79,14 +79,18 @@
 
 
 
+<meta name="description" content="Java 的数据类型分为三大类，即布尔型，字符型和数值型，其中数值型又分为整型和浮点型，相对于数 据类型，Java的变量类型为boolean；字符型为char,整型byte、short、int、long;浮点型float、 double其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编程时还经常用到两种 类型变量，即String和Data。   (1) 数据类型转换的种类 Jav">
+<meta name="keywords" content="Java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java-类型转换">
 <meta property="og:url" content="http://yoursite.com/2019/04/15/Java-类型转换/index.html">
 <meta property="og:site_name" content="Ike&#39;s blog">
+<meta property="og:description" content="Java 的数据类型分为三大类，即布尔型，字符型和数值型，其中数值型又分为整型和浮点型，相对于数 据类型，Java的变量类型为boolean；字符型为char,整型byte、short、int、long;浮点型float、 double其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编程时还经常用到两种 类型变量，即String和Data。   (1) 数据类型转换的种类 Jav">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-15T14:04:34.048Z">
+<meta property="og:updated_time" content="2019-04-18T16:37:19.832Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java-类型转换">
+<meta name="twitter:description" content="Java 的数据类型分为三大类，即布尔型，字符型和数值型，其中数值型又分为整型和浮点型，相对于数 据类型，Java的变量类型为boolean；字符型为char,整型byte、short、int、long;浮点型float、 double其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编程时还经常用到两种 类型变量，即String和Data。   (1) 数据类型转换的种类 Jav">
 
 
 
@@ -320,6 +324,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -358,7 +384,25 @@
       
 
       
-        
+        <pre><code>Java 的数据类型分为三大类，即布尔型，字符型和数值型，其中数值型又分为整型和浮点型，相对于数
+据类型，Java的变量类型为boolean；字符型为char,整型byte、short、int、long;浮点型float、
+double其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编程时还经常用到两种
+类型变量，即String和Data。  
+(1) 数据类型转换的种类
+Java数据类型的转换一般分三种，分别是：简单数据类型之间的转换，字符串与其他数据类型之间的转换，
+其他实用数据类型的转换。
+(2) 简单数据类型之间的转换
+在Java中，整型，实型，字符型被视为简单数据类型，这些类型由低级到高级分别为（byte, short,char）
+——&gt;int——&gt;long——&gt;float——&gt;double。
+简单数据类型之间的转换又可以分为：低级到高级的自动类型转换，高级到低级的强制类型转换，包装类过滤
+类型能够转换
+1）自动类型转换
+低级变量可以直接转换为高级变量，这叫自动类型转换。例如，下面的语句可以在节Java中直接通过
+byte b ; i = b ; long 1 = b ; float f = b ;double d = b ; 
+如果低级类型为char型，向高级类型（整型）转换时，会转换为对应的ASCLL码值，例如；
+char c = &apos;c&apos; ; int i = c ; System.out.println(&quot;output:&quot; + i);  
+输出 : output:99; 
+</code></pre>
       
     </div>
     
@@ -390,7 +434,7 @@
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    本博客所有文章除特别声明外，均采用 <a href="https://qiyanan.com/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
   </li>
 </ul>
 
@@ -398,6 +442,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java基础/" rel="tag"># Java基础</a>
+          
+        </div>
       
 
       
@@ -497,7 +547,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -508,7 +558,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
