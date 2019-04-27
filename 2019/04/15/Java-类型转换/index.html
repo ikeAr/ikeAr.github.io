@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Java 的数据类型分为三大类，即布尔型，字符型和数值型，其中数值型又分为整型和浮点型，相对于数 据类型，Java的变量类型为boolean；字符型为char,整型byte、short、int、long;浮点型float、 double其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编程时还经常用到两种 类型变量，即String和Data。   (1) 数据类型转换的种类 Jav">
+<meta name="description" content="Java 的数据类型分为三大类，即布尔型，字符型和数值型，其中数值型又分为整型和浮点型，相对于数据类型，Java的变量类型为boolean；字符型为char,整型byte、short、int、long;浮点型float、double其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编程时还经常用到两种类型变量，即String和Data。   数据类型转换的种类Java数据类型的转换">
 <meta name="keywords" content="Java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java-类型转换">
 <meta property="og:url" content="http://yoursite.com/2019/04/15/Java-类型转换/index.html">
 <meta property="og:site_name" content="Ike&#39;s blog">
-<meta property="og:description" content="Java 的数据类型分为三大类，即布尔型，字符型和数值型，其中数值型又分为整型和浮点型，相对于数 据类型，Java的变量类型为boolean；字符型为char,整型byte、short、int、long;浮点型float、 double其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编程时还经常用到两种 类型变量，即String和Data。   (1) 数据类型转换的种类 Jav">
+<meta property="og:description" content="Java 的数据类型分为三大类，即布尔型，字符型和数值型，其中数值型又分为整型和浮点型，相对于数据类型，Java的变量类型为boolean；字符型为char,整型byte、short、int、long;浮点型float、double其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编程时还经常用到两种类型变量，即String和Data。   数据类型转换的种类Java数据类型的转换">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-18T16:37:19.832Z">
+<meta property="og:updated_time" content="2019-04-27T07:09:32.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java-类型转换">
-<meta name="twitter:description" content="Java 的数据类型分为三大类，即布尔型，字符型和数值型，其中数值型又分为整型和浮点型，相对于数 据类型，Java的变量类型为boolean；字符型为char,整型byte、short、int、long;浮点型float、 double其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编程时还经常用到两种 类型变量，即String和Data。   (1) 数据类型转换的种类 Jav">
+<meta name="twitter:description" content="Java 的数据类型分为三大类，即布尔型，字符型和数值型，其中数值型又分为整型和浮点型，相对于数据类型，Java的变量类型为boolean；字符型为char,整型byte、short、int、long;浮点型float、double其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编程时还经常用到两种类型变量，即String和Data。   数据类型转换的种类Java数据类型的转换">
 
 
 
@@ -147,8 +147,6 @@
 
   <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
-    <a href="https://github.com/ikeAr"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
-
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -384,25 +382,18 @@
       
 
       
-        <pre><code>Java 的数据类型分为三大类，即布尔型，字符型和数值型，其中数值型又分为整型和浮点型，相对于数
-据类型，Java的变量类型为boolean；字符型为char,整型byte、short、int、long;浮点型float、
-double其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编程时还经常用到两种
-类型变量，即String和Data。  
-(1) 数据类型转换的种类
-Java数据类型的转换一般分三种，分别是：简单数据类型之间的转换，字符串与其他数据类型之间的转换，
-其他实用数据类型的转换。
-(2) 简单数据类型之间的转换
-在Java中，整型，实型，字符型被视为简单数据类型，这些类型由低级到高级分别为（byte, short,char）
-——&gt;int——&gt;long——&gt;float——&gt;double。
-简单数据类型之间的转换又可以分为：低级到高级的自动类型转换，高级到低级的强制类型转换，包装类过滤
-类型能够转换
-1）自动类型转换
-低级变量可以直接转换为高级变量，这叫自动类型转换。例如，下面的语句可以在节Java中直接通过
-byte b ; i = b ; long 1 = b ; float f = b ;double d = b ; 
-如果低级类型为char型，向高级类型（整型）转换时，会转换为对应的ASCLL码值，例如；
-char c = &apos;c&apos; ; int i = c ; System.out.println(&quot;output:&quot; + i);  
-输出 : output:99; 
-</code></pre>
+        <p>Java 的数据类型分为三大类，即布尔型，字符型和数值型，其中数值型又分为整型和浮点型，相对于数据类型，Java的变量类型为boolean；字符型为char,整型byte、short、int、long;浮点型float、<br>double其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编程时还经常用到两种<br>类型变量，即String和Data。  </p>
+<h2 id="数据类型转换的种类"><a href="#数据类型转换的种类" class="headerlink" title="数据类型转换的种类"></a>数据类型转换的种类</h2><p>Java数据类型的转换一般分三种，分别是：简单数据类型之间的转换，字符串与其他数据类型之间的转换，<br>其他实用数据类型的转换。</p>
+<h2 id="简单数据类型之间的转换"><a href="#简单数据类型之间的转换" class="headerlink" title="简单数据类型之间的转换"></a>简单数据类型之间的转换</h2><p>在Java中，整型，实型，字符型被视为简单数据类型，这些类型由低级到高级分别为<strong>（byte, short,char）——&gt;int——&gt;long——&gt;float——&gt;double。</strong><br>简单数据类型之间的转换又可以分为：低级到高级的自动类型转换，高级到低级的强制类型转换，包装类过滤类型能够转换</p>
+<h3 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h3><p>低级变量可以直接转换为高级变量，这叫自动类型转换。例如，下面的语句可以在节Java中直接通过<br>    <code>byte b ; i = b ; long 1 = b ; float f = b ;double d = b ;</code><br>如果低级类型为char型，向高级类型（整型）转换时，会转换为对应的ASCLL码值，例如；<br>    <code>char c = &#39;c&#39; ; int i = c ; System.out.println(&quot;output:&quot; + i);</code><br>输出 : output:99; </p>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><pre><code>int i = 99 ; byte b = (byte)i ; char c = (char)i;
+</code></pre><p>注意：这种转换可能会导致溢出或精度的下降。</p>
+<h3 id="包装类过滤类型转换"><a href="#包装类过滤类型转换" class="headerlink" title="包装类过滤类型转换"></a>包装类过滤类型转换</h3><p>Java 的包装类可以直接将简单类型的变量表示为一个类。Java共有六种包装类，分别是Boolean、Character、Integer、Long、Float和Double。<strong>String</strong>和<strong>Data</strong>本身就是类，不存在包装类的概念。<br>在进行简单数据类型之间的抓换时，可以利用包装类进行中间过渡，一般情况下，首先声明一个变量，然后生成一个对应的包装类，就可以利用包装类的各种方法进行类型转换。<br>例1：float——&gt;double<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">float f1 = 100.00f ; </span><br><span class="line">Float F1 = new Float(f1) ;</span><br><span class="line">Double d1 = F1.doubleValue() ;</span><br></pre></td></tr></table></figure></p>
+<p>例2：double——&gt;int<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">double d1 = 100.00;</span><br><span class="line">Double D1 = new Double(d1);</span><br><span class="line">int i1 = D1.intValue(D1);</span><br></pre></td></tr></table></figure></p>
+<p>例3：int——&gt;double ，自动转换：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int i1 = 200;</span><br><span class="line">double d1 = i1;</span><br></pre></td></tr></table></figure></p>
+<h3 id="字符串与其他数据类型之间的转换"><a href="#字符串与其他数据类型之间的转换" class="headerlink" title="字符串与其他数据类型之间的转换"></a>字符串与其他数据类型之间的转换</h3><p>在Java中，所有的类都继承于<strong>java.lang.Object</strong>, 在Object类中定义了<strong>toString()</strong>方法，即所有的类都可转换为字符串。</p>
+<h3 id="字符串转其他类型"><a href="#字符串转其他类型" class="headerlink" title="字符串转其他类型"></a>字符串转其他类型</h3><p>字符串转换为数值型变量有两种对应关系：一种是其转换为对应的ASCLL码；两一种是转换关系，例如，”1”就是数值1，而不是ASCLL码，对于这种转换，可以使用Character的<strong>getNumericValue(char ch)</strong>方法。</p>
+
       
     </div>
     
@@ -458,15 +449,15 @@ char c = &apos;c&apos; ; int i = c ; System.out.println(&quot;output:&quot; + i)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/14/你好，hexo/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/23/Java-性能调优/" rel="prev" title="Java 性能调优">
+                Java 性能调优 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -518,8 +509,17 @@ char c = &apos;c&apos; ; int i = c ; System.out.println(&quot;output:&quot; + i)
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -536,7 +536,7 @@ char c = &apos;c&apos; ; int i = c ; System.out.println(&quot;output:&quot; + i)
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -558,7 +558,7 @@ char c = &apos;c&apos; ; int i = c ; System.out.println(&quot;output:&quot; + i)
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -581,6 +581,22 @@ char c = &apos;c&apos; ; int i = c ; System.out.println(&quot;output:&quot; + i)
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型转换的种类"><span class="nav-number">1.</span> <span class="nav-text">数据类型转换的种类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单数据类型之间的转换"><span class="nav-number">2.</span> <span class="nav-text">简单数据类型之间的转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动类型转换"><span class="nav-number">2.1.</span> <span class="nav-text">自动类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强制类型转换"><span class="nav-number">2.2.</span> <span class="nav-text">强制类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包装类过滤类型转换"><span class="nav-number">2.3.</span> <span class="nav-text">包装类过滤类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串与其他数据类型之间的转换"><span class="nav-number">2.4.</span> <span class="nav-text">字符串与其他数据类型之间的转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串转其他类型"><span class="nav-number">2.5.</span> <span class="nav-text">字符串转其他类型</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
