@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="finalfinal 可以用于控制成员，方法，或者是一个类是否可以被重写或者继承等功能 finnal 成员挡在类中定义变量时，若在前面加上final关键字，那么，这个变量一旦被初始化，便不可改变，这里的不可变的意思对基本类型来说其值不可变，而对于对象变量来说是其引用不可变，初始化可以在两个地方，一是其定义处，二是在构造函数中，两者只能选其一。当你在方法中不需要改变做为参数的对象变量时，明确使用fi">
+<meta name="description" content="finalfinal 可以用于控制成员，方法，或者是一个类是否可以被重写或者继承等功能 finnal 成员当在类中定义变量时，若在前面加上final关键字，那么，这个变量一旦被初始化，便不可改变，这里的不可变的意思对基本类型来说其值不可变，而对于对象变量来说是其引用不可变，初始化可以在两个地方，一是其定义处，二是在构造函数中，两者只能选其一。当你在方法中不需要改变做为参数的对象变量时，明确使用fi">
 <meta name="keywords" content="Java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java-final, finally, finalize的区别">
 <meta property="og:url" content="http://yoursite.com/2019/04/27/Java-final-finally-finalize区别/index.html">
 <meta property="og:site_name" content="Ike&#39;s blog">
-<meta property="og:description" content="finalfinal 可以用于控制成员，方法，或者是一个类是否可以被重写或者继承等功能 finnal 成员挡在类中定义变量时，若在前面加上final关键字，那么，这个变量一旦被初始化，便不可改变，这里的不可变的意思对基本类型来说其值不可变，而对于对象变量来说是其引用不可变，初始化可以在两个地方，一是其定义处，二是在构造函数中，两者只能选其一。当你在方法中不需要改变做为参数的对象变量时，明确使用fi">
+<meta property="og:description" content="finalfinal 可以用于控制成员，方法，或者是一个类是否可以被重写或者继承等功能 finnal 成员当在类中定义变量时，若在前面加上final关键字，那么，这个变量一旦被初始化，便不可改变，这里的不可变的意思对基本类型来说其值不可变，而对于对象变量来说是其引用不可变，初始化可以在两个地方，一是其定义处，二是在构造函数中，两者只能选其一。当你在方法中不需要改变做为参数的对象变量时，明确使用fi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T09:06:00.189Z">
+<meta property="og:updated_time" content="2019-04-28T02:47:23.471Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java-final, finally, finalize的区别">
-<meta name="twitter:description" content="finalfinal 可以用于控制成员，方法，或者是一个类是否可以被重写或者继承等功能 finnal 成员挡在类中定义变量时，若在前面加上final关键字，那么，这个变量一旦被初始化，便不可改变，这里的不可变的意思对基本类型来说其值不可变，而对于对象变量来说是其引用不可变，初始化可以在两个地方，一是其定义处，二是在构造函数中，两者只能选其一。当你在方法中不需要改变做为参数的对象变量时，明确使用fi">
+<meta name="twitter:description" content="finalfinal 可以用于控制成员，方法，或者是一个类是否可以被重写或者继承等功能 finnal 成员当在类中定义变量时，若在前面加上final关键字，那么，这个变量一旦被初始化，便不可改变，这里的不可变的意思对基本类型来说其值不可变，而对于对象变量来说是其引用不可变，初始化可以在两个地方，一是其定义处，二是在构造函数中，两者只能选其一。当你在方法中不需要改变做为参数的对象变量时，明确使用fi">
 
 
 
@@ -239,16 +239,6 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-something">
-          <a href="/something" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
-            
-            有料
-          </a>
-        </li>
-      
 
       
     </ul>
@@ -383,11 +373,11 @@
 
       
         <h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><p>final 可以用于控制成员，方法，或者是一个类是否可以被重写或者继承等功能</p>
-<h3 id="finnal-成员"><a href="#finnal-成员" class="headerlink" title="finnal 成员"></a>finnal 成员</h3><p>挡在类中定义变量时，若在前面加上final关键字，那么，这个变量一旦被初始化，便不可改变，这里的不可变的意思对基本类型来说其值不可变，而对于对象变量来说是其引用不可变，初始化可以在两个地方，一是其定义处，二是在构造函数中，两者只能选其一。<br>当你在方法中不需要改变做为参数的对象变量时，明确使用final进行声明，会防止你无意地修改影响调用方法。</p>
+<h3 id="finnal-成员"><a href="#finnal-成员" class="headerlink" title="finnal 成员"></a>finnal 成员</h3><p>当在类中定义变量时，若在前面加上final关键字，那么，这个变量一旦被初始化，便不可改变，这里的不可变的意思对基本类型来说其值不可变，而对于对象变量来说是其引用不可变，初始化可以在两个地方，一是其定义处，二是在构造函数中，两者只能选其一。<br>当你在方法中不需要改变做为参数的对象变量时，明确使用final进行声明，会防止你无意地修改影响调用方法。</p>
 <h3 id="final-方法"><a href="#final-方法" class="headerlink" title="final 方法"></a>final 方法</h3><p>将方法声明为final有两个原因，第一就是明确已经知道这个方法提供的功能满足要求，不需要进行拓展，并且不允许任何从此类继承的类来重写这个方法，但是可以继承这个方法，即可以直接调用；第二就是允许编译器将所有对此方法的调用转化为i<strong>nline（行内）调用</strong>的机制，它会在调用final方法时，<strong>直接将方法主体插入到调用处</strong>，而不是进行例行的方法调用，例如：保存断点，压栈等操作，这样可能会使程序效率有所提高。</p>
 <h3 id="final-类"><a href="#final-类" class="headerlink" title="final 类"></a>final 类</h3><p>一个final 类是无法被任何类继承的，也就意味着，此类在一个继承树中是一个叶子类，并且此类的设计已被认为很完美，不需要进行修改或扩展。final类中的成员既可以明确指出final也可以不指出。</p>
 <h2 id="finaly"><a href="#finaly" class="headerlink" title="finaly"></a>finaly</h2><p>finally 关键字是对Java异常处理模型的补充，finally结构使代码总会执行，而不管有无异常发生，使用finally可以维护对象的内部状态，并且可以清理非内存资源。</p>
-<h2 id="finalize"><a href="#finalize" class="headerlink" title="finalize"></a>finalize</h2><p>finalize是方法名。Java允许使用finalize()方法在垃圾收集器将对象从内存清除出去之前作必要的清理工作。它是Object类中定义的，所以的类都继承了它。</p>
+<h2 id="finalize"><a href="#finalize" class="headerlink" title="finalize"></a>finalize</h2><p>finalize是方法名。Java允许使用finalize()方法在垃圾收集器将对象从内存清除出去之前作必要的清理工作。它是Object类中定义的，所有的类都继承了它。</p>
 
       
     </div>
@@ -535,7 +525,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
