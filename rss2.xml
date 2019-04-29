@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ike&#39;s blog</title>
+    <link>http://yoursite.com/</link>
+    <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description></description>
+    <pubDate>Mon, 29 Apr 2019 10:13:25 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Java-继承与组合</title>
+      <link>http://yoursite.com/2019/04/29/Java-%E7%BB%A7%E6%89%BF%E4%B8%8E%E7%BB%84%E5%90%88/</link>
+      <guid>http://yoursite.com/2019/04/29/Java-%E7%BB%A7%E6%89%BF%E4%B8%8E%E7%BB%84%E5%90%88/</guid>
+      <pubDate>Mon, 29 Apr 2019 06:55:22 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h1 id=&quot;继承qq&quot;&gt;&lt;a href=&quot;#继承qq&quot; class=&quot;headerlink&quot; title=&quot;继承qq&quot;&gt;&lt;/a&gt;继承qq&lt;/h1&gt;&lt;p&gt;继承(inheritance)是指Child类的对象可以使用仅对Father类的对象有效的方法或者属性，它使得这些方法和属性
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h1 id="继承qq"><a href="#继承qq" class="headerlink" title="继承qq"></a>继承qq</h1><p>继承(inheritance)是指Child类的对象可以使用仅对Father类的对象有效的方法或者属性，它使得这些方法和属性就好像是Child类自己定义的一样，此时Father类是Child类的父类，Child类是Father类的子类。在类结构中，父类的内部对于子类是可见的，所以，通过继承的代码复用是一种“白盒式代码复用”。</p><h1 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h1><p>组合(composition)是指通过对现有的对象进行拼装(组合)产生新的更复杂的功能。因为在对象之间，各自的内部细节是不可见的，所以，称这种代码复用是“黑盒式代码复用”。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Queue extends Array&#123;</span><br><span class="line">    // 继承</span><br><span class="line">&#125;</span><br><span class="line">class Queue extends Object&#123;</span><br><span class="line">    private Array asArray</span><br><span class="line">    //组合</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/04/29/Java-%E7%BB%A7%E6%89%BF%E4%B8%8E%E7%BB%84%E5%90%88/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Java-OOP</title>
+      <link>http://yoursite.com/2019/04/29/Java-OOP/</link>
+      <guid>http://yoursite.com/2019/04/29/Java-OOP/</guid>
+      <pubDate>Mon, 29 Apr 2019 06:33:33 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h1 id=&quot;什么是面向对象的程序设计？什么是面向过程的程序设计&quot;&gt;&lt;a href=&quot;#什么是面向对象的程序设计？什么是面向过程的程序设计&quot; class=&quot;headerlink&quot; title=&quot;什么是面向对象的程序设计？什么是面向过程的程序设计&quot;&gt;&lt;/a&gt;什么是面向对象的程序设
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h1 id="什么是面向对象的程序设计？什么是面向过程的程序设计"><a href="#什么是面向对象的程序设计？什么是面向过程的程序设计" class="headerlink" title="什么是面向对象的程序设计？什么是面向过程的程序设计"></a>什么是面向对象的程序设计？什么是面向过程的程序设计</h1><p>程序设计范型，开发程序发的方法，基于面向过程<br>面向过程：分析出解决问题所需要的步骤，使用函数把这些步骤实现，通过顺序执行一组组语句来实现一个个功能，这些语句的执行过程就是整个程序<br>例如：计算器程序，在main()函数里定义一系列的数据结构，然后开始写加减乘除等函数，实现功能<br>面向对象：抽象度更高，眼光集中在解决问题本身，他的目标是使模块的抽象度更高，实现可复用。<br>计算器创建一个Calculator类，在类里定义必要的数据成员，实现功能。</p><h1 id="什么是对象？"><a href="#什么是对象？" class="headerlink" title="什么是对象？"></a>什么是对象？</h1><p>万物皆对象，不但包括具体存在的，还包括抽象的规则，计划等。<br>对象具有状态，可以用数据来描述，例如：一个人，姓名：齐**，年龄：22，体重：65，身高：175等<br>对象具有行为，例如，运动，吃饭，睡觉，敲代码！！！</p><h1 id="什么是类？"><a href="#什么是类？" class="headerlink" title="什么是类？"></a>什么是类？</h1><p>具有相同或相似性质的对象的集合就是类，例如：人，学生，动物。。。<br>类具有属性：是对象的抽象，例如：姓名，年龄，体重。。。<br>类具有行为：是对对象行为的抽象。。。<br>抽象类：一般情况下，除了继承树的叶子节点以外，其他的所有类都是抽象类<br>具体类：继承树的叶子节点一般情况下是具体类</p><h1 id="类的实例化"><a href="#类的实例化" class="headerlink" title="类的实例化"></a>类的实例化</h1><p>通过类产生对象，叫做类的实例化，</p><ol><li>用关键字new<br>语法： 类 实例名 = new   类（）；</li><li>运用反射手段，调用java.long.Class 或者 java.lang.reflect.Constructor 类的newInstance()实例方法。</li><li>运用对象的clone()方法</li><li>运用反序列化手段，调用java.io.ObjectInputStream 对象的 readObjet()方法。<br><strong>1 和2 都会明确的，显式的调用构造函数；3 是在内存上对已有对象的克隆，所以不会调用构造函数；4 是从文件中还原类的对象，也不会调用构造函数</strong></li></ol><h1 id="继承！！！"><a href="#继承！！！" class="headerlink" title="继承！！！"></a>继承！！！</h1><p>面向对象中类与类之间的一种关系，继承的类称为子类，派生类，而被继承的类称为父类，基类，或者超类，类与类继承之后，除了构造方法，子类具有父类的所有属性和方法，构造方法是调用，不是继承，同时子类可以加入新的属性或者方法。</p><h2 id="继承的设计原则：高内聚，低耦合，类的继承层数不能超过三层。"><a href="#继承的设计原则：高内聚，低耦合，类的继承层数不能超过三层。" class="headerlink" title="继承的设计原则：高内聚，低耦合，类的继承层数不能超过三层。"></a>继承的设计原则：高内聚，低耦合，类的继承层数不能超过三层。</h2><h2 id="如何让对象访问父类有参构造函数？？super"><a href="#如何让对象访问父类有参构造函数？？super" class="headerlink" title="如何让对象访问父类有参构造函数？？super"></a>如何让对象访问父类有参构造函数？？super</h2><h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><p>概念：类将内部数据隐藏，为用户提供对象的属性和行为的接口，用户通过这些接口使用这些类，无需知道这些类内部是如何构成的，不能操作类中的内部数据<br>目的：防止对实现细节的访问<br>封装根据具体的需要，设置使用者的访问权限，并通过 访问修饰符 来实现。<br>一个访问修饰符 定义了一个类成员的范围和可见性。支持的访问修饰符如下所示：<br>Public 完全公开，没有访问限制，；<br>Private 私有成员，在类的内部可以使用，子类，实例都不能访问；<br>Protected 保护成员，该类的内部和继承类中可以访问</p><h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><p>通过继承实现的不同对象调用相同的方法，表现出不同的行为，称之为多态</p><h1 id="接口（Interface）"><a href="#接口（Interface）" class="headerlink" title="接口（Interface）"></a>接口（Interface）</h1><p>接口就是一种特别的类。只需要定义函数，函数不用实现，<br>接口内定义的函数必须在子类里面全部得实现<br>可以实现多继承</p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/04/29/Java-OOP/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Java-重载与重写</title>
+      <link>http://yoursite.com/2019/04/29/Java-%E9%87%8D%E8%BD%BD%E4%B8%8E%E9%87%8D%E5%86%99/</link>
+      <guid>http://yoursite.com/2019/04/29/Java-%E9%87%8D%E8%BD%BD%E4%B8%8E%E9%87%8D%E5%86%99/</guid>
+      <pubDate>Mon, 29 Apr 2019 06:03:40 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h1 id=&quot;重载&quot;&gt;&lt;a href=&quot;#重载&quot; class=&quot;headerlink&quot; title=&quot;重载&quot;&gt;&lt;/a&gt;重载&lt;/h1&gt;&lt;p&gt;重载(overload) 指编写一个与已有函数同名但是函数参数不同的函数，重载不是一种面向对象的编程，而只是一种语法规则，重载与多态没有直接
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h1 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h1><p>重载(overload) 指编写一个与已有函数同名但是函数参数不同的函数，重载不是一种面向对象的编程，而只是一种语法规则，重载与多态没有直接关系。</p><h2 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h2><ol><li>相同的范围（在同一个类中）</li><li>函数名字相同</li><li>参数不同</li><li>virtual关键字可有可无</li></ol><h1 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h1><p>重写(override) 指派生类重写基类的虚函数，重写的函数必须有一致的参数表和返回值</p><h2 id="特征-1"><a href="#特征-1" class="headerlink" title="特征"></a>特征</h2><ol><li>不同的范围（分别位于派生类与基类）</li><li>函数名字相同</li><li>参数相同</li><li>基类函数必须有virtual关键字</li></ol>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/04/29/Java-%E9%87%8D%E8%BD%BD%E4%B8%8E%E9%87%8D%E5%86%99/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Java-成员内部类的访问方式</title>
+      <link>http://yoursite.com/2019/04/28/Java-%E6%88%90%E5%91%98%E5%86%85%E9%83%A8%E7%B1%BB%E7%9A%84%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F/</link>
+      <guid>http://yoursite.com/2019/04/28/Java-%E6%88%90%E5%91%98%E5%86%85%E9%83%A8%E7%B1%BB%E7%9A%84%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F/</guid>
+      <pubDate>Sun, 28 Apr 2019 12:15:43 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;方式一：在外部提供一个方法创建内部类的对象进行访问。&quot;&gt;&lt;a href=&quot;#方式一：在外部提供一个方法创建内部类的对象进行访问。&quot; class=&quot;headerlink&quot; title=&quot;方式一：在外部提供一个方法创建内部类的对象进行访问。&quot;&gt;&lt;/a&gt;方式一：在外部提
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h2 id="方式一：在外部提供一个方法创建内部类的对象进行访问。"><a href="#方式一：在外部提供一个方法创建内部类的对象进行访问。" class="headerlink" title="方式一：在外部提供一个方法创建内部类的对象进行访问。"></a>方式一：在外部提供一个方法创建内部类的对象进行访问。</h2><h2 id="方式二：在其它类直接创建内部类的对象，格式：-内部类-变量名-new-外部类-内部类"><a href="#方式二：在其它类直接创建内部类的对象，格式：-内部类-变量名-new-外部类-内部类" class="headerlink" title="方式二：在其它类直接创建内部类的对象，格式： 内部类 变量名 = new 外部类().内部类();"></a>方式二：在其它类直接创建内部类的对象，格式： 内部类 变量名 = new 外部类().内部类();</h2><h2 id="内部类需要注意的细节"><a href="#内部类需要注意的细节" class="headerlink" title="内部类需要注意的细节:"></a>内部类需要注意的细节:</h2><ol><li><p>如果在外部类与内部类存在同名的成员变量时，在内部类中默认情况下是访问<strong>内部类中的成员变量</strong>，可以通过外部类.this.成员变量 来访问外部类的成员变量。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">    public int a = 1;</span><br><span class="line"></span><br><span class="line">    public class Tes &#123;</span><br><span class="line">        public int a = 3;</span><br><span class="line"></span><br><span class="line">        public void out() &#123;</span><br><span class="line">            System.out.println(&quot;内部类的a值：&quot; + a);</span><br><span class="line">            System.out.println(&quot;外部类的a值：&quot; + Test.this.a);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Test() &#123;</span><br><span class="line">        new Tes().out();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        new Test();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>私有的成员内部类只能在外部类提供一个方法创建内部类的对象进行访问，不能再其他类创建对象。</p></li><li>成员内部类一旦出现了静态成员，那么该类也必须使用static修饰。<h2 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h2>在一个类的方法内部定义了另外一个类，那么方法内的类称为局部内部类<br><strong>注意：如果局部内部类访问了局部变量，那么该变量需要用final修饰</strong></li></ol>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/04/28/Java-%E6%88%90%E5%91%98%E5%86%85%E9%83%A8%E7%B1%BB%E7%9A%84%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Java-Object类的方法</title>
+      <link>http://yoursite.com/2019/04/28/Java-Object%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <guid>http://yoursite.com/2019/04/28/Java-Object%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <pubDate>Sun, 28 Apr 2019 11:51:10 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h1 id=&quot;Object-基类的方法如下：&quot;&gt;&lt;a href=&quot;#Object-基类的方法如下：&quot; class=&quot;headerlink&quot; title=&quot;Object 基类的方法如下：&quot;&gt;&lt;/a&gt;Object 基类的方法如下：&lt;/h1&gt;&lt;h2 id=&quot;clone-创建并返回此对
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h1 id="Object-基类的方法如下："><a href="#Object-基类的方法如下：" class="headerlink" title="Object 基类的方法如下："></a>Object 基类的方法如下：</h1><h2 id="clone-创建并返回此对象的一个副本。"><a href="#clone-创建并返回此对象的一个副本。" class="headerlink" title="clone(): 创建并返回此对象的一个副本。"></a>clone(): 创建并返回此对象的一个副本。</h2><h2 id="equals-Object-obj-指示某个其他对象是否和此对象“相等”。"><a href="#equals-Object-obj-指示某个其他对象是否和此对象“相等”。" class="headerlink" title="equals(Object obj): 指示某个其他对象是否和此对象“相等”。"></a>equals(Object obj): 指示某个其他对象是否和此对象“相等”。</h2><h2 id="finalize-当垃圾回收器确定不存在对该对象的的个更多引用时，由对象的垃圾回收器调用此方法。"><a href="#finalize-当垃圾回收器确定不存在对该对象的的个更多引用时，由对象的垃圾回收器调用此方法。" class="headerlink" title="finalize(): 当垃圾回收器确定不存在对该对象的的个更多引用时，由对象的垃圾回收器调用此方法。"></a>finalize(): 当垃圾回收器确定不存在对该对象的的个更多引用时，由对象的垃圾回收器调用此方法。</h2><h2 id="getClass-返回一个对象的运行时类。"><a href="#getClass-返回一个对象的运行时类。" class="headerlink" title="getClass(): 返回一个对象的运行时类。"></a>getClass(): 返回一个对象的运行时类。</h2><h2 id="hashCode-返回对象的哈希值。"><a href="#hashCode-返回对象的哈希值。" class="headerlink" title="hashCode(): 返回对象的哈希值。"></a>hashCode(): 返回对象的哈希值。</h2><h2 id="notify-唤醒在此对象监视器上等待的单个线程。"><a href="#notify-唤醒在此对象监视器上等待的单个线程。" class="headerlink" title="notify(): 唤醒在此对象监视器上等待的单个线程。"></a>notify(): 唤醒在此对象监视器上等待的单个线程。</h2><h2 id="notifyAll-：唤醒在此对象监视器上等待的所有线程。"><a href="#notifyAll-：唤醒在此对象监视器上等待的所有线程。" class="headerlink" title="notifyAll()：唤醒在此对象监视器上等待的所有线程。"></a>notifyAll()：唤醒在此对象监视器上等待的所有线程。</h2><h2 id="toString-返回该对象的字符串表示。"><a href="#toString-返回该对象的字符串表示。" class="headerlink" title="toString(): 返回该对象的字符串表示。"></a>toString(): 返回该对象的字符串表示。</h2><h2 id="wait-导致当前线程等待，直到其他线程调用此对象的notify-或者notifyAll-。"><a href="#wait-导致当前线程等待，直到其他线程调用此对象的notify-或者notifyAll-。" class="headerlink" title="wait(): 导致当前线程等待，直到其他线程调用此对象的notify()或者notifyAll()。"></a>wait(): 导致当前线程等待，直到其他线程调用此对象的notify()或者notifyAll()。</h2><h2 id="wait-long-timeout-导致当前线程等待，直到其他线程调用此对象的notify-或者notifyAll-或者超过指定的时间量。"><a href="#wait-long-timeout-导致当前线程等待，直到其他线程调用此对象的notify-或者notifyAll-或者超过指定的时间量。" class="headerlink" title="wait(long timeout): 导致当前线程等待，直到其他线程调用此对象的notify()或者notifyAll(), 或者超过指定的时间量。"></a>wait(long timeout): 导致当前线程等待，直到其他线程调用此对象的notify()或者notifyAll(), 或者超过指定的时间量。</h2><h2 id="wait-long-timeout-int-nanos-导致当前线程等待，直到其他线程调用此对象的notify-或者notifyAll-或者其他某个线程中断当前线程，或者超过指定的时间量。"><a href="#wait-long-timeout-int-nanos-导致当前线程等待，直到其他线程调用此对象的notify-或者notifyAll-或者其他某个线程中断当前线程，或者超过指定的时间量。" class="headerlink" title="wait(long timeout , int nanos): 导致当前线程等待，直到其他线程调用此对象的notify()或者notifyAll(), 或者其他某个线程中断当前线程，或者超过指定的时间量。"></a>wait(long timeout , int nanos): 导致当前线程等待，直到其他线程调用此对象的notify()或者notifyAll(), 或者其他某个线程中断当前线程，或者超过指定的时间量。</h2>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/04/28/Java-Object%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Java-抽象类和接口</title>
+      <link>http://yoursite.com/2019/04/28/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/</link>
+      <guid>http://yoursite.com/2019/04/28/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/</guid>
+      <pubDate>Sun, 28 Apr 2019 10:51:05 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h1 id=&quot;抽象类&quot;&gt;&lt;a href=&quot;#抽象类&quot; class=&quot;headerlink&quot; title=&quot;抽象类&quot;&gt;&lt;/a&gt;抽象类&lt;/h1&gt;&lt;p&gt;有时候，基类并不与具体的事物相联系，而是只表达一种抽象的概念，用以为它的派生类提供一个公共的界面，为此，Java引入了抽象类(abs
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h1 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h1><p>有时候，基类并不与具体的事物相联系，而是只表达一种抽象的概念，用以为它的派生类提供一个公共的界面，为此，Java引入了抽象类(abstract class)的概念.<br>一个抽象类要注意以下几点：</p><ol><li>抽象类只能做为其他类的基类，它不能直接被实例化，且不能使用new操作符；</li><li>抽象类允许包含抽象成员，但不是必须的，抽象类可以有非抽象方法；</li><li>抽象类不能同时是final的；</li><li>如果一个非抽象类从抽象类中诞生，则必须通过重写来实现继承而来的抽象成员；</li><li>抽象类可以被抽象类所继承，结果仍是抽象类；</li><li>抽象类允许被声明。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">abstract class Person                              //建立抽象类</span><br><span class="line">&#123;</span><br><span class="line">    public abstract void SayHello();               //抽象方法SayHello</span><br><span class="line">    public void about()</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(&quot;Abstract Demo&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Student extends Person                       //实体类Student继承Person</span><br><span class="line">&#123;</span><br><span class="line">    public void SayHello()</span><br><span class="line">    &#123;                                              // 重写抽象方法SayHello</span><br><span class="line">        System.out.println(&quot;SayHello&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Nurse extends Person                          //建立实体类Nurse继承Person</span><br><span class="line">&#123;</span><br><span class="line">                                                    //么已有重写抽象方法SayHello，即这个类是错误的</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">abstract class Pupil extends Person                 //建立抽象类Pupil继承Person</span><br><span class="line">&#123;</span><br><span class="line">    public void SayHello()</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(&quot;SayHello&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">abstract class Worker extends Person                //建立抽象类Work继承Person</span><br><span class="line">&#123;</span><br><span class="line">                                                    //抽象类继承抽象类，可以不用重写抽象方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><ol><li>接口用于描述系统对外提供的所有服务，因此接口中的成员<strong>常量和方法都必须是公开的(public)类型</strong>的，确保外部使用者能够访问他们；</li><li>接口仅仅描述系统做什么，但不知名如何去做，所以<strong>接口中的方法都是抽象(abstract)</strong>方法；</li><li>接口不涉及和任何具体实例相关的细节，因此，<strong>接口没有构造方法，不能被实例化，没有实例变量，只有静态(static)变量</strong>；</li><li>接口中的变量是所有实现类共有的，即，<strong>变量是final类型</strong>，也就是常量了；</li><li>接口中不能出现变量，属性<strong>只能读，不能改</strong>；</li><li><strong>接口默认的方法是abstract的，接口属性默认是public static final ，且必须赋初值。</strong></li></ol>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/04/28/Java-%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Java-集合</title>
+      <link>http://yoursite.com/2019/04/28/Java-%E9%9B%86%E5%90%88/</link>
+      <guid>http://yoursite.com/2019/04/28/Java-%E9%9B%86%E5%90%88/</guid>
+      <pubDate>Sun, 28 Apr 2019 07:25:39 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;java-容器类库一共有两种主要类型：Collection和Map&quot;&gt;&lt;a href=&quot;#java-容器类库一共有两种主要类型：Collection和Map&quot; class=&quot;headerlink&quot; title=&quot;java 容器类库一共有两种主要类型：Collect
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h2 id="java-容器类库一共有两种主要类型：Collection和Map"><a href="#java-容器类库一共有两种主要类型：Collection和Map" class="headerlink" title="java 容器类库一共有两种主要类型：Collection和Map"></a>java 容器类库一共有两种主要类型：<strong>Collection</strong>和<strong>Map</strong></h2><p>Collection 和Map 的区别在于每个容器内每个“槽”所存的元素个数不同，Collection 类型中，每个“槽”只有一个元素，Map类型中，持有<strong>key-value</strong>关联，类似小型数据库，所有的Java容器都可以自动调整自己的尺寸。<br>各自旗下的子类关系如图：<br>Collection:<br><img src="/2019/04/28/Java-集合/./Java-集合/Collection.png" alt="avatar"><br>Map:<br><img src="/2019/04/28/Java-集合/./Java-集合/Map.png" alt="avatar"><br>Collection 的子类如下：<br>&emsp;&emsp;——List: 将以特定顺序存储元素，所以取出来的顺序可能和放入顺序不同<br>&emsp;&emsp;&emsp;&emsp;——ArrayList: 擅长随机访问元素，但在List中插入，删除，移动元素较慢<br>&emsp;&emsp;&emsp;&emsp;——LinkedList: 插入，删除，移动元素方便，随机访问元素慢<br>&emsp;&emsp;——Set：每个值只能保存一个对象，不能含有重复的元素<br>&emsp;&emsp;&emsp;&emsp;——HashSet：使用散列函数<br>&emsp;&emsp;&emsp;&emsp;——TreeSet：使用红黑树<br>&emsp;&emsp;&emsp;&emsp;——LinkedHashSet 使用链表结合散列函数<br>&emsp;&emsp;&emsp;&emsp;——Queue:队列，先进先出的容器<br>Map 的子类如下：<br>&emsp;&emsp;——HashSet<br>&emsp;&emsp;——HashTable<br>&emsp;&emsp;——TreeMap</p><h2 id="其他特征"><a href="#其他特征" class="headerlink" title="其他特征:"></a>其他特征:</h2><ol><li>List, Set, Map将所有对象视为Object类型；</li><li>Collection, List, Set, Map 都是接口，不能被实例化<br><strong>在各种List中，最好的做法是以ArrayList作为默认选择。当插入，删除频繁时，使用LinkedList(), Vector总是比ArrayList慢，在各种Set中，HashSet通常优于HashTree(插入，查找）。只有当需要产生一个经过排序的序列时，采用TreeSet。Hashtree的意义是用来维护其内元素的排序；在各种Map中，HashMap用于快速查找，当元素的个数固定时，Array的效率是最高的</strong><h2 id="HashMap与HashTable的区别"><a href="#HashMap与HashTable的区别" class="headerlink" title="HashMap与HashTable的区别"></a>HashMap与HashTable的区别</h2>都属于Map接口的类，实现了将唯一键映射到特定的值上。<br>HashMap 类没有分类或者排序，它允许一个null键和多个null值<br>HashTable 不允许null键和null值。<br>HashTable的方法是Synchronize的，HashMap不是</li></ol>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/04/28/Java-%E9%9B%86%E5%90%88/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Java-内存管理</title>
+      <link>http://yoursite.com/2019/04/28/Java-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</link>
+      <guid>http://yoursite.com/2019/04/28/Java-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
+      <pubDate>Sun, 28 Apr 2019 05:42:56 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h1 id=&quot;垃圾收集&quot;&gt;&lt;a href=&quot;#垃圾收集&quot; class=&quot;headerlink&quot; title=&quot;垃圾收集&quot;&gt;&lt;/a&gt;垃圾收集&lt;/h1&gt;&lt;p&gt;Java中使用被称为垃圾收集器的技术来监视Java程序的运行，当对象不在使用时，就自动释放对象所使用的内存。&lt;br&gt;垃圾收集
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h1 id="垃圾收集"><a href="#垃圾收集" class="headerlink" title="垃圾收集"></a>垃圾收集</h1><p>Java中使用被称为垃圾收集器的技术来监视Java程序的运行，当对象不在使用时，就自动释放对象所使用的内存。<br>垃圾收集器是自动运行的，一般情况下，无须显式的请求垃圾收集器，程序运行时，垃圾收集器会不时检查对象的各个引用，并非是无引用对象所占用的内存。调用System 类中的静态gc()方法可以运行垃圾收集器，但这样并不能保证立即回收指定对象。<br>Java垃圾回收机制：gc即垃圾收集机制，是指JVN用于释放那些不再使用的对象所占用的内存。Java的垃圾回收机制时为所有的Java应用进程服务的，而不是为某个特定的进程服务的，因此，<strong>任何一个进程都不能命令垃圾回收机制做什么，怎么做或做多少</strong>，在JVM垃圾收集器收集一个对象之前，一般要求程序中调用适当的方法来释放资源，但在没有明确释放资源的情况下，Java提供了默认机制终止化该对象来释放资源，这个方法就是<strong>finalize()</strong>。在finalize()方法返回之后，对象消失，垃圾收集开始执行。</p><h2 id="一块内存空间是否符合垃圾收集器收集标准"><a href="#一块内存空间是否符合垃圾收集器收集标准" class="headerlink" title="一块内存空间是否符合垃圾收集器收集标准"></a>一块内存空间是否符合垃圾收集器收集标准</h2><p>1.给对象赋予了控制null, 以后再也没有调用过<br>2.给对象赋予了新值，即重新分配了内存空间<br><strong>一块内存空间符合了垃圾收集器的收集标准，并不意味着这块内存空间就一定会被垃圾收集器收集</strong></p><h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><h2 id="变量的内存分配情况"><a href="#变量的内存分配情况" class="headerlink" title="变量的内存分配情况"></a>变量的内存分配情况</h2><p>1.不要试图去假定垃圾收集发生的时间，这一切都是未知的。<br>2.Java提供了一种强行执行的垃圾收集的方法——调用System.gc()，但这是一个不确定方法。<br>3.挑选适合自己的垃圾收集器<br>4.防止内存泄漏<br>5.尽早释放无用对象的引用，对于频繁申请内存和释放内存的操作，最好使用finalize强制执行，或者写自己的finalize方法。</p><h2 id="什么是Java中的内存泄漏"><a href="#什么是Java中的内存泄漏" class="headerlink" title="什么是Java中的内存泄漏"></a>什么是Java中的内存泄漏</h2><p>在Java中，内存泄漏就是存在一些被分配的对象，这些对象有两个特点：<br>1.对象是可达的，即在有向图中，存在通路可以与其相连；<br>2.对象是无用的，即程序以后不会再使用这些对象。<br>如果对象满足这两个条件，这些对象可以判定位Java中的内存泄漏，这些对象不会被gc所回收，然而他们却占用内存。<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vector v = new Vector(10);</span><br><span class="line">for (int i = 1; i &lt; 100; i++)&#123;</span><br><span class="line">    Object o = new Object();</span><br><span class="line">    v.add(o);</span><br><span class="line">    o = null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><strong>内存泄露的主要原因：保留下来却永远不再使用的对象引用。</strong></p><h2 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h2><p>Java中clone的含义是，假设x是一个非空对象，则：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x.clone() != x //true , 就是说他们不是一个对象</span><br><span class="line">x.clone().getClass() == x.getClass() //true, 说明他们是同一个类型的class</span><br><span class="line">x.equals(x.clone()) //true, 说明值相等</span><br></pre></td></tr></table></figure></p><p>clone方法是在Object中定义的，而且是proteced 的，只有实现了Cloneable接口，才可以在该类的实例上调用clone方法，否则会抛出CloneNotSupportException，该方法从Object类中继承而来，该接口只是一个标记。</p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/04/28/Java-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Java-序列化</title>
+      <link>http://yoursite.com/2019/04/28/Java-%E5%BA%8F%E5%88%97%E5%8C%96/</link>
+      <guid>http://yoursite.com/2019/04/28/Java-%E5%BA%8F%E5%88%97%E5%8C%96/</guid>
+      <pubDate>Sun, 28 Apr 2019 04:47:08 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h1 id=&quot;如何实现Java的序列化？&quot;&gt;&lt;a href=&quot;#如何实现Java的序列化？&quot; class=&quot;headerlink&quot; title=&quot;如何实现Java的序列化？&quot;&gt;&lt;/a&gt;如何实现Java的序列化？&lt;/h1&gt;&lt;p&gt;序列化一个对象只需要让他实现Serializable
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h1 id="如何实现Java的序列化？"><a href="#如何实现Java的序列化？" class="headerlink" title="如何实现Java的序列化？"></a>如何实现Java的序列化？</h1><p>序列化一个对象只需要让他实现Serializable接口（这是一个“标记接口”，tagging interface,没有任何方法）就行，但是，当语言引入序列化概念之后，它有很多标准类库的类，包括primitive的wrapper类，所有的容器类，以及别的很多类，都会相应的发生改变，甚至连Class对象都会被序列化。<br>要想序列化对象，<strong>必须先创建一个OutputStream，然后把它嵌进ObjectOutputStream。这是就能调用writeObject() 方法把对象写入OutputStream, 读的时候需要把InputStream嵌到ObjectInputStream中，然后在调用readObject()方法</strong>。代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">public class SerSingleton implements java.io.Serializable&#123;</span><br><span class="line">    String name;</span><br><span class="line">    private SerSingleton()&#123;</span><br><span class="line">        System.out.println(&quot;Singleton is create&quot;);</span><br><span class="line">        name = &quot;SerSingleton&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    private static SerSingleton instance = new SerSingleton();</span><br><span class="line">    public static SerSingleton getInstance()&#123;</span><br><span class="line">        return instance;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void createString()&#123;</span><br><span class="line">        System.out.println(&quot;CreateString in Singleton&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    private Object readResolve()&#123;//阻止新生成的实例，总是返回当前对象</span><br><span class="line">        return instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public void test() throw Exception&#123;</span><br><span class="line">    SerSingleton s1 = null ;</span><br><span class="line">    SerSingleton s = SerSingleton.getInstance();</span><br><span class="line">    //先将实例串化到文件</span><br><span class="line">    FileOutputStream fos = new FileOutputStream(&quot;SerSingleton.txt&quot;);</span><br><span class="line">    ObjectOutputStream oos = new ObjectOutputStream(fos);</span><br><span class="line">    oos.writeObject(s);</span><br><span class="line">    oos.flush();</span><br><span class="line">    oos.close();</span><br><span class="line">    //从文件读出原来的单例类</span><br><span class="line">    FileInputStream fis = new FileInputStream(&quot;SerSingleton.txt&quot;);</span><br><span class="line">    ObjectInputStream ois = new ObjectInputStream(fis);</span><br><span class="line">    s1 = (SerSingleton) ois.readObject();</span><br><span class="line">    Assert.assertEquals(s,s1); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/04/28/Java-%E5%BA%8F%E5%88%97%E5%8C%96/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Java-输入/输出流</title>
+      <link>http://yoursite.com/2019/04/28/Java-%E8%BE%93%E5%85%A5-%E8%BE%93%E5%87%BA%E6%B5%81/</link>
+      <guid>http://yoursite.com/2019/04/28/Java-%E8%BE%93%E5%85%A5-%E8%BE%93%E5%87%BA%E6%B5%81/</guid>
+      <pubDate>Sun, 28 Apr 2019 02:48:50 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;&amp;emsp;&amp;emsp;Java的IO操作有面向&lt;strong&gt;字节（Byte）&lt;/strong&gt;和面向&lt;strong&gt;字符（Character）&lt;/strong&gt;两种方式。&lt;br&gt;&amp;emsp;&amp;emsp;面向字节的操作以8位对二进制数据进行操作，对数据不进行转换，对数据不
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>&emsp;&emsp;Java的IO操作有面向<strong>字节（Byte）</strong>和面向<strong>字符（Character）</strong>两种方式。<br>&emsp;&emsp;面向字节的操作以8位对二进制数据进行操作，对数据不进行转换，对数据不进行转换，这些类都是<strong>InputStream</strong> 和<strong>OutputStream</strong> 的子类，<br>&emsp;&emsp;面向字符的操作以字符为单位进行操作，在读的时候将二进制数据转换为字符，在写的时候将字符转换为二进制数据，这些类都是<strong>Reader</strong>和<strong>Writer</strong>的子类。<br>&emsp;&emsp;即以<strong>InputStream（输入）/OutputStream（输出）</strong>为后缀的是字节流，以<strong>Reader（输入）/Writer（输出）</strong>为后缀的是字符流。<br>下面是Java流类图结构：<br><img src="/2019/04/28/Java-输入-输出流/./Java-输入-输出流/输入输出流.png" alt="avatar"></p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/04/28/Java-%E8%BE%93%E5%85%A5-%E8%BE%93%E5%87%BA%E6%B5%81/#disqus_thread</comments>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Java-继承与组合]]></title>
+    <url>%2F2019%2F04%2F29%2FJava-%E7%BB%A7%E6%89%BF%E4%B8%8E%E7%BB%84%E5%90%88%2F</url>
+    <content type="text"><![CDATA[继承qq继承(inheritance)是指Child类的对象可以使用仅对Father类的对象有效的方法或者属性，它使得这些方法和属性就好像是Child类自己定义的一样，此时Father类是Child类的父类，Child类是Father类的子类。在类结构中，父类的内部对于子类是可见的，所以，通过继承的代码复用是一种“白盒式代码复用”。 组合组合(composition)是指通过对现有的对象进行拼装(组合)产生新的更复杂的功能。因为在对象之间，各自的内部细节是不可见的，所以，称这种代码复用是“黑盒式代码复用”。1234567class Queue extends Array&#123; // 继承&#125;class Queue extends Object&#123; private Array asArray //组合&#125;]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java-OOP]]></title>
+    <url>%2F2019%2F04%2F29%2FJava-OOP%2F</url>
+    <content type="text"><![CDATA[什么是面向对象的程序设计？什么是面向过程的程序设计程序设计范型，开发程序发的方法，基于面向过程面向过程：分析出解决问题所需要的步骤，使用函数把这些步骤实现，通过顺序执行一组组语句来实现一个个功能，这些语句的执行过程就是整个程序例如：计算器程序，在main()函数里定义一系列的数据结构，然后开始写加减乘除等函数，实现功能面向对象：抽象度更高，眼光集中在解决问题本身，他的目标是使模块的抽象度更高，实现可复用。计算器创建一个Calculator类，在类里定义必要的数据成员，实现功能。 什么是对象？万物皆对象，不但包括具体存在的，还包括抽象的规则，计划等。对象具有状态，可以用数据来描述，例如：一个人，姓名：齐**，年龄：22，体重：65，身高：175等对象具有行为，例如，运动，吃饭，睡觉，敲代码！！！ 什么是类？具有相同或相似性质的对象的集合就是类，例如：人，学生，动物。。。类具有属性：是对象的抽象，例如：姓名，年龄，体重。。。类具有行为：是对对象行为的抽象。。。抽象类：一般情况下，除了继承树的叶子节点以外，其他的所有类都是抽象类具体类：继承树的叶子节点一般情况下是具体类 类的实例化通过类产生对象，叫做类的实例化， 用关键字new语法： 类 实例名 = new 类（）； 运用反射手段，调用java.long.Class 或者 java.lang.reflect.Constructor 类的newInstance()实例方法。 运用对象的clone()方法 运用反序列化手段，调用java.io.ObjectInputStream 对象的 readObjet()方法。1 和2 都会明确的，显式的调用构造函数；3 是在内存上对已有对象的克隆，所以不会调用构造函数；4 是从文件中还原类的对象，也不会调用构造函数 继承！！！面向对象中类与类之间的一种关系，继承的类称为子类，派生类，而被继承的类称为父类，基类，或者超类，类与类继承之后，除了构造方法，子类具有父类的所有属性和方法，构造方法是调用，不是继承，同时子类可以加入新的属性或者方法。 继承的设计原则：高内聚，低耦合，类的继承层数不能超过三层。如何让对象访问父类有参构造函数？？super封装概念：类将内部数据隐藏，为用户提供对象的属性和行为的接口，用户通过这些接口使用这些类，无需知道这些类内部是如何构成的，不能操作类中的内部数据目的：防止对实现细节的访问封装根据具体的需要，设置使用者的访问权限，并通过 访问修饰符 来实现。一个访问修饰符 定义了一个类成员的范围和可见性。支持的访问修饰符如下所示：Public 完全公开，没有访问限制，；Private 私有成员，在类的内部可以使用，子类，实例都不能访问；Protected 保护成员，该类的内部和继承类中可以访问 多态通过继承实现的不同对象调用相同的方法，表现出不同的行为，称之为多态 接口（Interface）接口就是一种特别的类。只需要定义函数，函数不用实现，接口内定义的函数必须在子类里面全部得实现可以实现多继承]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Java-重载与重写]]></title>
+    <url>%2F2019%2F04%2F29%2FJava-%E9%87%8D%E8%BD%BD%E4%B8%8E%E9%87%8D%E5%86%99%2F</url>
+    <content type="text"><![CDATA[重载重载(overload) 指编写一个与已有函数同名但是函数参数不同的函数，重载不是一种面向对象的编程，而只是一种语法规则，重载与多态没有直接关系。 特征 相同的范围（在同一个类中） 函数名字相同 参数不同 virtual关键字可有可无 重写重写(override) 指派生类重写基类的虚函数，重写的函数必须有一致的参数表和返回值 特征 不同的范围（分别位于派生类与基类） 函数名字相同 参数相同 基类函数必须有virtual关键字]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java-成员内部类的访问方式]]></title>
+    <url>%2F2019%2F04%2F28%2FJava-%E6%88%90%E5%91%98%E5%86%85%E9%83%A8%E7%B1%BB%E7%9A%84%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[方式一：在外部提供一个方法创建内部类的对象进行访问。方式二：在其它类直接创建内部类的对象，格式： 内部类 变量名 = new 外部类().内部类();内部类需要注意的细节: 如果在外部类与内部类存在同名的成员变量时，在内部类中默认情况下是访问内部类中的成员变量，可以通过外部类.this.成员变量 来访问外部类的成员变量。 123456789101112131415161718192021public class Test &#123; public int a = 1; public class Tes &#123; public int a = 3; public void out() &#123; System.out.println(&quot;内部类的a值：&quot; + a); System.out.println(&quot;外部类的a值：&quot; + Test.this.a); &#125; &#125; public Test() &#123; new Tes().out(); &#125; public static void main(String[] args) &#123; new Test(); &#125;&#125; 私有的成员内部类只能在外部类提供一个方法创建内部类的对象进行访问，不能再其他类创建对象。 成员内部类一旦出现了静态成员，那么该类也必须使用static修饰。局部内部类在一个类的方法内部定义了另外一个类，那么方法内的类称为局部内部类注意：如果局部内部类访问了局部变量，那么该变量需要用final修饰]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java-Object类的方法]]></title>
+    <url>%2F2019%2F04%2F28%2FJava-Object%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[Object 基类的方法如下：clone(): 创建并返回此对象的一个副本。equals(Object obj): 指示某个其他对象是否和此对象“相等”。finalize(): 当垃圾回收器确定不存在对该对象的的个更多引用时，由对象的垃圾回收器调用此方法。getClass(): 返回一个对象的运行时类。hashCode(): 返回对象的哈希值。notify(): 唤醒在此对象监视器上等待的单个线程。notifyAll()：唤醒在此对象监视器上等待的所有线程。toString(): 返回该对象的字符串表示。wait(): 导致当前线程等待，直到其他线程调用此对象的notify()或者notifyAll()。wait(long timeout): 导致当前线程等待，直到其他线程调用此对象的notify()或者notifyAll(), 或者超过指定的时间量。wait(long timeout , int nanos): 导致当前线程等待，直到其他线程调用此对象的notify()或者notifyAll(), 或者其他某个线程中断当前线程，或者超过指定的时间量。]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java-抽象类和接口]]></title>
+    <url>%2F2019%2F04%2F28%2FJava-%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%2F</url>
+    <content type="text"><![CDATA[抽象类有时候，基类并不与具体的事物相联系，而是只表达一种抽象的概念，用以为它的派生类提供一个公共的界面，为此，Java引入了抽象类(abstract class)的概念.一个抽象类要注意以下几点： 抽象类只能做为其他类的基类，它不能直接被实例化，且不能使用new操作符； 抽象类允许包含抽象成员，但不是必须的，抽象类可以有非抽象方法； 抽象类不能同时是final的； 如果一个非抽象类从抽象类中诞生，则必须通过重写来实现继承而来的抽象成员； 抽象类可以被抽象类所继承，结果仍是抽象类； 抽象类允许被声明。123456789101112131415161718192021222324252627282930313233abstract class Person //建立抽象类&#123; public abstract void SayHello(); //抽象方法SayHello public void about() &#123; System.out.println(&quot;Abstract Demo&quot;); &#125;&#125;class Student extends Person //实体类Student继承Person&#123; public void SayHello() &#123; // 重写抽象方法SayHello System.out.println(&quot;SayHello&quot;); &#125;&#125;class Nurse extends Person //建立实体类Nurse继承Person&#123; //么已有重写抽象方法SayHello，即这个类是错误的&#125;abstract class Pupil extends Person //建立抽象类Pupil继承Person&#123; public void SayHello() &#123; System.out.println(&quot;SayHello&quot;); &#125;&#125;abstract class Worker extends Person //建立抽象类Work继承Person&#123; //抽象类继承抽象类，可以不用重写抽象方法&#125; 接口 接口用于描述系统对外提供的所有服务，因此接口中的成员常量和方法都必须是公开的(public)类型的，确保外部使用者能够访问他们； 接口仅仅描述系统做什么，但不知名如何去做，所以接口中的方法都是抽象(abstract)方法； 接口不涉及和任何具体实例相关的细节，因此，接口没有构造方法，不能被实例化，没有实例变量，只有静态(static)变量； 接口中的变量是所有实现类共有的，即，变量是final类型，也就是常量了； 接口中不能出现变量，属性只能读，不能改； 接口默认的方法是abstract的，接口属性默认是public static final ，且必须赋初值。]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java-集合]]></title>
+    <url>%2F2019%2F04%2F28%2FJava-%E9%9B%86%E5%90%88%2F</url>
+    <content type="text"><![CDATA[java 容器类库一共有两种主要类型：Collection和MapCollection 和Map 的区别在于每个容器内每个“槽”所存的元素个数不同，Collection 类型中，每个“槽”只有一个元素，Map类型中，持有key-value关联，类似小型数据库，所有的Java容器都可以自动调整自己的尺寸。各自旗下的子类关系如图：Collection:Map:Collection 的子类如下：&emsp;&emsp;——List: 将以特定顺序存储元素，所以取出来的顺序可能和放入顺序不同&emsp;&emsp;&emsp;&emsp;——ArrayList: 擅长随机访问元素，但在List中插入，删除，移动元素较慢&emsp;&emsp;&emsp;&emsp;——LinkedList: 插入，删除，移动元素方便，随机访问元素慢&emsp;&emsp;——Set：每个值只能保存一个对象，不能含有重复的元素&emsp;&emsp;&emsp;&emsp;——HashSet：使用散列函数&emsp;&emsp;&emsp;&emsp;——TreeSet：使用红黑树&emsp;&emsp;&emsp;&emsp;——LinkedHashSet 使用链表结合散列函数&emsp;&emsp;&emsp;&emsp;——Queue:队列，先进先出的容器Map 的子类如下：&emsp;&emsp;——HashSet&emsp;&emsp;——HashTable&emsp;&emsp;——TreeMap 其他特征: List, Set, Map将所有对象视为Object类型； Collection, List, Set, Map 都是接口，不能被实例化在各种List中，最好的做法是以ArrayList作为默认选择。当插入，删除频繁时，使用LinkedList(), Vector总是比ArrayList慢，在各种Set中，HashSet通常优于HashTree(插入，查找）。只有当需要产生一个经过排序的序列时，采用TreeSet。Hashtree的意义是用来维护其内元素的排序；在各种Map中，HashMap用于快速查找，当元素的个数固定时，Array的效率是最高的HashMap与HashTable的区别都属于Map接口的类，实现了将唯一键映射到特定的值上。HashMap 类没有分类或者排序，它允许一个null键和多个null值HashTable 不允许null键和null值。HashTable的方法是Synchronize的，HashMap不是]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java-内存管理]]></title>
+    <url>%2F2019%2F04%2F28%2FJava-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%2F</url>
+    <content type="text"><![CDATA[垃圾收集Java中使用被称为垃圾收集器的技术来监视Java程序的运行，当对象不在使用时，就自动释放对象所使用的内存。垃圾收集器是自动运行的，一般情况下，无须显式的请求垃圾收集器，程序运行时，垃圾收集器会不时检查对象的各个引用，并非是无引用对象所占用的内存。调用System 类中的静态gc()方法可以运行垃圾收集器，但这样并不能保证立即回收指定对象。Java垃圾回收机制：gc即垃圾收集机制，是指JVN用于释放那些不再使用的对象所占用的内存。Java的垃圾回收机制时为所有的Java应用进程服务的，而不是为某个特定的进程服务的，因此，任何一个进程都不能命令垃圾回收机制做什么，怎么做或做多少，在JVM垃圾收集器收集一个对象之前，一般要求程序中调用适当的方法来释放资源，但在没有明确释放资源的情况下，Java提供了默认机制终止化该对象来释放资源，这个方法就是finalize()。在finalize()方法返回之后，对象消失，垃圾收集开始执行。 一块内存空间是否符合垃圾收集器收集标准1.给对象赋予了控制null, 以后再也没有调用过2.给对象赋予了新值，即重新分配了内存空间一块内存空间符合了垃圾收集器的收集标准，并不意味着这块内存空间就一定会被垃圾收集器收集 内存管理变量的内存分配情况1.不要试图去假定垃圾收集发生的时间，这一切都是未知的。2.Java提供了一种强行执行的垃圾收集的方法——调用System.gc()，但这是一个不确定方法。3.挑选适合自己的垃圾收集器4.防止内存泄漏5.尽早释放无用对象的引用，对于频繁申请内存和释放内存的操作，最好使用finalize强制执行，或者写自己的finalize方法。 什么是Java中的内存泄漏在Java中，内存泄漏就是存在一些被分配的对象，这些对象有两个特点：1.对象是可达的，即在有向图中，存在通路可以与其相连；2.对象是无用的，即程序以后不会再使用这些对象。如果对象满足这两个条件，这些对象可以判定位Java中的内存泄漏，这些对象不会被gc所回收，然而他们却占用内存。例如：123456Vector v = new Vector(10);for (int i = 1; i &lt; 100; i++)&#123; Object o = new Object(); v.add(o); o = null;&#125; 内存泄露的主要原因：保留下来却永远不再使用的对象引用。 cloneJava中clone的含义是，假设x是一个非空对象，则：123x.clone() != x //true , 就是说他们不是一个对象x.clone().getClass() == x.getClass() //true, 说明他们是同一个类型的classx.equals(x.clone()) //true, 说明值相等 clone方法是在Object中定义的，而且是proteced 的，只有实现了Cloneable接口，才可以在该类的实例上调用clone方法，否则会抛出CloneNotSupportException，该方法从Object类中继承而来，该接口只是一个标记。]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java-序列化]]></title>
+    <url>%2F2019%2F04%2F28%2FJava-%E5%BA%8F%E5%88%97%E5%8C%96%2F</url>
+    <content type="text"><![CDATA[如何实现Java的序列化？序列化一个对象只需要让他实现Serializable接口（这是一个“标记接口”，tagging interface,没有任何方法）就行，但是，当语言引入序列化概念之后，它有很多标准类库的类，包括primitive的wrapper类，所有的容器类，以及别的很多类，都会相应的发生改变，甚至连Class对象都会被序列化。要想序列化对象，必须先创建一个OutputStream，然后把它嵌进ObjectOutputStream。这是就能调用writeObject() 方法把对象写入OutputStream, 读的时候需要把InputStream嵌到ObjectInputStream中，然后在调用readObject()方法。代码如下：1234567891011121314151617181920212223242526272829303132public class SerSingleton implements java.io.Serializable&#123; String name; private SerSingleton()&#123; System.out.println(&quot;Singleton is create&quot;); name = &quot;SerSingleton&quot;; &#125; private static SerSingleton instance = new SerSingleton(); public static SerSingleton getInstance()&#123; return instance; &#125; public static void createString()&#123; System.out.println(&quot;CreateString in Singleton&quot;); &#125; private Object readResolve()&#123;//阻止新生成的实例，总是返回当前对象 return instance; &#125;&#125;public void test() throw Exception&#123; SerSingleton s1 = null ; SerSingleton s = SerSingleton.getInstance(); //先将实例串化到文件 FileOutputStream fos = new FileOutputStream(&quot;SerSingleton.txt&quot;); ObjectOutputStream oos = new ObjectOutputStream(fos); oos.writeObject(s); oos.flush(); oos.close(); //从文件读出原来的单例类 FileInputStream fis = new FileInputStream(&quot;SerSingleton.txt&quot;); ObjectInputStream ois = new ObjectInputStream(fis); s1 = (SerSingleton) ois.readObject(); Assert.assertEquals(s,s1); &#125;]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java-输入/输出流]]></title>
+    <url>%2F2019%2F04%2F28%2FJava-%E8%BE%93%E5%85%A5-%E8%BE%93%E5%87%BA%E6%B5%81%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;Java的IO操作有面向字节（Byte）和面向字符（Character）两种方式。&emsp;&emsp;面向字节的操作以8位对二进制数据进行操作，对数据不进行转换，对数据不进行转换，这些类都是InputStream 和OutputStream 的子类，&emsp;&emsp;面向字符的操作以字符为单位进行操作，在读的时候将二进制数据转换为字符，在写的时候将字符转换为二进制数据，这些类都是Reader和Writer的子类。&emsp;&emsp;即以InputStream（输入）/OutputStream（输出）为后缀的是字节流，以Reader（输入）/Writer（输出）为后缀的是字符流。下面是Java流类图结构：]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java-静态变量与私有变量]]></title>
+    <url>%2F2019%2F04%2F27%2FJava-%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E4%B8%8E%E7%A7%81%E6%9C%89%E5%8F%98%E9%87%8F%2F</url>
+    <content type="text"><![CDATA[static 关键字，可以被应用到类，方法和变量中 static变量&emsp; static变量称作静态变量，静态变量被所有对象共享，内存中只是一个副本，当且仅当被初次加载时会被初始化 static方法&emsp; static方法是没有this的方法，在static方法内部不能调用非静态方法，反过来是可以的，可以在没有创建任意对象的前提下通过本身调用static方法。 Java静态类&emsp; 如果一个类被声明为static，只有一种情况，就是静态内部类（内嵌类）。如果在外部类声明static，程序编译不会通过。1）静态内部类和静态方法一样，只能访问静态的成员变量和方法，不能访问非静态的方法和属性，但是普通类可以访问任意外部类的成员变量和方法2）静态内部类可以声明普通成员变量和方法，而普通内部类不能声明static成员变量和方法3）静态内部类可以单独初始化Inner i = new Outer.Inner();普通内部类初始化：12Outer n = new Outer();Inner i = o.new Inner(); 静态内部类使用场景一般是当外部类需要使用内部类，而内部类无需外部类资源，并且内部类可以单独创建的时候会考虑采用静态内部类的设计。1234567891011121314151617181920212223242526272829303132public class Outer &#123; private String name; private int age; public static class Builder &#123; private String name; private int age; public Builder(int age) &#123; this.age = age; &#125; public Builder withName(String name) &#123; this.name = name; return this; &#125; public Builder withAge(int age) &#123; this.age = age; return this; &#125; public Outer build() &#123; return new Outer(this); &#125; &#125; private Outer(Builder b) &#123; this.age = b.age; this.name = b.name; &#125;&#125; 静态内部类调用外部类的构造函数，来构造外部类，由于静态内部类可以被单独初始化，所以有了以下实现1234public Outer getOuter()&#123; Outer outer = new Outer.Builder(2).withName(&quot;Ike&quot;).build(); return outer;&#125;]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java-传递与引用]]></title>
+    <url>%2F2019%2F04%2F27%2FJava-%E4%BC%A0%E9%80%92%E4%B8%8E%E5%BC%95%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[Explain call by value and call by reference. Which of this these two does Java support?不管Java参数的类型是什么，一律传递参数的副本对于基本类型而言，传值就是把自己复制一份传递，即使自己的副本变了，自己也不变。对于对象类型而言，它传的引用副本指向自己的地址，而不是自己实际值的副本，原因以下：1.对象类型是存储在堆里，速度相对于基本类型比较慢；2.对象类型本身比较大，如果采用重新复制对象值的办法，浪费内存且速度又慢。以参数形式传递简单类型的变量时，实际上是将参数的值作为一个副本传进方法函数的，那么在方法函数中不管怎么改变其值，其结果都是改变了副本的值，而不是源值。123456789101112public class Test&#123; public static void test (Boolean test)&#123; test = !test; System.out.println(&quot;In test(boolean) : test = &quot; + test); &#125; public static void main(String[] args)&#123; boolean test = true ; System.out.println(&quot;Before test(boolean) : test = &quot; + test); test(test); System.out.println(&quot;After test(boolean) : test =&quot; + test); &#125;&#125; 运行结果：123Before test(boolean) : test = trueIn test(boolean) : test = falseAfter test(boolean) : test = true]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java-反射（Reflection）]]></title>
+    <url>%2F2019%2F04%2F27%2FReflection%2F</url>
+    <content type="text"><![CDATA[Java中的反射是一种强大的工具，它能够创建灵活的代码，这些代码可以运行时装配，无须在组件中进行连接。反射允许在编写与执行时，使程序代码能够接入装载到JVM中的类的内部信息，而不是源代码中选定的类协作的代码。这使反射成为构建灵活应用的主要工具。需要注意的使，如果使用不当，反射的成本会很高。Java中的类反射Reflection是Java程序开发语言的特征之一，它允许运行中的Java程序对自身进行检查，或者说“自省”，并能直接操作程序的内部属性。可以运用反射手段，调用java.lang.Class或者java.lang.reflect.Constructor类的newInstance()方法，创建一个对象讲道理，其实我也没懂，]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java-final, finally, finalize的区别]]></title>
+    <url>%2F2019%2F04%2F27%2FJava-final-finally-finalize%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[finalfinal 可以用于控制成员，方法，或者是一个类是否可以被重写或者继承等功能 finnal 成员当在类中定义变量时，若在前面加上final关键字，那么，这个变量一旦被初始化，便不可改变，这里的不可变的意思对基本类型来说其值不可变，而对于对象变量来说是其引用不可变，初始化可以在两个地方，一是其定义处，二是在构造函数中，两者只能选其一。当你在方法中不需要改变做为参数的对象变量时，明确使用final进行声明，会防止你无意地修改影响调用方法。 final 方法将方法声明为final有两个原因，第一就是明确已经知道这个方法提供的功能满足要求，不需要进行拓展，并且不允许任何从此类继承的类来重写这个方法，但是可以继承这个方法，即可以直接调用；第二就是允许编译器将所有对此方法的调用转化为inline（行内）调用的机制，它会在调用final方法时，直接将方法主体插入到调用处，而不是进行例行的方法调用，例如：保存断点，压栈等操作，这样可能会使程序效率有所提高。 final 类一个final 类是无法被任何类继承的，也就意味着，此类在一个继承树中是一个叶子类，并且此类的设计已被认为很完美，不需要进行修改或扩展。final类中的成员既可以明确指出final也可以不指出。 finalyfinally 关键字是对Java异常处理模型的补充，finally结构使代码总会执行，而不管有无异常发生，使用finally可以维护对象的内部状态，并且可以清理非内存资源。 finalizefinalize是方法名。Java允许使用finalize()方法在垃圾收集器将对象从内存清除出去之前作必要的清理工作。它是Object类中定义的，所有的类都继承了它。]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java-异常]]></title>
+    <url>%2F2019%2F04%2F27%2FJava-%E5%BC%82%E5%B8%B8%2F</url>
+    <content type="text"><![CDATA[什么是异常在Java程序运行时，常常会出现一些非正常的现象，这种情况称为运行错误。根据其性质可以分为异常和错误。Java程序中，所有抛出的异常都必须从Throwable派生而来。类Throwable有两个直接子类：Error和Exception。一般来说，最常见的错误程序进入死循环，内存泄露等Java错误对应的类为Error类，Error类对象有Java虚拟机生成并抛弃Java异常对应的类为Exception类，Java编译器要求程序必须捕获或声明所有的非运行时异常，但对运行时异常可以不做处理。其中类RuntimeException代表运行时由Java虚拟机生成的异常，原因是编程错误，其他则为非运行异常，原因是程序碰到了意外情况，如输入/输出异常IOException等。 异常关键字Java异常处理的关键语句有五个：try, catch, throw, throws, finally. 其中，try, catch, finally三个语句块应注意：1）try, catch, finally 三个语句块不饿能单独使用三者可以组成try…catch…finally, try…catch, try…finally三种结构，catch语句可以有一个或者多个，finally语句最多一个。2）try, catch, finally 三个变量的作用域为代码块内部，分别独立而不能互相访问3）若有多个catch块，只会匹配其中一个异常类并执行catch块代码，而不会在执行别的catch块，并且匹配catch语句的顺序是由上到下的。 throw, throws关键字的区别如下throw 关键字用于方法体内部，用来抛出一个Throwable类型的异常。如果抛出了检查异常，则还应该在头部声明方法可能抛出的异常类型。throws 关键字用于方法体外部的声明部分，仅当抛出了检查异常，该方法的调用者才必须处理或者重新抛出该异常。当方法的调用者无力处理该异常的时候，应当继续抛出。 异常处理中常见的问题过于庞大的try块大量的语句装入一个try块，找出异常不容易；对于这种问题，可以设置多个异常抛出点来解决，异常对象从产生点产生后，到被捕捉后终止生命的全过程中，实际是一个传值过程 异常的完整性在Java语言中，如果一个函数运行时可能会向上层调用者函数抛出一个异常。那么，它就必须在该函数的声明中显式地注明（采用throws关键字）。如果你在程序中利用throw出现一个异常，那么你的程序中必须要用catch处理这个异常。1234567try&#123; //throw Exception&#125;catch (Exception ex)&#123; //find Exception //hand of it&#125;]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java-运算符]]></title>
+    <url>%2F2019%2F04%2F27%2FJava-%E8%BF%90%E7%AE%97%E7%AC%A6%2F</url>
+    <content type="text"><![CDATA[语言中运算符分为三类：单目运算符，二目运算符，三目运算符。单目运算符只对一个参数进行运算（如++，—-等）；双目运算符就是对两个参数进行运算（如+，-，&gt;,&lt;,等）；三目运算符就是对三个参数进行运算（如？，：）。运算符的优先级别（1级优先级最高，16级最低）：123456789101112131415161级：—— . ()2级：—— ++ --3级：—— new 4级：—— * / %5级：—— + -6级：—— &gt;&gt; &lt;&lt; &gt;&gt; &gt;7级：—— &gt; &lt; &gt;= &lt;=8级：—— == !=9级：—— &amp;10级：—— ^11级：—— !12级：—— &amp;&amp;13级：—— ||14级：—— ?:15级：—— = += -= /= %= ^=16级：—— &amp;= &lt;&lt;= &gt;&gt;= 在Java编程规范中提到：当两个表达式有一个是常量表达式，另一个变量是T时，而常量表达式可以通过被T表示时，输出的结果是T类型。“&amp;”, “|”, “^” 是位运算符并且可以充当布尔逻辑运算符。例：int c = a &amp; b;意思是首先a和b按位与，a是1，b是2，a的二进制数位是0001，b的二进制位是0010，布尔运算符优先级别高于逻辑运算符。&amp;，| 逻辑运算与 &amp;&amp;，|| 运算符的重要区别是，前者是非短路运算，后者是短路运算编译器对 &amp;&amp; 和 || 已经优化过，凡 &amp;&amp; 前面的是false，那么 &amp;&amp; 后面的表达式将不会执行，|| 前面的是true，|| 后面的就不用做了。]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java 性能调优]]></title>
+    <url>%2F2019%2F04%2F23%2FJava-%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98%2F</url>
+    <content type="text"><![CDATA[程序的性能通过执行速度，内存分配，启动时间，负载承受能力来变现，其中：执行速度：程序的反映是否迅速，响应时间是否足够短。内存分配：内存分配是否合理，是否过多地消耗内存或者存在泄露。启动时间：程序从运行到可以正常处理业务需要花费多长时间。负载承受能力：当系统压力上升时，系统的执行速度，响应时间的上升曲线是否平缓。 性能的参考标准：执行时间：一段代码从开始运行到运行结束，所使用的时间CPU时间：函数或者线程所占用的CPU的时间内存分配：程序在运行时所占用的内存空间磁盘吞吐量：描述I/O使用情况网络吞吐量：描述网络的使用情况响应时间：系统对某用户行为或者事件做出响应的时间，响应时间鱼越短，性能越好]]></content>
+      <categories>
+        <category>Java高级</category>
+      </categories>
+      <tags>
+        <tag>Java高级</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java-类型转换]]></title>
+    <url>%2F2019%2F04%2F15%2FJava-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%2F</url>
+    <content type="text"><![CDATA[Java 的数据类型分为三大类，即布尔型，字符型和数值型，其中数值型又分为整型和浮点型，相对于数据类型，Java的变量类型为boolean；字符型为char,整型byte、short、int、long;浮点型float、double其中四种整型变量和两种浮点型变量分别对应于不同的精度和范围。此外，编程时还经常用到两种类型变量，即String和Data。 数据类型转换的种类Java数据类型的转换一般分三种，分别是：简单数据类型之间的转换，字符串与其他数据类型之间的转换，其他实用数据类型的转换。 简单数据类型之间的转换在Java中，整型，实型，字符型被视为简单数据类型，这些类型由低级到高级分别为（byte, short,char）——&gt;int——&gt;long——&gt;float——&gt;double。简单数据类型之间的转换又可以分为：低级到高级的自动类型转换，高级到低级的强制类型转换，包装类过滤类型能够转换 自动类型转换低级变量可以直接转换为高级变量，这叫自动类型转换。例如，下面的语句可以在节Java中直接通过 byte b ; i = b ; long 1 = b ; float f = b ;double d = b ;如果低级类型为char型，向高级类型（整型）转换时，会转换为对应的ASCLL码值，例如； char c = &#39;c&#39; ; int i = c ; System.out.println(&quot;output:&quot; + i);输出 : output:99; 强制类型转换int i = 99 ; byte b = (byte)i ; char c = (char)i; 注意：这种转换可能会导致溢出或精度的下降。 包装类过滤类型转换Java 的包装类可以直接将简单类型的变量表示为一个类。Java共有六种包装类，分别是Boolean、Character、Integer、Long、Float和Double。String和Data本身就是类，不存在包装类的概念。在进行简单数据类型之间的抓换时，可以利用包装类进行中间过渡，一般情况下，首先声明一个变量，然后生成一个对应的包装类，就可以利用包装类的各种方法进行类型转换。例1：float——&gt;double 123float f1 = 100.00f ; Float F1 = new Float(f1) ;Double d1 = F1.doubleValue() ; 例2：double——&gt;int 123double d1 = 100.00;Double D1 = new Double(d1);int i1 = D1.intValue(D1); 例3：int——&gt;double ，自动转换： 12int i1 = 200;double d1 = i1; 字符串与其他数据类型之间的转换在Java中，所有的类都继承于java.lang.Object, 在Object类中定义了toString()方法，即所有的类都可转换为字符串。 字符串转其他类型字符串转换为数值型变量有两种对应关系：一种是其转换为对应的ASCLL码；两一种是转换关系，例如，”1”就是数值1，而不是ASCLL码，对于这种转换，可以使用Character的getNumericValue(char ch)方法。]]></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+</search>
