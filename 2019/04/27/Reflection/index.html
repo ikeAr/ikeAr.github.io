@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Java中的反射是一种强大的工具，它能够创建灵活的代码，这些代码可以运行时装配，无须在组件中进行连接。反射允许在编写与执行时，使程序代码能够接入装载到JVM中的类的内部信息，而不是源代码中选定的类协作的代码。这使反射成为构建灵活应用的主要工具。需要注意的使，如果使用不当，反射的成本会很高。Java中的类反射Reflection是Java程序开发语言的特征之一，它允许运行中的Java程序对自身进行检">
+<meta name="description" content="在Java语言里面之所以会有如此众多的开源技术支撑，很大的一部分来自于Java最大的特征——反射机制，如果不能灵活的使用反射进行项目的开发与设计，那么可以说你未接触到Java的精髓。所有的技术实现的目标只有一点：重用性。对于反射机制首先考虑的是“反”与“正”的操作，所谓的“正”操作指的是当我们要使用一个类的时候，一定要先导入程序所在的包，而后根据类进行对象的实例化，并且依靠对象调用类中的方法。但是">
 <meta name="keywords" content="Java基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java-反射（Reflection）">
 <meta property="og:url" content="http://yoursite.com/2019/04/27/Reflection/index.html">
 <meta property="og:site_name" content="Ike&#39;s blog">
-<meta property="og:description" content="Java中的反射是一种强大的工具，它能够创建灵活的代码，这些代码可以运行时装配，无须在组件中进行连接。反射允许在编写与执行时，使程序代码能够接入装载到JVM中的类的内部信息，而不是源代码中选定的类协作的代码。这使反射成为构建灵活应用的主要工具。需要注意的使，如果使用不当，反射的成本会很高。Java中的类反射Reflection是Java程序开发语言的特征之一，它允许运行中的Java程序对自身进行检">
+<meta property="og:description" content="在Java语言里面之所以会有如此众多的开源技术支撑，很大的一部分来自于Java最大的特征——反射机制，如果不能灵活的使用反射进行项目的开发与设计，那么可以说你未接触到Java的精髓。所有的技术实现的目标只有一点：重用性。对于反射机制首先考虑的是“反”与“正”的操作，所谓的“正”操作指的是当我们要使用一个类的时候，一定要先导入程序所在的包，而后根据类进行对象的实例化，并且依靠对象调用类中的方法。但是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T10:32:54.129Z">
+<meta property="og:updated_time" content="2019-05-09T15:13:31.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java-反射（Reflection）">
-<meta name="twitter:description" content="Java中的反射是一种强大的工具，它能够创建灵活的代码，这些代码可以运行时装配，无须在组件中进行连接。反射允许在编写与执行时，使程序代码能够接入装载到JVM中的类的内部信息，而不是源代码中选定的类协作的代码。这使反射成为构建灵活应用的主要工具。需要注意的使，如果使用不当，反射的成本会很高。Java中的类反射Reflection是Java程序开发语言的特征之一，它允许运行中的Java程序对自身进行检">
+<meta name="twitter:description" content="在Java语言里面之所以会有如此众多的开源技术支撑，很大的一部分来自于Java最大的特征——反射机制，如果不能灵活的使用反射进行项目的开发与设计，那么可以说你未接触到Java的精髓。所有的技术实现的目标只有一点：重用性。对于反射机制首先考虑的是“反”与“正”的操作，所谓的“正”操作指的是当我们要使用一个类的时候，一定要先导入程序所在的包，而后根据类进行对象的实例化，并且依靠对象调用类中的方法。但是">
 
 
 
@@ -406,7 +406,8 @@
       
 
       
-        <p>Java中的反射是一种强大的工具，它能够创建灵活的代码，这些代码可以运行时装配，无须在组件中进行连接。反射允许在编写与执行时，使程序代码能够接入装载到JVM中的类的内部信息，而不是源代码中选定的类协作的代码。这使反射成为构建灵活应用的主要工具。需要注意的使，如果使用不当，反射的成本会很高。<br>Java中的类反射Reflection是Java程序开发语言的特征之一，它允许运行中的Java程序对自身进行检查，或者说“自省”，并能直接操作程序的内部属性。<br><strong>可以运用反射手段，调用java.lang.Class或者java.lang.reflect.Constructor类的newInstance()方法，创建一个对象</strong><br>讲道理，其实我也没懂，</p>
+        <p>在Java语言里面之所以会有如此众多的开源技术支撑，很大的一部分来自于Java最大的特征——反射机制，如果不能灵活的使用反射进行项目的开发与设计，那么可以说你未接触到Java的精髓。<br><strong>所有的技术实现的目标只有一点：重用性</strong>。<br>对于反射机制首先考虑的是“反”与“正”的操作，所谓的“正”操作指的是当我们要使用一个类的时候，一定要先导入程序所在的包，而后根据类进行对象的实例化，并且依靠对象调用类中的方法。但是如果说“反”，根据实例化对象推出其类型。<br>如果要实现反的处理操作，那么首先要采用的就是Object类中所提供的一个方法<br><strong>获取Class对象信息：public final Class&lt;?&gt;getClass();通过getClass()可以帮助使用者找到对象的根源</strong></p>
+<p><strong>可以运用反射手段，调用java.lang.Class或者java.lang.reflect.Constructor类的newInstance()方法，创建一个对象</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ipublic class Main &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Class&lt;?&gt; sr= null;</span><br><span class="line">        try &#123;</span><br><span class="line">            sr = Class.forName(&quot;Person&quot;);</span><br><span class="line">            Object o = sr.getConstructor().newInstance();</span><br><span class="line">            System.out.println(o);</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -545,7 +546,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

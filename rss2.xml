@@ -8,8 +8,40 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Thu, 02 May 2019 05:05:09 GMT</pubDate>
+    <pubDate>Thu, 09 May 2019 14:45:07 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Java-Class类对象的三种实例化模式</title>
+      <link>http://yoursite.com/2019/05/09/Java-Class%E7%B1%BB%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E7%A7%8D%E5%AE%9E%E4%BE%8B%E5%8C%96%E6%A8%A1%E5%BC%8F/</link>
+      <guid>http://yoursite.com/2019/05/09/Java-Class%E7%B1%BB%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E7%A7%8D%E5%AE%9E%E4%BE%8B%E5%8C%96%E6%A8%A1%E5%BC%8F/</guid>
+      <pubDate>Thu, 09 May 2019 13:26:57 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;反射之中的所有核心操作都是通过Class类对象展开的，可以说Class类是反射操作的根源所在，如果要获得它的实例化对象，可以采用三种方式完成 &lt;/p&gt;
+&lt;h1 id=&quot;【Object类支持】Object类可以根据实例化对象获取Class对象&quot;&gt;&lt;a href=&quot;#【Obje
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>反射之中的所有核心操作都是通过Class类对象展开的，可以说Class类是反射操作的根源所在，如果要获得它的实例化对象，可以采用三种方式完成 </p><h1 id="【Object类支持】Object类可以根据实例化对象获取Class对象"><a href="#【Object类支持】Object类可以根据实例化对象获取Class对象" class="headerlink" title="【Object类支持】Object类可以根据实例化对象获取Class对象"></a>【Object类支持】Object类可以根据实例化对象获取Class对象</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Person person=new Person();</span><br><span class="line">        Class sr=person.getClass();</span><br><span class="line">        System.out.println(sr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="JVN直接支持-类-class的形式实例化"><a href="#JVN直接支持-类-class的形式实例化" class="headerlink" title="JVN直接支持 类.class的形式实例化"></a>JVN直接支持 类.class的形式实例化</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Class sr=Person.class;</span><br><span class="line">        System.out.println(sr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="通过Class-forName-“类名”-实例化"><a href="#通过Class-forName-“类名”-实例化" class="headerlink" title="通过Class.forName(“类名”)实例化"></a>通过Class.forName(“类名”)实例化</h1><figure class="highlight plain"><figcaption><span>class Main &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Class&lt;?&gt; sr= null;</span><br><span class="line">        try &#123;</span><br><span class="line">            sr = Class.forName(&quot;Person&quot;);</span><br><span class="line">        &#125; catch (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2019/05/09/Java-Class%E7%B1%BB%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E7%A7%8D%E5%AE%9E%E4%BE%8B%E5%8C%96%E6%A8%A1%E5%BC%8F/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Java-工厂模式+反射+泛型</title>
+      <link>http://yoursite.com/2019/05/09/Java-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-%E5%8F%8D%E5%B0%84-%E6%B3%9B%E5%9E%8B/</link>
+      <guid>http://yoursite.com/2019/05/09/Java-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-%E5%8F%8D%E5%B0%84-%E6%B3%9B%E5%9E%8B/</guid>
+      <pubDate>Thu, 09 May 2019 13:25:35 GMT</pubDate>
+      <description>
+      
+      </description>
+      
+      <comments>http://yoursite.com/2019/05/09/Java-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-%E5%8F%8D%E5%B0%84-%E6%B3%9B%E5%9E%8B/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Java-多线程</title>
@@ -40,12 +72,12 @@
       
         
         
-          &lt;h1 id=&quot;继承qq&quot;&gt;&lt;a href=&quot;#继承qq&quot; class=&quot;headerlink&quot; title=&quot;继承qq&quot;&gt;&lt;/a&gt;继承qq&lt;/h1&gt;&lt;p&gt;继承(inheritance)是指Child类的对象可以使用仅对Father类的对象有效的方法或者属性，它使得这些方法和属性
+          &lt;h1 id=&quot;继承&quot;&gt;&lt;a href=&quot;#继承&quot; class=&quot;headerlink&quot; title=&quot;继承&quot;&gt;&lt;/a&gt;继承&lt;/h1&gt;&lt;p&gt;继承(inheritance)是指Child类的对象可以使用仅对Father类的对象有效的方法或者属性，它使得这些方法和属性就好像是Chil
         
       
       </description>
       
-      <content:encoded><![CDATA[<h1 id="继承qq"><a href="#继承qq" class="headerlink" title="继承qq"></a>继承qq</h1><p>继承(inheritance)是指Child类的对象可以使用仅对Father类的对象有效的方法或者属性，它使得这些方法和属性就好像是Child类自己定义的一样，此时Father类是Child类的父类，Child类是Father类的子类。在类结构中，父类的内部对于子类是可见的，所以，通过继承的代码复用是一种“白盒式代码复用”。</p><h1 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h1><p>组合(composition)是指通过对现有的对象进行拼装(组合)产生新的更复杂的功能。因为在对象之间，各自的内部细节是不可见的，所以，称这种代码复用是“黑盒式代码复用”。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Queue extends Array&#123;</span><br><span class="line">    // 继承</span><br><span class="line">&#125;</span><br><span class="line">class Queue extends Object&#123;</span><br><span class="line">    private Array asArray</span><br><span class="line">    //组合</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content:encoded>
+      <content:encoded><![CDATA[<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><p>继承(inheritance)是指Child类的对象可以使用仅对Father类的对象有效的方法或者属性，它使得这些方法和属性就好像是Child类自己定义的一样，此时Father类是Child类的父类，Child类是Father类的子类。在类结构中，父类的内部对于子类是可见的，所以，通过继承的代码复用是一种“白盒式代码复用”。</p><h1 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h1><p>组合(composition)是指通过对现有的对象进行拼装(组合)产生新的更复杂的功能。因为在对象之间，各自的内部细节是不可见的，所以，称这种代码复用是“黑盒式代码复用”。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Queue extends Array&#123;</span><br><span class="line">    // 继承</span><br><span class="line">&#125;</span><br><span class="line">class Queue extends Object&#123;</span><br><span class="line">    private Array asArray</span><br><span class="line">    //组合</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content:encoded>
       
       <comments>http://yoursite.com/2019/04/29/Java-%E7%BB%A7%E6%89%BF%E4%B8%8E%E7%BB%84%E5%90%88/#disqus_thread</comments>
     </item>
@@ -162,44 +194,6 @@
       <content:encoded><![CDATA[<h2 id="java-容器类库一共有两种主要类型：Collection和Map"><a href="#java-容器类库一共有两种主要类型：Collection和Map" class="headerlink" title="java 容器类库一共有两种主要类型：Collection和Map"></a>java 容器类库一共有两种主要类型：<strong>Collection</strong>和<strong>Map</strong></h2><p>Collection 和Map 的区别在于每个容器内每个“槽”所存的元素个数不同，Collection 类型中，每个“槽”只有一个元素，Map类型中，持有<strong>key-value</strong>关联，类似小型数据库，所有的Java容器都可以自动调整自己的尺寸。<br>各自旗下的子类关系如图：<br>Collection:<br><img src="/2019/04/28/Java-集合/./Java-集合/Collection.png" alt="avatar"><br>Map:<br><img src="/2019/04/28/Java-集合/./Java-集合/Map.png" alt="avatar"><br>Collection 的子类如下：<br>&emsp;&emsp;——List: 将以特定顺序存储元素，所以取出来的顺序可能和放入顺序不同<br>&emsp;&emsp;&emsp;&emsp;——ArrayList: 擅长随机访问元素，但在List中插入，删除，移动元素较慢<br>&emsp;&emsp;&emsp;&emsp;——LinkedList: 插入，删除，移动元素方便，随机访问元素慢<br>&emsp;&emsp;——Set：每个值只能保存一个对象，不能含有重复的元素<br>&emsp;&emsp;&emsp;&emsp;——HashSet：使用散列函数<br>&emsp;&emsp;&emsp;&emsp;——TreeSet：使用红黑树<br>&emsp;&emsp;&emsp;&emsp;——LinkedHashSet 使用链表结合散列函数<br>&emsp;&emsp;&emsp;&emsp;——Queue:队列，先进先出的容器<br>Map 的子类如下：<br>&emsp;&emsp;——HashSet<br>&emsp;&emsp;——HashTable<br>&emsp;&emsp;——TreeMap</p><h2 id="其他特征"><a href="#其他特征" class="headerlink" title="其他特征:"></a>其他特征:</h2><ol><li>List, Set, Map将所有对象视为Object类型；</li><li>Collection, List, Set, Map 都是接口，不能被实例化<br><strong>在各种List中，最好的做法是以ArrayList作为默认选择。当插入，删除频繁时，使用LinkedList(), Vector总是比ArrayList慢，在各种Set中，HashSet通常优于HashTree(插入，查找）。只有当需要产生一个经过排序的序列时，采用TreeSet。Hashtree的意义是用来维护其内元素的排序；在各种Map中，HashMap用于快速查找，当元素的个数固定时，Array的效率是最高的</strong><h2 id="HashMap与HashTable的区别"><a href="#HashMap与HashTable的区别" class="headerlink" title="HashMap与HashTable的区别"></a>HashMap与HashTable的区别</h2>都属于Map接口的类，实现了将唯一键映射到特定的值上。<br>HashMap 类没有分类或者排序，它允许一个null键和多个null值<br>HashTable 不允许null键和null值。<br>HashTable的方法是Synchronize的，HashMap不是</li></ol>]]></content:encoded>
       
       <comments>http://yoursite.com/2019/04/28/Java-%E9%9B%86%E5%90%88/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Java-内存管理</title>
-      <link>http://yoursite.com/2019/04/28/Java-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</link>
-      <guid>http://yoursite.com/2019/04/28/Java-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
-      <pubDate>Sun, 28 Apr 2019 05:42:56 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;h1 id=&quot;垃圾收集&quot;&gt;&lt;a href=&quot;#垃圾收集&quot; class=&quot;headerlink&quot; title=&quot;垃圾收集&quot;&gt;&lt;/a&gt;垃圾收集&lt;/h1&gt;&lt;p&gt;Java中使用被称为垃圾收集器的技术来监视Java程序的运行，当对象不在使用时，就自动释放对象所使用的内存。&lt;br&gt;垃圾收集
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<h1 id="垃圾收集"><a href="#垃圾收集" class="headerlink" title="垃圾收集"></a>垃圾收集</h1><p>Java中使用被称为垃圾收集器的技术来监视Java程序的运行，当对象不在使用时，就自动释放对象所使用的内存。<br>垃圾收集器是自动运行的，一般情况下，无须显式的请求垃圾收集器，程序运行时，垃圾收集器会不时检查对象的各个引用，并非是无引用对象所占用的内存。调用System 类中的静态gc()方法可以运行垃圾收集器，但这样并不能保证立即回收指定对象。<br>Java垃圾回收机制：gc即垃圾收集机制，是指JVN用于释放那些不再使用的对象所占用的内存。Java的垃圾回收机制时为所有的Java应用进程服务的，而不是为某个特定的进程服务的，因此，<strong>任何一个进程都不能命令垃圾回收机制做什么，怎么做或做多少</strong>，在JVM垃圾收集器收集一个对象之前，一般要求程序中调用适当的方法来释放资源，但在没有明确释放资源的情况下，Java提供了默认机制终止化该对象来释放资源，这个方法就是<strong>finalize()</strong>。在finalize()方法返回之后，对象消失，垃圾收集开始执行。</p><h2 id="一块内存空间是否符合垃圾收集器收集标准"><a href="#一块内存空间是否符合垃圾收集器收集标准" class="headerlink" title="一块内存空间是否符合垃圾收集器收集标准"></a>一块内存空间是否符合垃圾收集器收集标准</h2><p>1.给对象赋予了控制null, 以后再也没有调用过<br>2.给对象赋予了新值，即重新分配了内存空间<br><strong>一块内存空间符合了垃圾收集器的收集标准，并不意味着这块内存空间就一定会被垃圾收集器收集</strong></p><h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><h2 id="变量的内存分配情况"><a href="#变量的内存分配情况" class="headerlink" title="变量的内存分配情况"></a>变量的内存分配情况</h2><p>1.不要试图去假定垃圾收集发生的时间，这一切都是未知的。<br>2.Java提供了一种强行执行的垃圾收集的方法——调用System.gc()，但这是一个不确定方法。<br>3.挑选适合自己的垃圾收集器<br>4.防止内存泄漏<br>5.尽早释放无用对象的引用，对于频繁申请内存和释放内存的操作，最好使用finalize强制执行，或者写自己的finalize方法。</p><h2 id="什么是Java中的内存泄漏"><a href="#什么是Java中的内存泄漏" class="headerlink" title="什么是Java中的内存泄漏"></a>什么是Java中的内存泄漏</h2><p>在Java中，内存泄漏就是存在一些被分配的对象，这些对象有两个特点：<br>1.对象是可达的，即在有向图中，存在通路可以与其相连；<br>2.对象是无用的，即程序以后不会再使用这些对象。<br>如果对象满足这两个条件，这些对象可以判定位Java中的内存泄漏，这些对象不会被gc所回收，然而他们却占用内存。<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vector v = new Vector(10);</span><br><span class="line">for (int i = 1; i &lt; 100; i++)&#123;</span><br><span class="line">    Object o = new Object();</span><br><span class="line">    v.add(o);</span><br><span class="line">    o = null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><strong>内存泄露的主要原因：保留下来却永远不再使用的对象引用。</strong></p><h2 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h2><p>Java中clone的含义是，假设x是一个非空对象，则：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x.clone() != x //true , 就是说他们不是一个对象</span><br><span class="line">x.clone().getClass() == x.getClass() //true, 说明他们是同一个类型的class</span><br><span class="line">x.equals(x.clone()) //true, 说明值相等</span><br></pre></td></tr></table></figure></p><p>clone方法是在Object中定义的，而且是proteced 的，只有实现了Cloneable接口，才可以在该类的实例上调用clone方法，否则会抛出CloneNotSupportException，该方法从Object类中继承而来，该接口只是一个标记。</p>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/04/28/Java-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Java-序列化</title>
-      <link>http://yoursite.com/2019/04/28/Java-%E5%BA%8F%E5%88%97%E5%8C%96/</link>
-      <guid>http://yoursite.com/2019/04/28/Java-%E5%BA%8F%E5%88%97%E5%8C%96/</guid>
-      <pubDate>Sun, 28 Apr 2019 04:47:08 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;h1 id=&quot;如何实现Java的序列化？&quot;&gt;&lt;a href=&quot;#如何实现Java的序列化？&quot; class=&quot;headerlink&quot; title=&quot;如何实现Java的序列化？&quot;&gt;&lt;/a&gt;如何实现Java的序列化？&lt;/h1&gt;&lt;p&gt;序列化一个对象只需要让他实现Serializable
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<h1 id="如何实现Java的序列化？"><a href="#如何实现Java的序列化？" class="headerlink" title="如何实现Java的序列化？"></a>如何实现Java的序列化？</h1><p>序列化一个对象只需要让他实现Serializable接口（这是一个“标记接口”，tagging interface,没有任何方法）就行，但是，当语言引入序列化概念之后，它有很多标准类库的类，包括primitive的wrapper类，所有的容器类，以及别的很多类，都会相应的发生改变，甚至连Class对象都会被序列化。<br>要想序列化对象，<strong>必须先创建一个OutputStream，然后把它嵌进ObjectOutputStream。这是就能调用writeObject() 方法把对象写入OutputStream, 读的时候需要把InputStream嵌到ObjectInputStream中，然后在调用readObject()方法</strong>。代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">public class SerSingleton implements java.io.Serializable&#123;</span><br><span class="line">    String name;</span><br><span class="line">    private SerSingleton()&#123;</span><br><span class="line">        System.out.println(&quot;Singleton is create&quot;);</span><br><span class="line">        name = &quot;SerSingleton&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    private static SerSingleton instance = new SerSingleton();</span><br><span class="line">    public static SerSingleton getInstance()&#123;</span><br><span class="line">        return instance;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void createString()&#123;</span><br><span class="line">        System.out.println(&quot;CreateString in Singleton&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    private Object readResolve()&#123;//阻止新生成的实例，总是返回当前对象</span><br><span class="line">        return instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public void test() throw Exception&#123;</span><br><span class="line">    SerSingleton s1 = null ;</span><br><span class="line">    SerSingleton s = SerSingleton.getInstance();</span><br><span class="line">    //先将实例串化到文件</span><br><span class="line">    FileOutputStream fos = new FileOutputStream(&quot;SerSingleton.txt&quot;);</span><br><span class="line">    ObjectOutputStream oos = new ObjectOutputStream(fos);</span><br><span class="line">    oos.writeObject(s);</span><br><span class="line">    oos.flush();</span><br><span class="line">    oos.close();</span><br><span class="line">    //从文件读出原来的单例类</span><br><span class="line">    FileInputStream fis = new FileInputStream(&quot;SerSingleton.txt&quot;);</span><br><span class="line">    ObjectInputStream ois = new ObjectInputStream(fis);</span><br><span class="line">    s1 = (SerSingleton) ois.readObject();</span><br><span class="line">    Assert.assertEquals(s,s1); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content:encoded>
-      
-      <comments>http://yoursite.com/2019/04/28/Java-%E5%BA%8F%E5%88%97%E5%8C%96/#disqus_thread</comments>
     </item>
     
   </channel>

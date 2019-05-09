@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Java-Class类对象的三种实例化模式]]></title>
+    <url>%2F2019%2F05%2F09%2FJava-Class%E7%B1%BB%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E7%A7%8D%E5%AE%9E%E4%BE%8B%E5%8C%96%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[反射之中的所有核心操作都是通过Class类对象展开的，可以说Class类是反射操作的根源所在，如果要获得它的实例化对象，可以采用三种方式完成 【Object类支持】Object类可以根据实例化对象获取Class对象12345678public class Main &#123; public static void main(String[] args) &#123; Person person=new Person(); Class sr=person.getClass(); System.out.println(sr); &#125;&#125; JVN直接支持 类.class的形式实例化1234567public class Main &#123; public static void main(String[] args) &#123; Class sr=Person.class; System.out.println(sr); &#125;&#125; 通过Class.forName(“类名”)实例化class Main &#123;1234567891011 public static void main(String[] args) &#123; Class&lt;?&gt; sr= null; try &#123; sr = Class.forName(&quot;Person&quot;); &#125; catch (ClassNotFoundException e) &#123; e.printStackTrace(); &#125; System.out.println(sr); &#125;&#125;]]></content>
+      <categories>
+        <category>Java高级</category>
+      </categories>
+      <tags>
+        <tag>Java高级</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java-工厂模式+反射+泛型]]></title>
+    <url>%2F2019%2F05%2F09%2FJava-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-%E5%8F%8D%E5%B0%84-%E6%B3%9B%E5%9E%8B%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[Java-多线程]]></title>
     <url>%2F2019%2F05%2F02%2FJava-%E5%A4%9A%E7%BA%BF%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[在Java中，实现多线程一般有三种方式： 继承Thread类，实现run()方法，调用start()方法，启动一个线程代码如下：123456789101112131415161718192021222324public class MyThread extends Thread &#123; @Override public void run() &#123; for (int i = 0; i &lt; 10; i++) &#123; try &#123; sleep(1000); &#125; catch (InterruptedException e) &#123; e.printStackTrace(); &#125; System.out.println(currentThread().getName()); &#125; &#125;&#125;public class Main &#123; public static void main(String[] args) &#123; MyThread myThreadA = new MyThread(); MyThread myThreadB = new MyThread(); MyThread myThreadC = new MyThread(); myThreadA.start(); myThreadB.start(); myThreadC.start(); &#125;&#125; 实现Runnable接口，重写run()方法，并将此对象以参数的形式传给Thread对象，并调用Thread对象的start()方法，开启线程代码如下：12345678910111213141516171819202122232425public class MyThread implements Runnable &#123; @Override public void run() &#123; for (int i = 0; i &lt; 10; i++) &#123; try &#123; Thread.sleep(1000); &#125; catch (InterruptedException e) &#123; e.printStackTrace(); &#125; System.out.println(Thread.currentThread().getName() + &quot;我正在执行&quot;); &#125; &#125;&#125;public class Main &#123; public static void main(String[] args) &#123; MyThread myThread=new MyThread(); Thread threadA = new Thread(myThread, &quot;线程A&quot;); Thread threadB = new Thread(myThread, &quot;线程B&quot;); Thread threadC = new Thread(myThread, &quot;线程C&quot;); threadA.start(); threadB.start(); threadC.start(); &#125;&#125; 实现Collable接口，重写Call()方法, 并将它传让FutureTask对象内，再将FutureTask对象传入Thread对象内，调用Thread对象的start()方法开启线程123456789101112131415161718192021import java.util.concurrent.Callable;public class MyThread implements Callable&lt;String&gt; &#123; @Override public String call() &#123; for (int i = 0; i &lt; 10; i++) &#123; System.out.println(&quot;线程执行&quot; + i); &#125; return &quot;线程执行完毕&quot;; &#125;&#125;import java.util.concurrent.ExecutionException;import java.util.concurrent.FutureTask;public class Main &#123; public static void main(String[] args) throws ExecutionException, InterruptedException &#123; FutureTask&lt;String&gt; futureTask = new FutureTask&lt;String&gt;(new MyThread()); new Thread(futureTask).start(); System.out.println(futureTask.get()); &#125;&#125; Runnable 接口和Callable 的区别： Runnable 是在JDK 1.0 的时候提出的多线程实现接口，而Callable是在JDK1.5 之后提出的； java.lang.Runnable 接口之中只提供有一个run()方法，并且没有返回值； java.util.concurrent Callable 接口提供有call() 方法，可以有返回值。想要实现多线程的启动，必须使用Thread类的start()方法]]></content>
@@ -14,7 +30,7 @@
   <entry>
     <title><![CDATA[Java-继承与组合]]></title>
     <url>%2F2019%2F04%2F29%2FJava-%E7%BB%A7%E6%89%BF%E4%B8%8E%E7%BB%84%E5%90%88%2F</url>
-    <content type="text"><![CDATA[继承qq继承(inheritance)是指Child类的对象可以使用仅对Father类的对象有效的方法或者属性，它使得这些方法和属性就好像是Child类自己定义的一样，此时Father类是Child类的父类，Child类是Father类的子类。在类结构中，父类的内部对于子类是可见的，所以，通过继承的代码复用是一种“白盒式代码复用”。 组合组合(composition)是指通过对现有的对象进行拼装(组合)产生新的更复杂的功能。因为在对象之间，各自的内部细节是不可见的，所以，称这种代码复用是“黑盒式代码复用”。1234567class Queue extends Array&#123; // 继承&#125;class Queue extends Object&#123; private Array asArray //组合&#125;]]></content>
+    <content type="text"><![CDATA[继承继承(inheritance)是指Child类的对象可以使用仅对Father类的对象有效的方法或者属性，它使得这些方法和属性就好像是Child类自己定义的一样，此时Father类是Child类的父类，Child类是Father类的子类。在类结构中，父类的内部对于子类是可见的，所以，通过继承的代码复用是一种“白盒式代码复用”。 组合组合(composition)是指通过对现有的对象进行拼装(组合)产生新的更复杂的功能。因为在对象之间，各自的内部细节是不可见的，所以，称这种代码复用是“黑盒式代码复用”。1234567class Queue extends Array&#123; // 继承&#125;class Queue extends Object&#123; private Array asArray //组合&#125;]]></content>
       <categories>
         <category>Java基础</category>
       </categories>
@@ -140,7 +156,7 @@
   <entry>
     <title><![CDATA[Java-反射（Reflection）]]></title>
     <url>%2F2019%2F04%2F27%2FReflection%2F</url>
-    <content type="text"><![CDATA[Java中的反射是一种强大的工具，它能够创建灵活的代码，这些代码可以运行时装配，无须在组件中进行连接。反射允许在编写与执行时，使程序代码能够接入装载到JVM中的类的内部信息，而不是源代码中选定的类协作的代码。这使反射成为构建灵活应用的主要工具。需要注意的使，如果使用不当，反射的成本会很高。Java中的类反射Reflection是Java程序开发语言的特征之一，它允许运行中的Java程序对自身进行检查，或者说“自省”，并能直接操作程序的内部属性。可以运用反射手段，调用java.lang.Class或者java.lang.reflect.Constructor类的newInstance()方法，创建一个对象讲道理，其实我也没懂，]]></content>
+    <content type="text"><![CDATA[在Java语言里面之所以会有如此众多的开源技术支撑，很大的一部分来自于Java最大的特征——反射机制，如果不能灵活的使用反射进行项目的开发与设计，那么可以说你未接触到Java的精髓。所有的技术实现的目标只有一点：重用性。对于反射机制首先考虑的是“反”与“正”的操作，所谓的“正”操作指的是当我们要使用一个类的时候，一定要先导入程序所在的包，而后根据类进行对象的实例化，并且依靠对象调用类中的方法。但是如果说“反”，根据实例化对象推出其类型。如果要实现反的处理操作，那么首先要采用的就是Object类中所提供的一个方法获取Class对象信息：public final Class&lt;?&gt;getClass();通过getClass()可以帮助使用者找到对象的根源 可以运用反射手段，调用java.lang.Class或者java.lang.reflect.Constructor类的newInstance()方法，创建一个对象1234567891011121314ipublic class Main &#123; public static void main(String[] args) &#123; Class&lt;?&gt; sr= null; try &#123; sr = Class.forName(&quot;Person&quot;); Object o = sr.getConstructor().newInstance(); System.out.println(o); &#125; catch (Exception e) &#123; e.printStackTrace(); &#125; System.out.println(sr); &#125;&#125;]]></content>
       <categories>
         <category>Java基础</category>
       </categories>

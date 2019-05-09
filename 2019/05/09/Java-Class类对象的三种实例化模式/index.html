@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Java高级,">
 
 
 
@@ -81,13 +81,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ike&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/Java高级/index.html">
+<meta name="description" content="反射之中的所有核心操作都是通过Class类对象展开的，可以说Class类是反射操作的根源所在，如果要获得它的实例化对象，可以采用三种方式完成  【Object类支持】Object类可以根据实例化对象获取Class对象12345678public class Main &amp;#123;    public static void main(String[] args) &amp;#123;        Per">
+<meta name="keywords" content="Java高级">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java-Class类对象的三种实例化模式">
+<meta property="og:url" content="http://yoursite.com/2019/05/09/Java-Class类对象的三种实例化模式/index.html">
 <meta property="og:site_name" content="Ike&#39;s blog">
+<meta property="og:description" content="反射之中的所有核心操作都是通过Class类对象展开的，可以说Class类是反射操作的根源所在，如果要获得它的实例化对象，可以采用三种方式完成  【Object类支持】Object类可以根据实例化对象获取Class对象12345678public class Main &amp;#123;    public static void main(String[] args) &amp;#123;        Per">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-09T14:45:07.186Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ike&#39;s blog">
+<meta name="twitter:title" content="Java-Class类对象的三种实例化模式">
+<meta name="twitter:description" content="反射之中的所有核心操作都是通过Class类对象展开的，可以说Class类是反射操作的根源所在，如果要获得它的实例化对象，可以采用三种方式完成  【Object类支持】Object类可以根据实例化对象获取Class对象12345678public class Main &amp;#123;    public static void main(String[] args) &amp;#123;        Per">
 
 
 
@@ -117,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/Java高级/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/09/Java-Class类对象的三种实例化模式/">
 
 
 
 
 
-  <title>标签: Java高级 | Ike's blog</title>
+  <title>Java-Class类对象的三种实例化模式 | Ike's blog</title>
   
 
 
@@ -142,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-right ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -287,104 +292,208 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Java高级<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/09/Java-Class类对象的三种实例化模式/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ike">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ike's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/05/09/Java-Class类对象的三种实例化模式/" itemprop="url">
-              
-                <span itemprop="name">Java-Class类对象的三种实例化模式</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Java-Class类对象的三种实例化模式</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-09T21:26:57+08:00" content="2019-05-09">
-          05-09
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-09T21:26:57+08:00">
+                2019-05-09
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java高级/" itemprop="url" rel="index">
+                    <span itemprop="name">Java高级</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/05/09/Java-Class类对象的三种实例化模式/" class="leancloud_visitors" data-flag-title="Java-Class类对象的三种实例化模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/02/Java-多线程/" itemprop="url">
-              
-                <span itemprop="name">Java-多线程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-02T02:21:10+08:00" content="2019-05-02">
-          05-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/23/Java-性能调优/" itemprop="url">
-              
-                <span itemprop="name">Java 性能调优</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-23T21:21:21+08:00" content="2019-04-23">
-          04-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+        <p>反射之中的所有核心操作都是通过Class类对象展开的，可以说Class类是反射操作的根源所在，如果要获得它的实例化对象，可以采用三种方式完成 </p>
+<h1 id="【Object类支持】Object类可以根据实例化对象获取Class对象"><a href="#【Object类支持】Object类可以根据实例化对象获取Class对象" class="headerlink" title="【Object类支持】Object类可以根据实例化对象获取Class对象"></a>【Object类支持】Object类可以根据实例化对象获取Class对象</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Person person=new Person();</span><br><span class="line">        Class sr=person.getClass();</span><br><span class="line">        System.out.println(sr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="JVN直接支持-类-class的形式实例化"><a href="#JVN直接支持-类-class的形式实例化" class="headerlink" title="JVN直接支持 类.class的形式实例化"></a>JVN直接支持 类.class的形式实例化</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Class sr=Person.class;</span><br><span class="line">        System.out.println(sr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="通过Class-forName-“类名”-实例化"><a href="#通过Class-forName-“类名”-实例化" class="headerlink" title="通过Class.forName(“类名”)实例化"></a>通过Class.forName(“类名”)实例化</h1><figure class="highlight plain"><figcaption><span>class Main &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Class&lt;?&gt; sr= null;</span><br><span class="line">        try &#123;</span><br><span class="line">            sr = Class.forName(&quot;Person&quot;);</span><br><span class="line">        &#125; catch (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
+    
+    
+    
+    
+      <div>
+        
+    <div style="text-align:center;color: #ccc;font-size:14px;">
+        ------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+    
+      </div>
+    
 
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Ike
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2019/05/09/Java-Class类对象的三种实例化模式/" title="Java-Class类对象的三种实例化模式">http://yoursite.com/2019/05/09/Java-Class类对象的三种实例化模式/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java高级/" rel="tag"># Java高级</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/09/Java-工厂模式-反射-泛型/" rel="next" title="Java-工厂模式+反射+泛型">
+                <i class="fa fa-chevron-left"></i> Java-工厂模式+反射+泛型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -392,6 +501,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -412,8 +525,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -482,6 +604,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#【Object类支持】Object类可以根据实例化对象获取Class对象"><span class="nav-number">1.</span> <span class="nav-text">【Object类支持】Object类可以根据实例化对象获取Class对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JVN直接支持-类-class的形式实例化"><span class="nav-number">2.</span> <span class="nav-text">JVN直接支持 类.class的形式实例化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过Class-forName-“类名”-实例化"><span class="nav-number">3.</span> <span class="nav-text">通过Class.forName(“类名”)实例化</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -636,6 +774,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
