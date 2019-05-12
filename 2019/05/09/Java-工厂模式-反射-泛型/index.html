@@ -81,14 +81,17 @@
 
 
 
+<meta name="description" content="如果要想进行对象的实例化处理，除了可以使用关键字new之外，还可以使用反射机制来完成，那么到底是使用关键字new还是使用反射呢？最好的解释方案是通过工厂模式来解决 工厂模式工厂模式最大特点：客户端的一个程序类不直接牵扯到对象的实例化管理，只与接口发生关联，通过工厂类获取指定接口的实例，传统的工厂模式：1234567891011121314151617181920212223242526272829">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java-工厂模式+反射+泛型">
 <meta property="og:url" content="http://yoursite.com/2019/05/09/Java-工厂模式-反射-泛型/index.html">
 <meta property="og:site_name" content="Ike&#39;s blog">
+<meta property="og:description" content="如果要想进行对象的实例化处理，除了可以使用关键字new之外，还可以使用反射机制来完成，那么到底是使用关键字new还是使用反射呢？最好的解释方案是通过工厂模式来解决 工厂模式工厂模式最大特点：客户端的一个程序类不直接牵扯到对象的实例化管理，只与接口发生关联，通过工厂类获取指定接口的实例，传统的工厂模式：1234567891011121314151617181920212223242526272829">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-09T13:25:35.641Z">
+<meta property="og:updated_time" content="2019-05-12T03:58:06.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java-工厂模式+反射+泛型">
+<meta name="twitter:description" content="如果要想进行对象的实例化处理，除了可以使用关键字new之外，还可以使用反射机制来完成，那么到底是使用关键字new还是使用反射呢？最好的解释方案是通过工厂模式来解决 工厂模式工厂模式最大特点：客户端的一个程序类不直接牵扯到对象的实例化管理，只与接口发生关联，通过工厂类获取指定接口的实例，传统的工厂模式：1234567891011121314151617181920212223242526272829">
 
 
 
@@ -380,7 +383,14 @@
       
 
       
-        
+        <p>如果要想进行对象的实例化处理，除了可以使用关键字new之外，还可以使用反射机制来完成，那么到底是使用关键字new还是使用反射呢？<br>最好的解释方案是通过工厂模式来解决</p>
+<h1 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h1><p>工厂模式最大特点：客户端的一个程序类不直接牵扯到对象的实例化管理，只与接口发生关联，通过工厂类获取指定接口的实例，传统的工厂模式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">package com.company;</span><br><span class="line"></span><br><span class="line">public interface Imessage &#123; //消息接口</span><br><span class="line">     void send();</span><br><span class="line">&#125;</span><br><span class="line">package com.company;</span><br><span class="line"></span><br><span class="line">public class NetMessage implements Imessage &#123;</span><br><span class="line">    @Override //网络消息类</span><br><span class="line">    public void send() &#123;</span><br><span class="line">        System.out.println(&quot;【网络消息发送】&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">package com.company;</span><br><span class="line"></span><br><span class="line">public class CloudMessage implements Imessage &#123;</span><br><span class="line"></span><br><span class="line">    @Override //云消息类</span><br><span class="line">    public void send() &#123;</span><br><span class="line">        System.out.println(&quot;【云消息发送】&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">package com.company;</span><br><span class="line"></span><br><span class="line">public class Factory &#123;//工厂类</span><br><span class="line">    private Factory()&#123;&#125;;</span><br><span class="line">    public static Imessage getInstance(String className)&#123;</span><br><span class="line">        if(&quot;netmessage&quot;.equalsIgnoreCase(className))&#123;</span><br><span class="line">            return new NetMessage();</span><br><span class="line">        &#125;else if(&quot;cloudMessage&quot;.equalsIgnoreCase(className))&#123;</span><br><span class="line">            return new CloudMessage();</span><br><span class="line">        &#125;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">package com.company;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">	// write your code here</span><br><span class="line">        Imessage netMessage=Factory.getInstance(&quot;netmessage&quot;);</span><br><span class="line">        netMessage.send();</span><br><span class="line">        Imessage cloudmessage=Factory.getInstance(&quot;cloudmessage&quot;);</span><br><span class="line">        cloudmessage.send();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>此种工厂设计模式属于静态工厂设计模式，如果现在需要追加一个子类，那么工厂模式必须修改，如果不追加此种判断是无法获取指定接口对象的，因此，我们通过工厂模式 + 反射机制来解决问题。</p>
+<h1 id="工厂模式-反射"><a href="#工厂模式-反射" class="headerlink" title="工厂模式 + 反射"></a>工厂模式 + 反射</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">package com.company;</span><br><span class="line"></span><br><span class="line">import java.lang.reflect.InvocationTargetException;</span><br><span class="line"></span><br><span class="line">public class Factory &#123;</span><br><span class="line">    private Factory() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static Imessage getInstance(String className) &#123;</span><br><span class="line">        Imessage instance = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            instance = (Imessage) Class.forName(className).getDeclaredConstructor().newInstance();</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        return instance;</span><br><span class="line">//        if(&quot;netmessage&quot;.equalsIgnoreCase(className))&#123;</span><br><span class="line">//            return new NetMessage();</span><br><span class="line">//        &#125;else if(&quot;cloudMessage&quot;.equalsIgnoreCase(className))&#123;</span><br><span class="line">//            return new CloudMessage();</span><br><span class="line">//        &#125;</span><br><span class="line">//        return null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">package com.company;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">	// write your code here</span><br><span class="line">        Imessage netMessage=Factory.getInstance(&quot;com.company.NetMessage&quot;);</span><br><span class="line">        netMessage.send();</span><br><span class="line">        Imessage cloudmessage=Factory.getInstance(&quot;com.company.CloudMessage&quot;);</span><br><span class="line">        cloudmessage.send();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当我们在开发过程中，可能存在有大量的接口，并且这些接口都可能需要通过工厂类实例化，此时，该工厂既不能只为一个特定的接口服务，而是应该为所有的接口服务，因此，我们采用工厂模式 + 反射 + 泛型来解决</p>
+<h1 id="工厂模式-反射-泛型"><a href="#工厂模式-反射-泛型" class="headerlink" title="工厂模式 + 反射 + 泛型"></a>工厂模式 + 反射 + 泛型</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package com.company;</span><br><span class="line"></span><br><span class="line">import java.lang.reflect.InvocationTargetException;</span><br><span class="line"></span><br><span class="line">public class Factory &#123;</span><br><span class="line">    private Factory() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static &lt;T&gt; T getInstance(String className, Class&lt;T&gt; tClass) &#123;</span><br><span class="line">        T instance = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            instance = (T) Class.forName(className).getDeclaredConstructor().newInstance();</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        return instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">package com.company;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">	// write your code here</span><br><span class="line">        Imessage netMessage=Factory.getInstance(&quot;com.company.NetMessage&quot;,Imessage.class);</span><br><span class="line">        netMessage.send();</span><br><span class="line">        IService houseService=Factory.getInstance(&quot;com.company.HouseService&quot;,IService.class);</span><br><span class="line">        houseService.service();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时的工厂设计模式将不再受限指定的接口，可以为所有的接口提供实例化服务</p>
+
       
     </div>
     
@@ -494,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -512,7 +531,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -564,6 +583,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工厂模式"><span class="nav-number">1.</span> <span class="nav-text">工厂模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工厂模式-反射"><span class="nav-number">2.</span> <span class="nav-text">工厂模式 + 反射</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工厂模式-反射-泛型"><span class="nav-number">3.</span> <span class="nav-text">工厂模式 + 反射 + 泛型</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
