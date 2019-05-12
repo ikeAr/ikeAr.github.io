@@ -120,10 +120,10 @@
     <url>%2F2019%2F04%2F28%2FJava-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%2F</url>
     <content type="text"><![CDATA[垃圾收集Java中使用被称为垃圾收集器的技术来监视Java程序的运行，当对象不在使用时，就自动释放对象所使用的内存。垃圾收集器是自动运行的，一般情况下，无须显式的请求垃圾收集器，程序运行时，垃圾收集器会不时检查对象的各个引用，并非是无引用对象所占用的内存。调用System 类中的静态gc()方法可以运行垃圾收集器，但这样并不能保证立即回收指定对象。Java垃圾回收机制：gc即垃圾收集机制，是指JVN用于释放那些不再使用的对象所占用的内存。Java的垃圾回收机制时为所有的Java应用进程服务的，而不是为某个特定的进程服务的，因此，任何一个进程都不能命令垃圾回收机制做什么，怎么做或做多少，在JVM垃圾收集器收集一个对象之前，一般要求程序中调用适当的方法来释放资源，但在没有明确释放资源的情况下，Java提供了默认机制终止化该对象来释放资源，这个方法就是finalize()。在finalize()方法返回之后，对象消失，垃圾收集开始执行。 一块内存空间是否符合垃圾收集器收集标准1.给对象赋予了控制null, 以后再也没有调用过2.给对象赋予了新值，即重新分配了内存空间一块内存空间符合了垃圾收集器的收集标准，并不意味着这块内存空间就一定会被垃圾收集器收集 内存管理变量的内存分配情况1.不要试图去假定垃圾收集发生的时间，这一切都是未知的。2.Java提供了一种强行执行的垃圾收集的方法——调用System.gc()，但这是一个不确定方法。3.挑选适合自己的垃圾收集器4.防止内存泄漏5.尽早释放无用对象的引用，对于频繁申请内存和释放内存的操作，最好使用finalize强制执行，或者写自己的finalize方法。 什么是Java中的内存泄漏在Java中，内存泄漏就是存在一些被分配的对象，这些对象有两个特点：1.对象是可达的，即在有向图中，存在通路可以与其相连；2.对象是无用的，即程序以后不会再使用这些对象。如果对象满足这两个条件，这些对象可以判定位Java中的内存泄漏，这些对象不会被gc所回收，然而他们却占用内存。例如：123456Vector v = new Vector(10);for (int i = 1; i &lt; 100; i++)&#123; Object o = new Object(); v.add(o); o = null;&#125; 内存泄露的主要原因：保留下来却永远不再使用的对象引用。 cloneJava中clone的含义是，假设x是一个非空对象，则：123x.clone() != x //true , 就是说他们不是一个对象x.clone().getClass() == x.getClass() //true, 说明他们是同一个类型的classx.equals(x.clone()) //true, 说明值相等 clone方法是在Object中定义的，而且是proteced 的，只有实现了Cloneable接口，才可以在该类的实例上调用clone方法，否则会抛出CloneNotSupportException，该方法从Object类中继承而来，该接口只是一个标记。]]></content>
       <categories>
-        <category>Java基础</category>
+        <category>Java高级</category>
       </categories>
       <tags>
-        <tag>Java基础</tag>
+        <tag>Java高级</tag>
       </tags>
   </entry>
   <entry>
@@ -131,10 +131,10 @@
     <url>%2F2019%2F04%2F28%2FJava-%E5%BA%8F%E5%88%97%E5%8C%96%2F</url>
     <content type="text"><![CDATA[如何实现Java的序列化？序列化一个对象只需要让他实现Serializable接口（这是一个“标记接口”，tagging interface,没有任何方法）就行，但是，当语言引入序列化概念之后，它有很多标准类库的类，包括primitive的wrapper类，所有的容器类，以及别的很多类，都会相应的发生改变，甚至连Class对象都会被序列化。要想序列化对象，必须先创建一个OutputStream，然后把它嵌进ObjectOutputStream。这是就能调用writeObject() 方法把对象写入OutputStream, 读的时候需要把InputStream嵌到ObjectInputStream中，然后在调用readObject()方法。代码如下：1234567891011121314151617181920212223242526272829303132public class SerSingleton implements java.io.Serializable&#123; String name; private SerSingleton()&#123; System.out.println(&quot;Singleton is create&quot;); name = &quot;SerSingleton&quot;; &#125; private static SerSingleton instance = new SerSingleton(); public static SerSingleton getInstance()&#123; return instance; &#125; public static void createString()&#123; System.out.println(&quot;CreateString in Singleton&quot;); &#125; private Object readResolve()&#123;//阻止新生成的实例，总是返回当前对象 return instance; &#125;&#125;public void test() throw Exception&#123; SerSingleton s1 = null ; SerSingleton s = SerSingleton.getInstance(); //先将实例串化到文件 FileOutputStream fos = new FileOutputStream(&quot;SerSingleton.txt&quot;); ObjectOutputStream oos = new ObjectOutputStream(fos); oos.writeObject(s); oos.flush(); oos.close(); //从文件读出原来的单例类 FileInputStream fis = new FileInputStream(&quot;SerSingleton.txt&quot;); ObjectInputStream ois = new ObjectInputStream(fis); s1 = (SerSingleton) ois.readObject(); Assert.assertEquals(s,s1); &#125;]]></content>
       <categories>
-        <category>Java基础</category>
+        <category>Java高级</category>
       </categories>
       <tags>
-        <tag>Java基础</tag>
+        <tag>Java高级</tag>
       </tags>
   </entry>
   <entry>
@@ -175,10 +175,10 @@
     <url>%2F2019%2F04%2F27%2FReflection%2F</url>
     <content type="text"><![CDATA[在Java语言里面之所以会有如此众多的开源技术支撑，很大的一部分来自于Java最大的特征——反射机制，如果不能灵活的使用反射进行项目的开发与设计，那么可以说你未接触到Java的精髓。所有的技术实现的目标只有一点：重用性。对于反射机制首先考虑的是“反”与“正”的操作，所谓的“正”操作指的是当我们要使用一个类的时候，一定要先导入程序所在的包，而后根据类进行对象的实例化，并且依靠对象调用类中的方法。但是如果说“反”，根据实例化对象推出其类型。如果要实现反的处理操作，那么首先要采用的就是Object类中所提供的一个方法获取Class对象信息：public final Class&lt;?&gt;getClass();通过getClass()可以帮助使用者找到对象的根源 可以运用反射手段，调用java.lang.Class或者java.lang.reflect.Constructor类的newInstance()方法，创建一个对象1234567891011121314ipublic class Main &#123; public static void main(String[] args) &#123; Class&lt;?&gt; sr= null; try &#123; sr = Class.forName(&quot;Person&quot;); Object o = sr.getConstructor().newInstance(); System.out.println(o); &#125; catch (Exception e) &#123; e.printStackTrace(); &#125; System.out.println(sr); &#125;&#125;]]></content>
       <categories>
-        <category>Java基础</category>
+        <category>Java高级</category>
       </categories>
       <tags>
-        <tag>Java基础</tag>
+        <tag>Java高级</tag>
       </tags>
   </entry>
   <entry>
