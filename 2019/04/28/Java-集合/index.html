@@ -89,13 +89,13 @@
 <meta property="og:site_name" content="Ike&#39;s blog">
 <meta property="og:description" content="java 容器类库一共有两种主要类型：Collection和MapCollection 和Map 的区别在于每个容器内每个“槽”所存的元素个数不同，Collection 类型中，每个“槽”只有一个元素，Map类型中，持有key-value关联，类似小型数据库，所有的Java容器都可以自动调整自己的尺寸。各自旗下的子类关系如图：Collection:Map:Collection 的子类如下：&amp;ems">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/04/28/Java-集合/Java-集合/Collection.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/28/Java-集合/Java-集合/Map.png">
-<meta property="og:updated_time" content="2019-04-28T09:56:32.038Z">
+<meta property="og:image" content="http://yoursite.com/2019/04/28/Java-集合/Collection.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/28/Java-集合/Map.png">
+<meta property="og:updated_time" content="2019-05-21T15:13:40.133Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java-集合">
 <meta name="twitter:description" content="java 容器类库一共有两种主要类型：Collection和MapCollection 和Map 的区别在于每个容器内每个“槽”所存的元素个数不同，Collection 类型中，每个“槽”只有一个元素，Map类型中，持有key-value关联，类似小型数据库，所有的Java容器都可以自动调整自己的尺寸。各自旗下的子类关系如图：Collection:Map:Collection 的子类如下：&amp;ems">
-<meta name="twitter:image" content="http://yoursite.com/2019/04/28/Java-集合/Java-集合/Collection.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/28/Java-集合/Collection.png">
 
 
 
@@ -429,7 +429,7 @@
       
 
       
-        <h2 id="java-容器类库一共有两种主要类型：Collection和Map"><a href="#java-容器类库一共有两种主要类型：Collection和Map" class="headerlink" title="java 容器类库一共有两种主要类型：Collection和Map"></a>java 容器类库一共有两种主要类型：<strong>Collection</strong>和<strong>Map</strong></h2><p>Collection 和Map 的区别在于每个容器内每个“槽”所存的元素个数不同，Collection 类型中，每个“槽”只有一个元素，Map类型中，持有<strong>key-value</strong>关联，类似小型数据库，所有的Java容器都可以自动调整自己的尺寸。<br>各自旗下的子类关系如图：<br>Collection:<br><img src="/2019/04/28/Java-集合/./Java-集合/Collection.png" alt="avatar"><br>Map:<br><img src="/2019/04/28/Java-集合/./Java-集合/Map.png" alt="avatar"><br>Collection 的子类如下：<br>&emsp;&emsp;——List: 将以特定顺序存储元素，所以取出来的顺序可能和放入顺序不同<br>&emsp;&emsp;&emsp;&emsp;——ArrayList: 擅长随机访问元素，但在List中插入，删除，移动元素较慢<br>&emsp;&emsp;&emsp;&emsp;——LinkedList: 插入，删除，移动元素方便，随机访问元素慢<br>&emsp;&emsp;——Set：每个值只能保存一个对象，不能含有重复的元素<br>&emsp;&emsp;&emsp;&emsp;——HashSet：使用散列函数<br>&emsp;&emsp;&emsp;&emsp;——TreeSet：使用红黑树<br>&emsp;&emsp;&emsp;&emsp;——LinkedHashSet 使用链表结合散列函数<br>&emsp;&emsp;&emsp;&emsp;——Queue:队列，先进先出的容器<br>Map 的子类如下：<br>&emsp;&emsp;——HashSet<br>&emsp;&emsp;——HashTable<br>&emsp;&emsp;——TreeMap</p>
+        <h2 id="java-容器类库一共有两种主要类型：Collection和Map"><a href="#java-容器类库一共有两种主要类型：Collection和Map" class="headerlink" title="java 容器类库一共有两种主要类型：Collection和Map"></a>java 容器类库一共有两种主要类型：<strong>Collection</strong>和<strong>Map</strong></h2><p>Collection 和Map 的区别在于每个容器内每个“槽”所存的元素个数不同，Collection 类型中，每个“槽”只有一个元素，Map类型中，持有<strong>key-value</strong>关联，类似小型数据库，所有的Java容器都可以自动调整自己的尺寸。<br>各自旗下的子类关系如图：<br>Collection:<br><img src="/2019/04/28/Java-集合/Collection.png" alt="avatar"><br>Map:<br><img src="/2019/04/28/Java-集合/Map.png" alt="avatar"><br>Collection 的子类如下：<br>&emsp;&emsp;——List: 将以特定顺序存储元素，所以取出来的顺序可能和放入顺序不同<br>&emsp;&emsp;&emsp;&emsp;——ArrayList: 擅长随机访问元素，但在List中插入，删除，移动元素较慢<br>&emsp;&emsp;&emsp;&emsp;——LinkedList: 插入，删除，移动元素方便，随机访问元素慢<br>&emsp;&emsp;——Set：每个值只能保存一个对象，不能含有重复的元素<br>&emsp;&emsp;&emsp;&emsp;——HashSet：使用散列函数<br>&emsp;&emsp;&emsp;&emsp;——TreeSet：使用红黑树<br>&emsp;&emsp;&emsp;&emsp;——LinkedHashSet 使用链表结合散列函数<br>&emsp;&emsp;&emsp;&emsp;——Queue:队列，先进先出的容器<br>Map 的子类如下：<br>&emsp;&emsp;——HashSet<br>&emsp;&emsp;——HashTable<br>&emsp;&emsp;——TreeMap</p>
 <h2 id="其他特征"><a href="#其他特征" class="headerlink" title="其他特征:"></a>其他特征:</h2><ol>
 <li>List, Set, Map将所有对象视为Object类型；</li>
 <li>Collection, List, Set, Map 都是接口，不能被实例化<br><strong>在各种List中，最好的做法是以ArrayList作为默认选择。当插入，删除频繁时，使用LinkedList(), Vector总是比ArrayList慢，在各种Set中，HashSet通常优于HashTree(插入，查找）。只有当需要产生一个经过排序的序列时，采用TreeSet。Hashtree的意义是用来维护其内元素的排序；在各种Map中，HashMap用于快速查找，当元素的个数固定时，Array的效率是最高的</strong><h2 id="HashMap与HashTable的区别"><a href="#HashMap与HashTable的区别" class="headerlink" title="HashMap与HashTable的区别"></a>HashMap与HashTable的区别</h2>都属于Map接口的类，实现了将唯一键映射到特定的值上。<br>HashMap 类没有分类或者排序，它允许一个null键和多个null值<br>HashTable 不允许null键和null值。<br>HashTable的方法是Synchronize的，HashMap不是</li>
@@ -591,7 +591,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
