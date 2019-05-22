@@ -885,26 +885,37 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '8phgyOc9NTPl82Iwp9Tt0tFe-gzGzoHsz',
+        appKey: 'deCUTN2WJ6SuTw31YPXRUDAR',
+        placeholder: 'Just go go',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
@@ -1235,7 +1246,7 @@
 
   
   <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("k0jexNiSdamSH6yNsHS0G7Ir-gzGzoHsz", "xdkYdEVcN6QpJvsAjM3QB6Pa");</script>
+  <script>AV.initialize("8phgyOc9NTPl82Iwp9Tt0tFe-gzGzoHsz", "deCUTN2WJ6SuTw31YPXRUDAR");</script>
   <script>
     function showTime(Counter) {
       var query = new AV.Query(Counter);
