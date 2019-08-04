@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="GitGit两大特点 版本控制 分布式  git最基本操作初始化仓库：git init将一个文件添加到暂存区git add code.txt创建一个版本记录git commit -m ‘verson1’(版本的说明信息)查看版本记录git log版本回退git reset –hard head^ /hard head~1-100再次返回git reset –hard 版本号查看之前的操作记录git">
+<meta name="description" content="GitGit两大特点 版本控制 分布式  git最基本操作初始化仓库：git init将一个文件添加到暂存区git add code.txt创建一个版本记录git commit -m &amp;#39;verson1&amp;#39;(版本的说明信息)查看版本记录git log版本回退git reset --hard head^ /hard head~1-100再次返回git reset --hard 版本号查看">
 <meta name="keywords" content="其他">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GitHub使用技巧">
 <meta property="og:url" content="https://qiyanan.com/2019/08/04/GitHub使用技巧/index.html">
 <meta property="og:site_name" content="Ike&#39;s blog">
-<meta property="og:description" content="GitGit两大特点 版本控制 分布式  git最基本操作初始化仓库：git init将一个文件添加到暂存区git add code.txt创建一个版本记录git commit -m ‘verson1’(版本的说明信息)查看版本记录git log版本回退git reset –hard head^ /hard head~1-100再次返回git reset –hard 版本号查看之前的操作记录git">
+<meta property="og:description" content="GitGit两大特点 版本控制 分布式  git最基本操作初始化仓库：git init将一个文件添加到暂存区git add code.txt创建一个版本记录git commit -m &amp;#39;verson1&amp;#39;(版本的说明信息)查看版本记录git log版本回退git reset --hard head^ /hard head~1-100再次返回git reset --hard 版本号查看">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-04T06:33:34.703Z">
+<meta property="og:updated_time" content="2019-08-04T06:40:25.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub使用技巧">
-<meta name="twitter:description" content="GitGit两大特点 版本控制 分布式  git最基本操作初始化仓库：git init将一个文件添加到暂存区git add code.txt创建一个版本记录git commit -m ‘verson1’(版本的说明信息)查看版本记录git log版本回退git reset –hard head^ /hard head~1-100再次返回git reset –hard 版本号查看之前的操作记录git">
+<meta name="twitter:description" content="GitGit两大特点 版本控制 分布式  git最基本操作初始化仓库：git init将一个文件添加到暂存区git add code.txt创建一个版本记录git commit -m &amp;#39;verson1&amp;#39;(版本的说明信息)查看版本记录git log版本回退git reset --hard head^ /hard head~1-100再次返回git reset --hard 版本号查看">
 
 
 
@@ -430,7 +430,7 @@
 <li>版本控制</li>
 <li>分布式</li>
 </ol>
-<h2 id="git最基本操作"><a href="#git最基本操作" class="headerlink" title="git最基本操作"></a>git最基本操作</h2><p>初始化仓库：<br>git init<br>将一个文件添加到暂存区<br>git add code.txt<br>创建一个版本记录<br>git commit -m ‘verson1’(版本的说明信息)<br>查看版本记录<br>git log<br>版本回退<br>git reset –hard head^ /hard head~1-100<br>再次返回<br>git reset –hard 版本号<br>查看之前的操作记录<br>git reflog<br>查看当前文件状态<br>git status<br>未添加到暂存区之前撤销改动(增删改)<br>git checkout – 文件名<br>撤销暂存区的修改<br>git reset HEAD file<br>对比文件不同</p>
+<h2 id="git最基本操作"><a href="#git最基本操作" class="headerlink" title="git最基本操作"></a>git最基本操作</h2><p>初始化仓库：<br><code>git init</code><br>将一个文件添加到暂存区<br><code>git add code.txt</code><br>创建一个版本记录<br><code>git commit -m &#39;verson1&#39;(版本的说明信息)</code><br>查看版本记录<br><code>git log</code><br>版本回退<br><code>git reset --hard head^ /hard head~1-100</code><br>再次返回<br><code>git reset --hard 版本号</code><br>查看之前的操作记录<br><code>git reflog</code><br>查看当前文件状态<br><code>git status</code><br>未添加到暂存区之前撤销改动(增删改)<br><code>git checkout -- 文件名</code><br>撤销暂存区的修改<br><code>git reset HEAD file</code><br>对比文件不同</p>
 <ol>
 <li>工作区文件与版本文件对比<br>git diff HEAD – code.txt<br>–代表版本文件<br>++代表工作区文件</li>
 <li>对比两个版本之间某个文件的不同<br>git diff HEAD HEAD^ – code.txt</li>
@@ -440,7 +440,7 @@
 <li>不放在暂存区<br>rm 文件名</li>
 <li>放在暂存区<br>git rm 文件名</li>
 </ol>
-<p>##git分支操作##<br>查看分支<br>git branch<br>创建分支<br>git branch 分支名<br>创建并切换一个新的分支<br>git checkout -b 分支名<br>切换分支<br>git checkout master<br>合并<br>git merge 分支名<br>删除分支<br>git branch -d 分支名<br>合并冲突(两个分支上同时提交且编辑同一个文件)</p>
+<p>##git分支操作##<br>查看分支<br><code>git branch</code><br>创建分支<br><code>git branch 分支名</code><br>创建并切换一个新的分支<br><code>git checkout -b 分支名</code><br>切换分支<br><code>git checkout master</code><br>合并<br><code>git merge 分支名</code><br>删除分支<br><code>git branch -d 分支名</code><br>合并冲突(两个分支上同时提交且编辑同一个文件)</p>
 <p><strong><em>每次操作暂存区内容都必须git commit 创建版本记录</em></strong></p>
 <h2 id="工作区-Working-Directory"><a href="#工作区-Working-Directory" class="headerlink" title="工作区(Working Directory)"></a>工作区(Working Directory)</h2><p>电脑中的目录，就是一个工作区</p>
 <h2 id="版本库-Repository"><a href="#版本库-Repository" class="headerlink" title="版本库(Repository)"></a>版本库(Repository)</h2><p>工作区有一个隐藏目录.git, 这个不是工作区，而是git的版本库<br>git的版本库里存了很多东西，其中最重要的就是称为stage的暂存区，还有git为我们自动创建的第一个分支master，以及指向master的一个指针HEAD</p>
