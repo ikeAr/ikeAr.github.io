@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Java基础,">
+  <meta name="keywords" content="C#基础,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="方式一：在外部提供一个方法创建内部类的对象进行访问。方式二：在其它类直接创建内部类的对象，格式： 内部类 变量名 = new 外部类().内部类();内部类需要注意的细节: 如果在外部类与内部类存在同名的成员变量时，在内部类中默认情况下是访问内部类中的成员变量，可以通过外部类.this.成员变量 来访问外部类的成员变量。 123456789101112131415161718192021publi">
-<meta name="keywords" content="Java基础">
+<meta name="description" content="浅度复制和深度复制浅度复制浅度复制指按照引用复制对象简单的按照成员复制对象可以通过派生于System. Object的MemberwiseClone()方法来完成，这是一个受保护的方法，这个方法提供的复制功能称为浅度复制 12345678910public class Content &amp;#123;    public int val;&amp;#125;public class Cloner &amp;#123;">
+<meta name="keywords" content="C#基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java-成员内部类的访问方式">
-<meta property="og:url" content="https://qiyanan.com/2019/04/28/Java-成员内部类的访问方式/index.html">
+<meta property="og:title" content="C#-浅度复制与深度复制">
+<meta property="og:url" content="https://qiyanan.com/2019/08/06/C-浅度复制与深度复制/index.html">
 <meta property="og:site_name" content="Ike&#39;s blog">
-<meta property="og:description" content="方式一：在外部提供一个方法创建内部类的对象进行访问。方式二：在其它类直接创建内部类的对象，格式： 内部类 变量名 = new 外部类().内部类();内部类需要注意的细节: 如果在外部类与内部类存在同名的成员变量时，在内部类中默认情况下是访问内部类中的成员变量，可以通过外部类.this.成员变量 来访问外部类的成员变量。 123456789101112131415161718192021publi">
+<meta property="og:description" content="浅度复制和深度复制浅度复制浅度复制指按照引用复制对象简单的按照成员复制对象可以通过派生于System. Object的MemberwiseClone()方法来完成，这是一个受保护的方法，这个方法提供的复制功能称为浅度复制 12345678910public class Content &amp;#123;    public int val;&amp;#125;public class Cloner &amp;#123;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-28T12:49:07.731Z">
+<meta property="og:updated_time" content="2019-08-06T08:23:24.875Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java-成员内部类的访问方式">
-<meta name="twitter:description" content="方式一：在外部提供一个方法创建内部类的对象进行访问。方式二：在其它类直接创建内部类的对象，格式： 内部类 变量名 = new 外部类().内部类();内部类需要注意的细节: 如果在外部类与内部类存在同名的成员变量时，在内部类中默认情况下是访问内部类中的成员变量，可以通过外部类.this.成员变量 来访问外部类的成员变量。 123456789101112131415161718192021publi">
+<meta name="twitter:title" content="C#-浅度复制与深度复制">
+<meta name="twitter:description" content="浅度复制和深度复制浅度复制浅度复制指按照引用复制对象简单的按照成员复制对象可以通过派生于System. Object的MemberwiseClone()方法来完成，这是一个受保护的方法，这个方法提供的复制功能称为浅度复制 12345678910public class Content &amp;#123;    public int val;&amp;#125;public class Cloner &amp;#123;">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://qiyanan.com/2019/04/28/Java-成员内部类的访问方式/">
+  <link rel="canonical" href="https://qiyanan.com/2019/08/06/C-浅度复制与深度复制/">
 
 
 
 
 
-  <title>Java-成员内部类的访问方式 | Ike's blog</title>
+  <title>C#-浅度复制与深度复制 | Ike's blog</title>
   
 
 
@@ -310,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://qiyanan.com/2019/04/28/Java-成员内部类的访问方式/">
+    <link itemprop="mainEntityOfPage" href="https://qiyanan.com/2019/08/06/C-浅度复制与深度复制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ike">
@@ -327,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java-成员内部类的访问方式</h1>
+          <h1 class="post-title" itemprop="name headline">C#-浅度复制与深度复制</h1>
         
 
         <div class="post-meta">
@@ -340,8 +340,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-28T20:15:43+08:00">
-                2019-04-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-06T16:14:26+08:00">
+                2019-08-06
               </time>
             
 
@@ -363,8 +363,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Java基础</span>
+                  <a href="/categories/C-基础/" itemprop="url" rel="index">
+                    <span itemprop="name">C#基础</span>
                   </a>
                 </span>
 
@@ -381,8 +381,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/28/Java-成员内部类的访问方式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/28/Java-成员内部类的访问方式/" itemprop="commentCount"></span>
+                <a href="/2019/08/06/C-浅度复制与深度复制/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/06/C-浅度复制与深度复制/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -390,7 +390,7 @@
 
           
           
-             <span id="/2019/04/28/Java-成员内部类的访问方式/" class="leancloud_visitors" data-flag-title="Java-成员内部类的访问方式">
+             <span id="/2019/08/06/C-浅度复制与深度复制/" class="leancloud_visitors" data-flag-title="C#-浅度复制与深度复制">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -426,14 +426,13 @@
       
 
       
-        <h2 id="方式一：在外部提供一个方法创建内部类的对象进行访问。"><a href="#方式一：在外部提供一个方法创建内部类的对象进行访问。" class="headerlink" title="方式一：在外部提供一个方法创建内部类的对象进行访问。"></a>方式一：在外部提供一个方法创建内部类的对象进行访问。</h2><h2 id="方式二：在其它类直接创建内部类的对象，格式：-内部类-变量名-new-外部类-内部类"><a href="#方式二：在其它类直接创建内部类的对象，格式：-内部类-变量名-new-外部类-内部类" class="headerlink" title="方式二：在其它类直接创建内部类的对象，格式： 内部类 变量名 = new 外部类().内部类();"></a>方式二：在其它类直接创建内部类的对象，格式： 内部类 变量名 = new 外部类().内部类();</h2><h2 id="内部类需要注意的细节"><a href="#内部类需要注意的细节" class="headerlink" title="内部类需要注意的细节:"></a>内部类需要注意的细节:</h2><ol>
-<li><p>如果在外部类与内部类存在同名的成员变量时，在内部类中默认情况下是访问<strong>内部类中的成员变量</strong>，可以通过外部类.this.成员变量 来访问外部类的成员变量。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">    public int a = 1;</span><br><span class="line"></span><br><span class="line">    public class Tes &#123;</span><br><span class="line">        public int a = 3;</span><br><span class="line"></span><br><span class="line">        public void out() &#123;</span><br><span class="line">            System.out.println(&quot;内部类的a值：&quot; + a);</span><br><span class="line">            System.out.println(&quot;外部类的a值：&quot; + Test.this.a);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Test() &#123;</span><br><span class="line">        new Tes().out();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        new Test();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>私有的成员内部类只能在外部类提供一个方法创建内部类的对象进行访问，不能再其他类创建对象。</p>
-</li>
-<li>成员内部类一旦出现了静态成员，那么该类也必须使用static修饰。<h2 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h2>在一个类的方法内部定义了另外一个类，那么方法内的类称为局部内部类<br><strong>注意：如果局部内部类访问了局部变量，那么该变量需要用final修饰</strong></li>
-</ol>
+        <h1 id="浅度复制和深度复制"><a href="#浅度复制和深度复制" class="headerlink" title="浅度复制和深度复制"></a>浅度复制和深度复制</h1><h2 id="浅度复制"><a href="#浅度复制" class="headerlink" title="浅度复制"></a>浅度复制</h2><p>浅度复制指按照引用复制对象<br>简单的按照成员复制对象可以通过派生于System. Object的MemberwiseClone()方法来完成，这是一个受保护的方法，这个方法提供的复制功能称为浅度复制</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class Content </span><br><span class="line">&#123;</span><br><span class="line">    public int val;</span><br><span class="line">&#125;</span><br><span class="line">public class Cloner </span><br><span class="line">&#123;</span><br><span class="line">    public Content MyContent = new Content();</span><br><span class="line">    public Cloner(int newVal) =&gt; MyContent.val = newVal;</span><br><span class="line">    public object GetCopy() =&gt; MemberwiseClone();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Cloner mySource = new Cloner(5);</span><br><span class="line">Cloner myTarget = (Cloner) mySource.GetCopy();</span><br><span class="line">Console.WriteLine($ &quot;myTarget.MyContent.Val=&#123;myTarget.MyContent.val&#125;&quot;);</span><br><span class="line">mySource.MyContent.val = 2;</span><br><span class="line">Console.WriteLine($ &quot;myTarget.MyContent.Val=&#123;myTarget.MyContent.val&#125;&quot;);</span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
+<h2 id="深度复制"><a href="#深度复制" class="headerlink" title="深度复制"></a>深度复制</h2><p>复制的是一个对象的值<br>可以实现一个ICloneable接口，以标准方式进行深度复制，如果使用这个接口，就必须实现它包含的Clone()方法，这个方法返回一个System. Object的值，我们可以采用各种处理方式，实现所选的任何一个方法体来得到这个对象，如果愿意就可以进行深度复制，但不是必须的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Cloner: ICloneable </span><br><span class="line">&#123;</span><br><span class="line">    public Content MyContent = new Content();</span><br><span class="line">    public Cloner(int newVal) =&gt; MyContent.val = newVal;</span><br><span class="line"></span><br><span class="line">    public object Clone() </span><br><span class="line">    &#123;</span><br><span class="line">        Cloner clonedCloner = new Cloner(MyContent.val);</span><br><span class="line">        return clonedCloner;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //public object GetCopy() =&gt; MemberwiseClone();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意在比较复杂的对象系统中，调用Clone是一个递归过程</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class Cloner: ICloneable </span><br><span class="line">&#123;</span><br><span class="line">    public Content MyContent = new Content();</span><br><span class="line">    public object Clone() </span><br><span class="line">    &#123;</span><br><span class="line">        Cloner clonedCloner = new Cloner();</span><br><span class="line">        clonedCloner.MyContent = MyContent.Clone();</span><br><span class="line">        return clonedCloner;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -462,7 +461,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://qiyanan.com/2019/04/28/Java-成员内部类的访问方式/" title="Java-成员内部类的访问方式">https://qiyanan.com/2019/04/28/Java-成员内部类的访问方式/</a>
+    <a href="https://qiyanan.com/2019/08/06/C-浅度复制与深度复制/" title="C#-浅度复制与深度复制">https://qiyanan.com/2019/08/06/C-浅度复制与深度复制/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -477,7 +476,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java基础/" rel="tag"># Java基础</a>
+            <a href="/tags/C-基础/" rel="tag"># C#基础</a>
           
         </div>
       
@@ -490,8 +489,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/28/Java-Object类的方法/" rel="next" title="Java-Object类的方法">
-                <i class="fa fa-chevron-left"></i> Java-Object类的方法
+              <a href="/2019/08/06/C-迭代器/" rel="next" title="C#-迭代器">
+                <i class="fa fa-chevron-left"></i> C#-迭代器
               </a>
             
           </div>
@@ -499,10 +498,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/29/Java-重载与重写/" rel="prev" title="Java-重载与重写">
-                Java-重载与重写 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -671,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#方式一：在外部提供一个方法创建内部类的对象进行访问。"><span class="nav-number">1.</span> <span class="nav-text">方式一：在外部提供一个方法创建内部类的对象进行访问。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方式二：在其它类直接创建内部类的对象，格式：-内部类-变量名-new-外部类-内部类"><span class="nav-number">2.</span> <span class="nav-text">方式二：在其它类直接创建内部类的对象，格式： 内部类 变量名 = new 外部类().内部类();</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部类需要注意的细节"><span class="nav-number">3.</span> <span class="nav-text">内部类需要注意的细节:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局部内部类"><span class="nav-number">4.</span> <span class="nav-text">局部内部类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#浅度复制和深度复制"><span class="nav-number">1.</span> <span class="nav-text">浅度复制和深度复制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#浅度复制"><span class="nav-number">1.1.</span> <span class="nav-text">浅度复制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度复制"><span class="nav-number">1.2.</span> <span class="nav-text">深度复制</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -875,9 +870,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://qiyanan.com/2019/04/28/Java-成员内部类的访问方式/';
-          this.page.identifier = '2019/04/28/Java-成员内部类的访问方式/';
-          this.page.title = 'Java-成员内部类的访问方式';
+          this.page.url = 'https://qiyanan.com/2019/08/06/C-浅度复制与深度复制/';
+          this.page.identifier = '2019/08/06/C-浅度复制与深度复制/';
+          this.page.title = 'C#-浅度复制与深度复制';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';

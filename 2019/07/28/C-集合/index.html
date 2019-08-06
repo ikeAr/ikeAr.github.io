@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="集合(Collection)ArrayList: 动态数组，需要装箱与拆箱List: 与ArrayList类的泛型等效，性能提高 方法：添加元素：List.Add(T item); 添加一个元素List.AddRange(IEnumerable Collection); 添加一组元素Insert(int index, T item); 在index位置添加一个元素遍历List元素; 使用forea">
+<meta name="description" content="集合(Collection)ArrayList: 动态数组，需要装箱与拆箱List: 与ArrayList类的泛型等效，性能提高 方法：添加元素：List. Add(T item); 添加一个元素List. AddRange(IEnumerable Collection); 添加一组元素Insert(int index, T item); 在index位置添加一个元素遍历List元素; 使用for">
 <meta name="keywords" content="C#基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C#-集合">
 <meta property="og:url" content="https://qiyanan.com/2019/07/28/C-集合/index.html">
 <meta property="og:site_name" content="Ike&#39;s blog">
-<meta property="og:description" content="集合(Collection)ArrayList: 动态数组，需要装箱与拆箱List: 与ArrayList类的泛型等效，性能提高 方法：添加元素：List.Add(T item); 添加一个元素List.AddRange(IEnumerable Collection); 添加一组元素Insert(int index, T item); 在index位置添加一个元素遍历List元素; 使用forea">
+<meta property="og:description" content="集合(Collection)ArrayList: 动态数组，需要装箱与拆箱List: 与ArrayList类的泛型等效，性能提高 方法：添加元素：List. Add(T item); 添加一个元素List. AddRange(IEnumerable Collection); 添加一组元素Insert(int index, T item); 在index位置添加一个元素遍历List元素; 使用for">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-28T03:11:50.440Z">
+<meta property="og:updated_time" content="2019-08-06T02:51:39.102Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#-集合">
-<meta name="twitter:description" content="集合(Collection)ArrayList: 动态数组，需要装箱与拆箱List: 与ArrayList类的泛型等效，性能提高 方法：添加元素：List.Add(T item); 添加一个元素List.AddRange(IEnumerable Collection); 添加一组元素Insert(int index, T item); 在index位置添加一个元素遍历List元素; 使用forea">
+<meta name="twitter:description" content="集合(Collection)ArrayList: 动态数组，需要装箱与拆箱List: 与ArrayList类的泛型等效，性能提高 方法：添加元素：List. Add(T item); 添加一个元素List. AddRange(IEnumerable Collection); 添加一组元素Insert(int index, T item); 在index位置添加一个元素遍历List元素; 使用for">
 
 
 
@@ -427,9 +427,10 @@
 
       
         <h1 id="集合-Collection"><a href="#集合-Collection" class="headerlink" title="集合(Collection)"></a>集合(Collection)</h1><p>ArrayList: 动态数组，需要装箱与拆箱<br>List<t>: 与ArrayList类的泛型等效，性能提高</t></p>
-<h1 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h1><h2 id="添加元素："><a href="#添加元素：" class="headerlink" title="添加元素："></a>添加元素：</h2><p>List.Add(T item); 添加一个元素<br>List.AddRange(IEnumerable<t> Collection); 添加一组元素<br>Insert(int index, T item); 在index位置添加一个元素<br>遍历List元素; 使用foreach进行遍历</t></p>
-<h2 id="删除元素："><a href="#删除元素：" class="headerlink" title="删除元素："></a>删除元素：</h2><p>List.Remove(T item); 删除一个值<br>List.RemoveAt(int index); 删除下标为index的元素<br>List.RemoveRange(int index , int count); 从下标index开始，删除count个元素<br>List.Contains(T item); 判断某个元素是否在该List中<br>List.Sort(); 在List里面元素排序,默认是元素第一个字母按升序<br>List.Reverse(); 给List里面元素顺序反转<br>List.Clear(); 清空List<br>List.Count(); 获取元素数目：<br>List.Find(Predicate<t>match);搜索与指定谓词所定义的条件相匹配的元素，并返回整个List中的第一个匹配元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var list = new List&lt;string&gt;();</span><br><span class="line">string[] temArr = &#123; &quot;aq&quot;, &quot;qwe&quot;, &quot;qweqwr&quot;, &quot;wqeqw&quot;, &quot;ewq&quot;, &quot;aeqw&quot;, &quot;dad&quot;, &quot;a&quot; &#125;;</span><br><span class="line">list.AddRange(temArr);</span><br><span class="line">var str = list.Find(x =&gt;</span><br><span class="line">    &#123;</span><br><span class="line">        if (x.Length == 1)</span><br><span class="line">        &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">Console.WriteLine(str);</span><br></pre></td></tr></table></figure></t></p>
-<p>List.FindLast();搜索与指定谓词所定义的条件相匹配的元素，并返回整个List中的最后一个匹配元素<br>List.TrueForAll();确定是否List中的每个元素都与指定的谓词所定义的条件相匹配<br>List.FindAll();检查与指定谓词所定义的条件相匹配的所有元素<br>List.Take(n);获得前n行 返回值为IEnumetable<t>,T的类型与List<t>的类型一样<br>List.RemoveAll();移除与指定谓词所定义的条件相匹配的所有元素，返回删除的个数<br>Dictionary&lt;[key],[value]&gt;;提供快速的基于键值的元素查找,必须对键值类型进行说明<br>创建及初始化：<br><code>var myDictonary = new Dictionary&lt;int,string&gt;();</code><br>添加一个元素：<br><code>myDictonary.Add(1, &quot;C#&quot;);</code><br>通过Key查找元素：<br><code>myDictonary[1];</code></t></t></p>
+<h1 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h1><h2 id="添加元素："><a href="#添加元素：" class="headerlink" title="添加元素："></a>添加元素：</h2><p>List. Add(T item); 添加一个元素<br>List. AddRange(IEnumerable<t> Collection); 添加一组元素<br>Insert(int index, T item); 在index位置添加一个元素<br>遍历List元素; 使用foreach进行遍历</t></p>
+<h2 id="删除元素："><a href="#删除元素：" class="headerlink" title="删除元素："></a>删除元素：</h2><p>List. Remove(T item); 删除一个值<br>List. RemoveAt(int index); 删除下标为index的元素<br>List. RemoveRange(int index , int count); 从下标index开始，删除count个元素<br>List. Contains(T item); 判断某个元素是否在该List中<br>List. Sort(); 在List里面元素排序, 默认是元素第一个字母按升序<br>List. Reverse(); 给List里面元素顺序反转<br>List. Clear(); 清空List<br>List. Count(); 获取元素数目：<br>List. Find(Predicate<t>match); 搜索与指定谓词所定义的条件相匹配的元素，并返回整个List中的第一个匹配元素</t></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var list = new List &lt; string &gt; ();</span><br><span class="line">string[] temArr = &#123;</span><br><span class="line">    &quot;aq&quot;,</span><br><span class="line">    &quot;qwe&quot;,</span><br><span class="line">    &quot;qweqwr&quot;,</span><br><span class="line">    &quot;wqeqw&quot;,</span><br><span class="line">    &quot;ewq&quot;,</span><br><span class="line">    &quot;aeqw&quot;,</span><br><span class="line">    &quot;dad&quot;,</span><br><span class="line">    &quot;a&quot;</span><br><span class="line">&#125;;</span><br><span class="line">list.AddRange(temArr);</span><br><span class="line">var str = list.Find(x =&gt; &#123;</span><br><span class="line">    if (x.Length == 1) &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">Console.WriteLine(str);</span><br></pre></td></tr></table></figure>
+<p>List. FindLast(); 搜索与指定谓词所定义的条件相匹配的元素，并返回整个List中的最后一个匹配元素<br>List. TrueForAll(); 确定是否List中的每个元素都与指定的谓词所定义的条件相匹配<br>List. FindAll(); 检查与指定谓词所定义的条件相匹配的所有元素<br>List. Take(n); 获得前n行 返回值为IEnumetable<t>, T的类型与List<t>的类型一样<br>List. RemoveAll(); 移除与指定谓词所定义的条件相匹配的所有元素，返回删除的个数<br>Dictionary&lt;[key], [value]&gt;; 提供快速的基于键值的元素查找, 必须对键值类型进行说明<br>创建及初始化：<br><code>var myDictonary = new Dictionary&lt; int, string&gt;();</code><br>添加一个元素：<br><code>myDictonary. Add(1, &quot;C#&quot;);</code><br>通过Key查找元素：<br><code>myDictonary[1];</code></t></t></p>
 
       
     </div>
@@ -587,7 +588,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -598,7 +599,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -609,7 +610,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

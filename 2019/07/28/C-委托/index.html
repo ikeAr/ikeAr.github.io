@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="C#基础,">
+  <meta name="keywords" content="C#高级,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="委托:委托就是具有相同返回值类型和参数的方法的抽象 声明委托：delegate &amp;lt;retutrn type&amp;gt; 委托名(参数类型)委托是一个特殊的类，需要实例化，凡是可以声明类的地方，都可以声明委托 泛型委托：Predicate 泛型委托表示的方法需要传入一个T类型的参数，并且返回一个bool类型的返回值1234567891011121314var d1 = new Predicate&amp;">
-<meta name="keywords" content="C#基础">
+<meta name="description" content="委托:委托就是具有相同返回值类型和参数的方法的抽象 声明委托：delegate &amp;lt; retutrn type &amp;gt; 委托名(参数类型)委托是一个特殊的类，需要实例化，凡是可以声明类的地方，都可以声明委托 泛型委托：Predicate 泛型委托表示的方法需要传入一个T类型的参数，并且返回一个bool类型的返回值1234567891011121314var d1 = new Predicat">
+<meta name="keywords" content="C#高级">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C#-委托">
 <meta property="og:url" content="https://qiyanan.com/2019/07/28/C-委托/index.html">
 <meta property="og:site_name" content="Ike&#39;s blog">
-<meta property="og:description" content="委托:委托就是具有相同返回值类型和参数的方法的抽象 声明委托：delegate &amp;lt;retutrn type&amp;gt; 委托名(参数类型)委托是一个特殊的类，需要实例化，凡是可以声明类的地方，都可以声明委托 泛型委托：Predicate 泛型委托表示的方法需要传入一个T类型的参数，并且返回一个bool类型的返回值1234567891011121314var d1 = new Predicate&amp;">
+<meta property="og:description" content="委托:委托就是具有相同返回值类型和参数的方法的抽象 声明委托：delegate &amp;lt; retutrn type &amp;gt; 委托名(参数类型)委托是一个特殊的类，需要实例化，凡是可以声明类的地方，都可以声明委托 泛型委托：Predicate 泛型委托表示的方法需要传入一个T类型的参数，并且返回一个bool类型的返回值1234567891011121314var d1 = new Predicat">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-28T09:00:38.787Z">
+<meta property="og:updated_time" content="2019-08-06T08:08:23.023Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#-委托">
-<meta name="twitter:description" content="委托:委托就是具有相同返回值类型和参数的方法的抽象 声明委托：delegate &amp;lt;retutrn type&amp;gt; 委托名(参数类型)委托是一个特殊的类，需要实例化，凡是可以声明类的地方，都可以声明委托 泛型委托：Predicate 泛型委托表示的方法需要传入一个T类型的参数，并且返回一个bool类型的返回值1234567891011121314var d1 = new Predicate&amp;">
+<meta name="twitter:description" content="委托:委托就是具有相同返回值类型和参数的方法的抽象 声明委托：delegate &amp;lt; retutrn type &amp;gt; 委托名(参数类型)委托是一个特殊的类，需要实例化，凡是可以声明类的地方，都可以声明委托 泛型委托：Predicate 泛型委托表示的方法需要传入一个T类型的参数，并且返回一个bool类型的返回值1234567891011121314var d1 = new Predicat">
 
 
 
@@ -363,8 +363,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">C#基础</span>
+                  <a href="/categories/C-高级/" itemprop="url" rel="index">
+                    <span itemprop="name">C#高级</span>
                   </a>
                 </span>
 
@@ -427,7 +427,7 @@
 
       
         <h1 id="委托"><a href="#委托" class="headerlink" title="委托:"></a>委托:</h1><p>委托就是具有相同返回值类型和参数的方法的抽象</p>
-<h2 id="声明委托："><a href="#声明委托：" class="headerlink" title="声明委托："></a>声明委托：</h2><p><code>delegate &lt;retutrn type&gt; 委托名(参数类型)</code><br>委托是一个特殊的类，需要实例化，凡是可以声明类的地方，都可以声明委托</p>
+<h2 id="声明委托："><a href="#声明委托：" class="headerlink" title="声明委托："></a>声明委托：</h2><p><code>delegate &lt; retutrn type &gt; 委托名(参数类型)</code><br>委托是一个特殊的类，需要实例化，凡是可以声明类的地方，都可以声明委托</p>
 <h1 id="泛型委托："><a href="#泛型委托：" class="headerlink" title="泛型委托："></a>泛型委托：</h1><h2 id="Predicate-泛型委托"><a href="#Predicate-泛型委托" class="headerlink" title="Predicate 泛型委托"></a>Predicate 泛型委托</h2><p>表示的方法需要传入一个T类型的参数，并且返回一个bool类型的返回值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var d1 = new Predicate&lt;int&gt;(Compare);</span><br><span class="line">static bool Compare(int a)</span><br><span class="line">&#123;</span><br><span class="line">    var flag = false;</span><br><span class="line">    if (a &gt; 5)</span><br><span class="line">    &#123;</span><br><span class="line">        flag = true;</span><br><span class="line">        return flag;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        return flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="Action-泛型委托"><a href="#Action-泛型委托" class="headerlink" title="Action 泛型委托"></a>Action 泛型委托</h2><p>参数0-16个，类型不确定。不能有返回值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var d1 = new Action&lt;int,string&gt;(Compare);</span><br><span class="line">static void Compare(int a,string b)</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="Func-泛型委托"><a href="#Func-泛型委托" class="headerlink" title="Func 泛型委托"></a>Func 泛型委托</h2><p>参数0-16个，类型不确定，必须有一个返回值，返回值为最后一个参数类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var d1 = new Func&lt;int,string&gt;(Compare);</span><br><span class="line">static string Compare(int a)</span><br><span class="line">&#123;</span><br><span class="line">    return &quot;test Func&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -476,7 +476,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C-基础/" rel="tag"># C#基础</a>
+            <a href="/tags/C-高级/" rel="tag"># C#高级</a>
           
         </div>
       
@@ -590,7 +590,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -601,7 +601,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -612,7 +612,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
