@@ -85,17 +85,17 @@
 <meta name="keywords" content="TypeScript基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TypeScript-基础类型">
-<meta property="og:url" content="https://qiyanan.com/2019/08/09/TypeScript-基础类型/index.html">
+<meta property="og:url" content="https://qiyanan.com/2019/08/09/TypeScript-Basic Type/index.html">
 <meta property="og:site_name" content="Ike&#39;s blog">
 <meta property="og:description" content="Basic Types 布尔值：  let isDone:boolean = false;  数字(和JavaScript一样，TypeScript里的所有数字都是浮点型的，这些浮点类型是number)  1234let decLiteral: number = 6;let hexLiteral: number = 0Xf00d;let binaryLiteral: number = 0b1010">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://qiyanan.com/2019/08/09/TypeScript-基础类型/TypeScript/Any.png">
-<meta property="og:image" content="https://qiyanan.com/2019/08/09/TypeScript-基础类型/TypeScript/Object.png">
-<meta property="og:updated_time" content="2019-08-09T09:18:16.855Z">
+<meta property="og:image" content="https://qiyanan.com/2019/08/09/TypeScript-Basic%20Type/Any.png">
+<meta property="og:image" content="https://qiyanan.com/2019/08/09/TypeScript-Basic%20Type/Object.png">
+<meta property="og:updated_time" content="2019-08-09T09:48:22.073Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TypeScript-基础类型">
 <meta name="twitter:description" content="Basic Types 布尔值：  let isDone:boolean = false;  数字(和JavaScript一样，TypeScript里的所有数字都是浮点型的，这些浮点类型是number)  1234let decLiteral: number = 6;let hexLiteral: number = 0Xf00d;let binaryLiteral: number = 0b1010">
-<meta name="twitter:image" content="https://qiyanan.com/2019/08/09/TypeScript-基础类型/TypeScript/Any.png">
+<meta name="twitter:image" content="https://qiyanan.com/2019/08/09/TypeScript-Basic%20Type/Any.png">
 
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="https://qiyanan.com/2019/08/09/TypeScript-基础类型/">
+  <link rel="canonical" href="https://qiyanan.com/2019/08/09/TypeScript-Basic Type/">
 
 
 
@@ -313,7 +313,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://qiyanan.com/2019/08/09/TypeScript-基础类型/">
+    <link itemprop="mainEntityOfPage" href="https://qiyanan.com/2019/08/09/TypeScript-Basic Type/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ike">
@@ -384,8 +384,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/09/TypeScript-基础类型/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/09/TypeScript-基础类型/" itemprop="commentCount"></span>
+                <a href="/2019/08/09/TypeScript-Basic Type/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/09/TypeScript-Basic Type/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -393,7 +393,7 @@
 
           
           
-             <span id="/2019/08/09/TypeScript-基础类型/" class="leancloud_visitors" data-flag-title="TypeScript-基础类型">
+             <span id="/2019/08/09/TypeScript-Basic Type/" class="leancloud_visitors" data-flag-title="TypeScript-基础类型">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -473,9 +473,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let notSure: any = 4; </span><br><span class="line">notSure = &quot;maybe a string instead&quot;; </span><br><span class="line">notSure = false;</span><br></pre></td></tr></table></figure>
 <p>the <strong>any</strong> type is powerful way to work with existing JavaScript, allowing you to gradually opt-in and opt-out of type checking during compilation. you might expect Object to play a similar role, as it does in other languages. However, variables of type Object only allow you to assign any value to them. You can’tcall arbitrary methods on them, even ones that actually exist:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let notSure: any = 4;</span><br><span class="line">notSure.ifitExists();//okay, ifitExists might exist at runtime</span><br><span class="line">notSure.toFixed();//Okay, toFixed exists</span><br></pre></td></tr></table></figure>
-<p><img src="/2019/08/09/TypeScript-基础类型/TypeScript/Any.png" alt="avatar"></p>
+<p><img src="/2019/08/09/TypeScript-Basic Type/Any.png" alt="avatar"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let prettySure: Object = 4;</span><br><span class="line">prettySure.ToFixed();//Error:Property &quot;toFind&quot; doesn&apos;t exist on type &apos;Object&apos;.</span><br></pre></td></tr></table></figure>
-<p><img src="/2019/08/09/TypeScript-基础类型/TypeScript/Object.png" alt="avatar"></p>
+<p><img src="/2019/08/09/TypeScript-Basic Type/Object.png" alt="avatar"></p>
 <p>The <strong>any</strong> type is also handy if you know some part of the type, You nay have an array but the array has a mix of different type</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let list: any[] = [1, true, &quot;free&quot;];</span><br><span class="line">list[1] = 100;</span><br></pre></td></tr></table></figure>
 <ol start="8">
@@ -501,20 +501,18 @@
 <p>object is a type that represents the non-primitive type, anything  that is not number, string, boolean, symbol, null, or undefined.<br>With object type, APIs like object.create can be better represnted. for ecample:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">declare function create(o: object | null): void;</span><br><span class="line">create(&#123; prop: 0 &#125;);OK</span><br><span class="line">create(null);OK</span><br><span class="line">create(42);//Error</span><br><span class="line">create(&quot;string&quot;);//Error</span><br><span class="line">create(false);//error</span><br><span class="line">create(undefined);//Error</span><br></pre></td></tr></table></figure>
 <ol start="12">
-<li>Type assertions<ul>
-<li>Type assertions have two forms. One is the “angle-bracket”syntax:</li>
+<li><p>Type assertions</p>
+<ul>
+<li><p>Type assertions have two forms. One is the “angle-bracket”syntax:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let someValue: any = &quot;this is a string &quot;;</span><br><span class="line">let strLength: number = (&lt;string&gt;someValue).length;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>The other is the as -syntax:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let somevalue: any=&quot;this is a string&quot;; </span><br><span class="line">let strLength: number = (someValue as string).length;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ol>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let someValue: any = &quot;this is a string &quot;;</span><br><span class="line">let strLength: number = (&lt;string&gt;someValue).length;</span><br></pre></td></tr></table></figure>
-
-- The other is the as -syntax:
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let somevalue: any=&quot;this is a string&quot;; </span><br><span class="line">let strLength: number = (someValue as string).length;</span><br></pre></td></tr></table></figure>
-
-when using typeScript with JSX, only as -style assertions are allowed.
+<pre><code>when using typeScript with JSX, only as -style assertions are allowed.
 </code></pre>
       
     </div>
@@ -543,7 +541,7 @@ when using typeScript with JSX, only as -style assertions are allowed.
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://qiyanan.com/2019/08/09/TypeScript-基础类型/" title="TypeScript-基础类型">https://qiyanan.com/2019/08/09/TypeScript-基础类型/</a>
+    <a href="https://qiyanan.com/2019/08/09/TypeScript-Basic Type/" title="TypeScript-基础类型">https://qiyanan.com/2019/08/09/TypeScript-Basic Type/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -952,8 +950,8 @@ when using typeScript with JSX, only as -style assertions are allowed.
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://qiyanan.com/2019/08/09/TypeScript-基础类型/';
-          this.page.identifier = '2019/08/09/TypeScript-基础类型/';
+          this.page.url = 'https://qiyanan.com/2019/08/09/TypeScript-Basic Type/';
+          this.page.identifier = '2019/08/09/TypeScript-Basic Type/';
           this.page.title = 'TypeScript-基础类型';
         };
         var d = document, s = d.createElement('script');
