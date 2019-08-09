@@ -91,7 +91,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://qiyanan.com/2019/08/09/TypeScript-基础类型/TypeScript/Any.png">
 <meta property="og:image" content="https://qiyanan.com/2019/08/09/TypeScript-基础类型/TypeScript/Object.png">
-<meta property="og:updated_time" content="2019-08-09T09:15:47.598Z">
+<meta property="og:updated_time" content="2019-08-09T09:18:16.855Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TypeScript-基础类型">
 <meta name="twitter:description" content="Basic Types 布尔值：  let isDone:boolean = false;  数字(和JavaScript一样，TypeScript里的所有数字都是浮点型的，这些浮点类型是number)  1234let decLiteral: number = 6;let hexLiteral: number = 0Xf00d;let binaryLiteral: number = 0b1010">
@@ -506,10 +506,15 @@
 </ul>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let someValue: any = &quot;this is a string &quot;;</span><br><span class="line">let strLength: number = (&lt;string&gt;someValue).length;</span><br></pre></td></tr></table></figure>
-<pre><code>- The other is the as -syntax:
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let somevalue: any=&quot;this is a string&quot;; </span><br><span class="line">let strLength: number = (someValue as string).length;</span><br></pre></td></tr></table></figure>
-<pre><code>when using typeScript with JSX, only as -style assertions are allowed.
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let someValue: any = &quot;this is a string &quot;;</span><br><span class="line">let strLength: number = (&lt;string&gt;someValue).length;</span><br></pre></td></tr></table></figure>
+
+- The other is the as -syntax:
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let somevalue: any=&quot;this is a string&quot;; </span><br><span class="line">let strLength: number = (someValue as string).length;</span><br></pre></td></tr></table></figure>
+
+when using typeScript with JSX, only as -style assertions are allowed.
 </code></pre>
       
     </div>
