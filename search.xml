@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[TypeScript-基础类型]]></title>
+    <url>%2F2019%2F08%2F09%2FTypeScript-%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[C#-浅度复制与深度复制]]></title>
     <url>%2F2019%2F08%2F06%2FC-%E6%B5%85%E5%BA%A6%E5%A4%8D%E5%88%B6%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%A4%8D%E5%88%B6%2F</url>
     <content type="text"><![CDATA[浅度复制和深度复制浅度复制浅度复制指按照引用复制对象简单的按照成员复制对象可以通过派生于System. Object的MemberwiseClone()方法来完成，这是一个受保护的方法，这个方法提供的复制功能称为浅度复制 12345678910public class Content &#123; public int val;&#125;public class Cloner &#123; public Content MyContent = new Content(); public Cloner(int newVal) =&gt; MyContent.val = newVal; public object GetCopy() =&gt; MemberwiseClone();&#125; 123456Cloner mySource = new Cloner(5);Cloner myTarget = (Cloner) mySource.GetCopy();Console.WriteLine($ &quot;myTarget.MyContent.Val=&#123;myTarget.MyContent.val&#125;&quot;);mySource.MyContent.val = 2;Console.WriteLine($ &quot;myTarget.MyContent.Val=&#123;myTarget.MyContent.val&#125;&quot;);Console.ReadKey(); 深度复制复制的是一个对象的值可以实现一个ICloneable接口，以标准方式进行深度复制，如果使用这个接口，就必须实现它包含的Clone()方法，这个方法返回一个System. Object的值，我们可以采用各种处理方式，实现所选的任何一个方法体来得到这个对象，如果愿意就可以进行深度复制，但不是必须的。 12345678910111213public class Cloner: ICloneable &#123; public Content MyContent = new Content(); public Cloner(int newVal) =&gt; MyContent.val = newVal; public object Clone() &#123; Cloner clonedCloner = new Cloner(MyContent.val); return clonedCloner; &#125; //public object GetCopy() =&gt; MemberwiseClone();&#125; 注意在比较复杂的对象系统中，调用Clone是一个递归过程 12345678910public class Cloner: ICloneable &#123; public Content MyContent = new Content(); public object Clone() &#123; Cloner clonedCloner = new Cloner(); clonedCloner.MyContent = MyContent.Clone(); return clonedCloner; &#125;&#125;]]></content>
