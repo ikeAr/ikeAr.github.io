@@ -84,16 +84,16 @@
 <meta name="description" content="Basic Types布尔值let isDone:boolean = false; 数字(和JavaScript一样，TypeScript里的所有数字都是浮点型的，这些浮点类型是number) 1234let decLiteral: number = 6;let hexLiteral: number = 0Xf00d;let binaryLiteral: number = 0b1010；let o">
 <meta name="keywords" content="TypeScript基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TypeScript-Basic Type">
+<meta property="og:title" content="TypeScript - Basic Type">
 <meta property="og:url" content="https://qiyanan.com/2019/08/09/TypeScript-Basic Type/index.html">
 <meta property="og:site_name" content="Ike&#39;s blog">
 <meta property="og:description" content="Basic Types布尔值let isDone:boolean = false; 数字(和JavaScript一样，TypeScript里的所有数字都是浮点型的，这些浮点类型是number) 1234let decLiteral: number = 6;let hexLiteral: number = 0Xf00d;let binaryLiteral: number = 0b1010；let o">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://qiyanan.com/2019/08/09/TypeScript-Basic%20Type/Any.png">
 <meta property="og:image" content="https://qiyanan.com/2019/08/09/TypeScript-Basic%20Type/Object.png">
-<meta property="og:updated_time" content="2019-08-09T13:48:41.291Z">
+<meta property="og:updated_time" content="2019-09-06T08:56:34.385Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TypeScript-Basic Type">
+<meta name="twitter:title" content="TypeScript - Basic Type">
 <meta name="twitter:description" content="Basic Types布尔值let isDone:boolean = false; 数字(和JavaScript一样，TypeScript里的所有数字都是浮点型的，这些浮点类型是number) 1234let decLiteral: number = 6;let hexLiteral: number = 0Xf00d;let binaryLiteral: number = 0b1010；let o">
 <meta name="twitter:image" content="https://qiyanan.com/2019/08/09/TypeScript-Basic%20Type/Any.png">
 
@@ -131,7 +131,7 @@
 
 
 
-  <title>TypeScript-Basic Type | Ike's blog</title>
+  <title>TypeScript - Basic Type | Ike's blog</title>
   
 
 
@@ -330,7 +330,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">TypeScript-Basic Type</h1>
+          <h1 class="post-title" itemprop="name headline">TypeScript - Basic Type</h1>
         
 
         <div class="post-meta">
@@ -393,7 +393,7 @@
 
           
           
-             <span id="/2019/08/09/TypeScript-Basic Type/" class="leancloud_visitors" data-flag-title="TypeScript-Basic Type">
+             <span id="/2019/08/09/TypeScript-Basic Type/" class="leancloud_visitors" data-flag-title="TypeScript - Basic Type">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -436,12 +436,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let name； string = &quot; bob&quot;;</span><br><span class="line">name = &quot;smith&quot;;</span><br></pre></td></tr></table></figure>
 <p>可以使用模板字符串，也可以定义多行文本和内嵌表达式，这种字符串是被反引号包围( ` ), 并且以$( expr )这种形式嵌入表达式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let name: string = `Gene` ;</span><br><span class="line">let age: number = 37;</span><br><span class="line">let sentence: string = `Hello, my name is $&#123; name &#125;.</span><br><span class="line">I &apos;ll be $&#123; age+1 &#125; years old next month.`;</span><br></pre></td></tr></table></figure>
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ol>
-<li><p>在元素类型后面接上[],表示此类型组成的一个数组：<br><code>let list: number[] = {1,2,3};</code></p>
-</li>
-<li><p>使用数据泛型，Array&lt;元素类型&gt;<br><code>let list: Array&lt; number &gt; = {1,2,3};</code></p>
-</li>
-</ol>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>在元素类型后面接上[], 表示此类型组成的一个数组：</p>
+<p><code>let list: number[] = {1, 2, 3};</code></p>
+<p>使用数据泛型，Array&lt;元素类型&gt;</p>
+<p><code>let list: Array&lt; number &gt; = {1, 2, 3};</code></p>
 <h2 id="元组-Tuple"><a href="#元组-Tuple" class="headerlink" title="元组 Tuple"></a>元组 Tuple</h2><p>(允许表示一个已知元素数量和类型的数组，各元素的类型不必相同)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//Declare a tuple type</span><br><span class="line">let x: [string , number];</span><br><span class="line">//Initialize</span><br><span class="line">x = [&quot;hello&quot;, 10];//OK</span><br><span class="line">//Initialize it incorrectly</span><br><span class="line">x = [10,&apos;hello&apos;];//Error</span><br></pre></td></tr></table></figure>
 <p>当访问一个已知索引的元素，会得到正确的类型：</p>
@@ -452,28 +450,33 @@
 <p>默认情况下，从0开始为元素编号，也可以手动设置</p>
 <h2 id="Any"><a href="#Any" class="headerlink" title="Any"></a>Any</h2><p>(使类型检查器不对这些值检查直接让他们通过编译阶段)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let notSure: any = 4; </span><br><span class="line">notSure = &quot;maybe a string instead&quot;; </span><br><span class="line">notSure = false;</span><br></pre></td></tr></table></figure>
-<p>the <strong>any</strong> type is powerful way to work with existing JavaScript, allowing you to gradually opt-in and opt-out of type checking during compilation. you might expect Object to play a similar role, as it does in other languages. However, variables of type Object only allow you to assign any value to them. You can’tcall arbitrary methods on them, even ones that actually exist:</p>
+<p><strong>any</strong> 类型是十分有用的，它允许你在编译时可选择的包含或者移除类型检查，你可能认为在其他语言中 <strong>Object</strong> 有类似的作用，然而，<strong>Object</strong>只允许你给它赋任意值，即便它拥有方法，你不能调用。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let notSure: any = 4;</span><br><span class="line">notSure.ifitExists();//okay, ifitExists might exist at runtime</span><br><span class="line">notSure.toFixed();//Okay, toFixed exists</span><br></pre></td></tr></table></figure>
 <p><img src="/2019/08/09/TypeScript-Basic Type/Any.png" alt="avatar"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let prettySure: Object = 4;</span><br><span class="line">prettySure.ToFixed();//Error:Property &quot;toFind&quot; doesn&apos;t exist on type &apos;Object&apos;.</span><br></pre></td></tr></table></figure>
 <p><img src="/2019/08/09/TypeScript-Basic Type/Object.png" alt="avatar"></p>
-<p>The <strong>any</strong> type is also handy if you know some part of the type, You nay have an array but the array has a mix of different type</p>
+<p>如果你只知道一部分数据类型的时候，<strong>any</strong> 类型也是有用的，比如你可能有一个包含了不同数据类型的数组</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let list: any[] = [1, true, &quot;free&quot;];</span><br><span class="line">list[1] = 100;</span><br></pre></td></tr></table></figure>
-<h2 id="void"><a href="#void" class="headerlink" title="void"></a>void</h2><p>void is a little like the opposite of any: the absence of having any type at all. You may commonly see this as the return type of function that do not return a value.</p>
+<h2 id="void"><a href="#void" class="headerlink" title="void"></a>void</h2><p>某种程度上来说，void 类型与 any 类型相反，它表示没有任何类型，你通常会看到当一个函数没有返回值的时候，该函数的返回值类型是 void</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function warnUser(): void &#123;</span><br><span class="line">    console.log(&quot;This is my warning message&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Declaring variables of type void is not useful because you can only assign undefined or null them.</p>
+<p>声明一个 void 类型的变量没有什么大用，应为你只能为它赋予 undefined 和 null：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let unusable: void = undefined;</span><br><span class="line">let unKnow: void = null;</span><br></pre></td></tr></table></figure>
-<h2 id="Null-and-Underfined"><a href="#Null-and-Underfined" class="headerlink" title="Null and Underfined"></a>Null and Underfined</h2><p>In TypeScript both undefined and null actually have thier own types named undefined and null respectively. Much like void, they’re not extremely useful on their own.</p>
+<h2 id="Null-and-Underfined"><a href="#Null-and-Underfined" class="headerlink" title="Null and Underfined"></a>Null and Underfined</h2><p>TypeScript 里，undefined 和 null 两者各自有自己的类型分别叫做 undefined 和 null，和 void 相似，他们的本身用处不是很大：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let u: undefined = undefined;</span><br><span class="line">let n: null = null;</span><br></pre></td></tr></table></figure>
-<p>By default <strong>null</strong> and <strong>undefined</strong> are subtypespf all other types, that means you can assign <strong>null</strong> and <strong>undefined</strong> to something like number.<br>However when using the <strong>–strictNullChecks</strong> flag, <strong>null</strong> and <strong>undefined</strong> are only assignable to any and their respective type<br>(the one exception being that <strong>undefine</strong> is also assignabe to <strong>void</strong> ), this helps avoid many common errors. In case where you want to paa in either a string or null or undefined, you can use the union type string | null | undefined.<br><strong><em>As a note: we encourage the use of –strictNullChecks</em></strong></p>
-<h2 id="Never"><a href="#Never" class="headerlink" title="Never"></a>Never</h2><p>The <strong>never</strong> type represents the type of values that never occur. For instance, never is the return type for a function expression or arrow function expression that always throws an exception or one that never returns, Variables also acquire the type never when narrowed by any type guards that can never be true.<br>The never type is a subtype of , and assignable to, every type; however, no type is a subtype of or assignable to never(except never itself), Even any isn’t assignable to never </p>
-<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><p>object is a type that represents the non-primitive type, anything  that is not number, string, boolean, symbol, null, or undefined.<br>With object type, APIs like object.create can be better represnted. for ecample:</p>
+<p>默认情况下，<strong>null</strong> 和 <strong>undefined</strong> 是所有类型的子类型，这意味着你可以将 null 和 undefined 赋值给任何类型就像 number。<br>然而，你指定了 –strictNullChecks 标记，null 和 undefined 只能赋值给他们各自本身，（其中 undefined 也不能赋值给 void），这就帮助避免了很多常见的问题，也许你想在某处传一个 string 或 null 或 undefined，你可以使用联合类型 string | null | undefined。<br><strong><em>注意：我们鼓励尽可能多的使用 –strictNullChecks</em></strong></p>
+<h2 id="Never"><a href="#Never" class="headerlink" title="Never"></a>Never</h2><p>never 类型表示的是那些永不存在的类型。例如，never 类型是那些总是会抛出异常或者根本就不会有返回值的函数表达式或者箭头函数的返回值类型，当变量被永不为真的类型保护所约束时，该变量可能是 never 类型。</p>
+<p>never 类型是任何类型的子类型，也可以赋值给任何类型，除了 never 本身以外，没有值可以赋值给 never 类型，即便是 any 也不可以赋值给 never。</p>
+<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><p>object 表示的是除 number, string, boolean, symbol, null, undefined 的非原始类型，<br>使用 object 类型，就可以更好的表示像 object.create 这样的 API。例如</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">declare function create(o: object | null): void;</span><br><span class="line">create(&#123; prop: 0 &#125;);OK</span><br><span class="line">create(null);OK</span><br><span class="line">create(42);//Error</span><br><span class="line">create(&quot;string&quot;);//Error</span><br><span class="line">create(false);//error</span><br><span class="line">create(undefined);//Error</span><br></pre></td></tr></table></figure>
-<h2 id="Type-assertions"><a href="#Type-assertions" class="headerlink" title="Type assertions"></a>Type assertions</h2><pre><code>- Type assertions have two forms. One is the &quot;angle-bracket&quot;syntax:
-</code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let someValue: any = &quot;this is a string &quot;;</span><br><span class="line">let strLength: number = (&lt;string&gt;someValue).length;</span><br></pre></td></tr></table></figure>
-<pre><code>- The other is the as -syntax:
-</code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let somevalue: any=&quot;this is a string&quot;; </span><br><span class="line">let strLength: number = (someValue as string).length;</span><br></pre></td></tr></table></figure>
-<p><strong>when using typeScript with JSX, only as -style assertions are allowed.</strong></p>
+<h2 id="Type-assertions"><a href="#Type-assertions" class="headerlink" title="Type assertions"></a>Type assertions</h2><ul>
+<li><p>类型断言有两种形式，第一种是尖括号语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let someValue: any = &quot;this is a string &quot;;</span><br><span class="line">let strLength: number = (&lt;string&gt;someValue).length;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>as 语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let somevalue: any=&quot;this is a string&quot;; </span><br><span class="line">let strLength: number = (someValue as string).length;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>当你在 TypeScript 里使用 JSX 时，只有 as 语法断言是被允许的</strong></p>
 
       
     </div>
@@ -502,7 +505,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://qiyanan.com/2019/08/09/TypeScript-Basic Type/" title="TypeScript-Basic Type">https://qiyanan.com/2019/08/09/TypeScript-Basic Type/</a>
+    <a href="https://qiyanan.com/2019/08/09/TypeScript-Basic Type/" title="TypeScript - Basic Type">https://qiyanan.com/2019/08/09/TypeScript-Basic Type/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -539,6 +542,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/06/TypeScript-Class/" rel="prev" title="TypeScript-Class">
+                TypeScript-Class <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -627,7 +634,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -913,7 +920,7 @@
         var disqus_config = function () {
           this.page.url = 'https://qiyanan.com/2019/08/09/TypeScript-Basic Type/';
           this.page.identifier = '2019/08/09/TypeScript-Basic Type/';
-          this.page.title = 'TypeScript-Basic Type';
+          this.page.title = 'TypeScript - Basic Type';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
