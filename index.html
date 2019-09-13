@@ -1286,7 +1286,7 @@ Numeric enums可以使用 enu
         
           
           Generics我们可以使用 any 类型来定义函数
-12345function identity(arg:any):any&#123;    return arg;&#125;let output=
+12345function identity&lt;T&gt;(arg: T): T &#123;    return arg;&#125;;le
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1457,8 +1457,8 @@ Numeric enums可以使用 enu
       
         
           
-          Functions两种 JavaScript 函数：方式一：
-1234567function add(x, y) &#123;    return x + y;&#125;let myAdd = fu
+          Functions两种 JavaScript 函数：
+123456789101112131415161718// 方式一：function add(x, y) &#123;    return x +
           ...
           <!--noindex-->
           <div class="post-button text-center">
