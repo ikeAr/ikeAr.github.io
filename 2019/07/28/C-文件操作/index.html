@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="C#高级,">
+
+
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="Ike's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="File I/ODirectory 类的常用属性public System.IO.DirectoryInfo Directory { get; }DirectoryName, Exists, isReadOnly, length(当前文件的的大小), Name Directory 类的常用方法:CreateDirectory()在指定路径中创建所有目录和子目录，除非他们已经存在， 如果该目录已存在">
+<meta name="keywords" content="C#高级">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#-文件操作">
+<meta property="og:url" content="https://qiyanan.com/2019/07/28/C-文件操作/index.html">
+<meta property="og:site_name" content="Ike&#39;s blog">
+<meta property="og:description" content="File I/ODirectory 类的常用属性public System.IO.DirectoryInfo Directory { get; }DirectoryName, Exists, isReadOnly, length(当前文件的的大小), Name Directory 类的常用方法:CreateDirectory()在指定路径中创建所有目录和子目录，除非他们已经存在， 如果该目录已存在">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-06T08:08:26.478Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C#-文件操作">
+<meta name="twitter:description" content="File I/ODirectory 类的常用属性public System.IO.DirectoryInfo Directory { get; }DirectoryName, Exists, isReadOnly, length(当前文件的的大小), Name Directory 类的常用方法:CreateDirectory()在指定路径中创建所有目录和子目录，除非他们已经存在， 如果该目录已存在">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qiyanan.com/2019/07/28/C-文件操作/">
+
+
+
+
+
+  <title>C#-文件操作 | Ike's blog</title>
+  
+
+
+
+
+
+
+
+
+  <!-- 爆炸红心效果 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/firework.js"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ike's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-留言板">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-newspaper-o"></i> <br>
+            
+            留言板
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qiyanan.com/2019/07/28/C-文件操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ike">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ike's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C#-文件操作</h1>
+        
+
+        <div class="post-meta">
+        
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-28T10:37:48+08:00">
+                2019-07-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C-高级/" itemprop="url" rel="index">
+                    <span itemprop="name">C#高级</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/28/C-文件操作/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/28/C-文件操作/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/07/28/C-文件操作/" class="leancloud_visitors" data-flag-title="C#-文件操作">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="File-I-O"><a href="#File-I-O" class="headerlink" title="File I/O"></a>File I/O</h1><h2 id="Directory-类的常用属性"><a href="#Directory-类的常用属性" class="headerlink" title="Directory 类的常用属性"></a>Directory 类的常用属性</h2><p><code>public System.IO.DirectoryInfo Directory { get; }</code><br><code>DirectoryName, Exists, isReadOnly, length(当前文件的的大小), Name</code></p>
+<h2 id="Directory-类的常用方法"><a href="#Directory-类的常用方法" class="headerlink" title="Directory 类的常用方法:"></a>Directory 类的常用方法:</h2><p><strong>CreateDirectory()</strong><br>在指定路径中创建所有目录和子目录，除非他们已经存在， 如果该目录已存在，此方法不会创建一个新目录，但它将返回DirectoryInfo现有目录的对象。<br><strong>Delete()</strong><br>从指定路径删除空目录<br><strong>Delete(String, Boolean)</strong><br>删除指定的目录，并删除该目录所有的子目录和文件<br><strong>Move()</strong><br>移动目录<br><code>public static void Move (string sourceDirName, string destDirName)</code><br><strong>GetDirectories()</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public static string[] GetDirectories (string path, string searchPattern, System.IO.SearchOption searchOption);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public static string[] GetDirectories (string path);//返回路径中子目录的完整名称的数组, 如果未找到任何目录，则为空数组</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public static string[] GetDirectories (string path, string searchPattern)</span><br></pre></td></tr></table></figure>
+<p>string path: 相对路径或者绝对路径，此字符串不区分大小写<br>string searchPattern:  与path中的子目录的名称匹配的搜索字符串，此参数可以包含有效文本个通配符的组合，不支持正则表达式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var directory = Directory.GetDirectories(@&quot;c:\&quot;);</span><br><span class="line">foreach (var d in directory)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(d);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>GetFiles()</strong><br>得到当前目录下所有文件<br><code>public static string[] GetFiles (string path)</code><br><strong>Exists()</strong><br>指向现有目录，则为true，如果该目录不存在或者在尝试确定指定目录是否存在时出错，则为false<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">var directoryPath = @&quot;c:\test&quot;;</span><br><span class="line">var filePath = @&quot;MyTest.txt&quot;;</span><br><span class="line">if (!Directory.Exists(directoryPath))//尝试确定指定目录是否存在时，则为false</span><br><span class="line">&#123;</span><br><span class="line">    Directory.CreateDirectory(directoryPath);</span><br><span class="line">&#125;</span><br><span class="line">if (!File.Exists(Path.Combine(directoryPath,filePath)))</span><br><span class="line">&#123;</span><br><span class="line">    using (StreamWriter sw = File.CreateText(Path.Combine(directoryPath, filePath)))//文件夹路径必须存在，</span><br><span class="line">    &#123;</span><br><span class="line">        sw.WriteLine(&quot;hello&quot;);</span><br><span class="line">        sw.WriteLine(&quot;and&quot;);</span><br><span class="line">        sw.WriteLine(&quot;welcome&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">using (StreamReader sr = File.OpenText(Path.Combine(directoryPath, filePath)))</span><br><span class="line">&#123;</span><br><span class="line">    string s;</span><br><span class="line">    while ((s = sr.ReadLine()) != null)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="DirectoryInfo类的常用属性"><a href="#DirectoryInfo类的常用属性" class="headerlink" title="DirectoryInfo类的常用属性:"></a>DirectoryInfo类的常用属性:</h2><p>Exists; FullNam; Name; Parent; Root;</p>
+<h2 id="DirectoryInfo类的常用方法"><a href="#DirectoryInfo类的常用方法" class="headerlink" title="DirectoryInfo类的常用方法:"></a>DirectoryInfo类的常用方法:</h2><p>初始化：<br><code>var dir = new DirectoryInfo(Path);</code><br><strong>Create()</strong><br>创建一个空目录<br><strong>Delete()</strong><br><code>public override void Delete ();//若当前目录为空则删除</code><br><code>public void Delete (bool recursive);//指定是否删除子目录和文件</code><br><strong>CreateSubdirectory()</strong><br>在指定路径的基础上创建一个或多个子目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var direcotaryInfo = new DirectoryInfo(@&quot;c:\test\test\test&quot;);</span><br><span class="line">direcotaryInfo.CreateSubdirectory(&quot;text&quot;);</span><br></pre></td></tr></table></figure></p>
+<p><strong>GetDirectories()</strong><br><code>public System.IO.DirectoryInfo[] GetDirectories ()</code><br><strong>GetFiles()</strong><br><code>public System.IO.FileInfo[] GetFiles ()</code><br><code>public System.IO.FileInfo[] GetFiles (string searchPattern);</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">foreach (var fi in di.GetFiles(&quot;*2*&quot;))</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(fi.Name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>MoveTo()</strong><br><code>public void MoveTo (string destDirName)</code></p>
+<h2 id="File与FileInfo的区别："><a href="#File与FileInfo的区别：" class="headerlink" title="File与FileInfo的区别："></a>File与FileInfo的区别：</h2><p>File是静态类，所有方法都是静态的，可以通过类名直接调用，不需要实例化，如果对文件进行少量操作，或者对很多文件进行操作，建议使用<br>FileInfo是普通类，只有实例化对象之后才可以调用其中的方法，如果需要对一个文件进行大量操作，建议使用FileInfo</p>
+<h2 id="File常用方法："><a href="#File常用方法：" class="headerlink" title="File常用方法："></a>File常用方法：</h2><p><strong>Create(string path)</strong><br><code>Delete(string path)// 删除文件应先判空</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (File.Exists(filePath))</span><br><span class="line">&#123;</span><br><span class="line">  File.Delete(filePath);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Move()</strong><br><code>public static void Move (string sourceFileName, string destFileName)</code><br><strong>Copy()</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public static void Copy (string sourceFileName, string destFileName)//复制以后不允许覆盖同名文件</span><br></pre></td></tr></table></figure></p>
+<p><strong>ReadAllText(string path)</strong><br><code>public static string ReadAllText(string path)//打开一个文件，读取所有的行，然后关闭文件</code><br><strong>ReadAllLines(string path)</strong><br><code>public static string[] ReadAllLines(string path)</code><br><strong>ReadLines(string path)</strong><br><code>public static IEnumerable&lt;string&gt; ReadLines(string path)</code><br><strong>ReadAllBytes(string path)</strong><br><code>public static byte[] ReadAllBytes(string path)</code></p>
+<h2 id="FileInfo类常用属性"><a href="#FileInfo类常用属性" class="headerlink" title="FileInfo类常用属性"></a>FileInfo类常用属性</h2><p>初始化：<br><code>var fileinfo = new FileInfo(@&quot;C:\test\test\test.txt&quot;);//路径必须是文件</code></p>
+<h2 id="FileInfo类的常用方法"><a href="#FileInfo类的常用方法" class="headerlink" title="FileInfo类的常用方法"></a>FileInfo类的常用方法</h2><p><strong>Create()</strong><br><code>public System.IO.FileStream Create ()</code><br><strong>Delete()</strong><br><code>public override void Delete ()</code><br><strong>MoveTo()</strong><br><code>public void MoveTo (string destFileName)    //将指定文件移到新位置，提供要指定新文件名的选项</code><br><strong>CopyTo()</strong><br><code>public System.IO.FileInfo CopyTo (string destFileName)//不允许覆盖源文件</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public System.IO.FileInfo CopyTo (string destFileName, bool overwrite)//可以覆盖源文件</span><br></pre></td></tr></table></figure></p>
+<p>遍历一个目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public void GetAllFiles(string directoryPath)</span><br><span class="line">&#123;</span><br><span class="line">    var rootDirectory = new DirectoryInfo(directoryPath);</span><br><span class="line">    foreach (var file in rootDirectory.GetFiles())</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine($&quot;File Name is &#123;file.Name&#125;&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    foreach (var directory in rootDirectory.GetDirectories())</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(directory.Name);</span><br><span class="line">        this.GetAllFiles(directory.FullName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="文件内容操作"><a href="#文件内容操作" class="headerlink" title="文件内容操作"></a>文件内容操作</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Object——&gt;MarshalByRefObject——&gt;Stream——&gt;FileStream</span><br><span class="line">Object——&gt;MarshalByRefObject——&gt;TextReader——&gt;StreramReader</span><br><span class="line">Object——&gt;MarshalByRefObject——&gt;TextWriter——&gt;StreamWriter</span><br><span class="line">Object——&gt;MarshalByRefObject——&gt;TextReader——&gt;StringReader</span><br><span class="line">Object——&gt;MarshalByRefObject——&gt;TextWriter——&gt;StringWriter</span><br></pre></td></tr></table></figure>
+<h2 id="Strean"><a href="#Strean" class="headerlink" title="Strean"></a>Strean</h2><p>流，提供了读写的方法是以字节码的形式从流中读取内容</p>
+<h2 id="FileStream"><a href="#FileStream" class="headerlink" title="FileStream"></a>FileStream</h2><p>处理的是字节，继承Stream，一个FileStream类的实例实际代表一个文件流，使用FileStream类可以对文件系统上的文件 进行读取，写入，打开和关闭操作<br><code>public FileStream(string path, FileMode mode, FileAccess access);</code><br><strong>path</strong>指明文件搜所在路径信息<br><strong>mode</strong>是FileMode的枚举值，表示打开或者创建的方式<br>CreateNew 创建新文件，如果文件已存在，则IOExcepption<br>Create 创建新文件，文件已存在，源文件将被覆盖<br>Open 打开文件，如果文件不存在则报FileNoFoundException<br>OpenOrCreate 打开文件，文件不存在则创建文件<br>Truncate 打开已经存在的文件，清楚文件中的内容，保留文件的创建日期，如果文件不存在，则会跑出异常<br>Append 打开先有文件并把Position设置在文档尾部，如果文件不存在将创建新文件，Append只能同FileAccess.Writer 一起使用<br><strong>access</strong> 是FileAccess的枚举值，它控制对文件的访问权限<br>Read 打开文件用于只读<br>Write 打开文件用于读写<br>ReadWrite 打开文件用于读写<br>创建文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var fileStream = new FileStream(@&quot;C:\test\a.txt&quot;, FileMode.Create, FileAccess.Write);</span><br></pre></td></tr></table></figure></p>
+<h2 id="FileStream-类中常用属性"><a href="#FileStream-类中常用属性" class="headerlink" title="FileStream 类中常用属性"></a>FileStream 类中常用属性</h2><p><strong>bool CanRead</strong> 表示是否可以读取<br><strong>bool CanSeek</strong> 表示是否支持查找<br><strong>bool CanWrite</strong> 表示是否可以写入<br><strong>bool IsAsync</strong> 表示是异步还是同步打开<br><strong>bool Length</strong> 获取用字节表示的流长度<br><strong>string Name</strong> 获取文件的全路径<br><code>int Read(byte[] array,int offset,int count) //从流中读取字节块并将数据写入给定缓冲区中</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">using (var fileStream = new FileStream(@&quot;C:\test\a.txt&quot;, FileMode.Open, FileAccess.Read))</span><br><span class="line">&#123;</span><br><span class="line">    var array = new byte[fileStream.Length];</span><br><span class="line">    fileStream.Read(array, 0, array.Length);</span><br><span class="line">    var c = Encoding.UTF8.GetChars(array);</span><br><span class="line">    Console.WriteLine(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>void Write(byte[] array,int offset,int count) //将字节块写入文件流</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">using (var fileStream = new FileStream(@&quot;C:\test\a.txt&quot;, FileMode.Append, FileAccess.Write))</span><br><span class="line">&#123;</span><br><span class="line">    var name = &quot;qiyanan&quot;;</span><br><span class="line">    var arrayWrite = Encoding.UTF8.GetBytes(name);</span><br><span class="line">    fileStream.Write(arrayWrite, 0, arrayWrite.Length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="StreamReader"><a href="#StreamReader" class="headerlink" title="StreamReader"></a>StreamReader</h2><p>处理的是字符，从流中读取字符<br><strong>构造函数</strong>：<br><code>StreamReader(Stream) //为指定的流初始化StreamReader类的新实例</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">using (var fileStream = new FileStream(@&quot;C:\test\a.txt&quot;, FileMode.Append, FileAccess.Write))</span><br><span class="line">&#123;</span><br><span class="line">    using (var streanReader = new StreamReader(fileStream))</span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="StreamReader-String"><a href="#StreamReader-String" class="headerlink" title="StreamReader(String)"></a>StreamReader(String)</h2><p>为指定的文件名初始化StreamReader类的新实例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">using (var streamReader=new StreamReader(@&quot;c:\test\a.txt&quot;))</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="StreamReader-Stream-Encoding"><a href="#StreamReader-Stream-Encoding" class="headerlink" title="StreamReader(Stream, Encoding)"></a>StreamReader(Stream, Encoding)</h2><p>默认编码是Unicode, UTF-8是其子集<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">using (var fileStream = new FileStream(@&quot;C:\test\a.txt&quot;, FileMode.Append, FileAccess.Write))</span><br><span class="line">&#123;</span><br><span class="line">    using (var streanReader = new StreamReader(fileStream, Encoding.GetEncoding(&quot;GB2312&quot;)))</span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>常用方法</strong><br><strong>Read()</strong><br>单字符读入<br><code>public override int Read (); //返回值为ascll码</code><br><strong>ReadLine()</strong><br>行读入<br><code>public override string ReadLine ()</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">using (var streanReader = new StreamReader(@&quot;C:\test\a.txt&quot;))</span><br><span class="line">&#123;</span><br><span class="line">    string Ichar = null;</span><br><span class="line">    while ((Ichar=streanReader.ReadLine() )!= null)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(Ichar);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="StringReader"><a href="#StringReader" class="headerlink" title="StringReader"></a>StringReader</h2><p>从字符串读取字符</p>
+<h2 id="StreamWriter"><a href="#StreamWriter" class="headerlink" title="StreamWriter"></a>StreamWriter</h2><p><code>public override void Write(string value)//字符串写入</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">using (var streamWriter=new StreamWriter(@&quot;c:\test\a.txt&quot;,true))</span><br><span class="line">&#123;</span><br><span class="line">    var str = &quot;qi yanan is good  &quot;;</span><br><span class="line">    streamWriter.Write(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>public override void Write(char value) //字符写入</code><br><code>public override void Write(char[] buffer)//字符数组写入</code><br>public virtual void WriteLine () //写入空行，等同于跳到下一行<br>`</p>
+<h2 id="StringWriter"><a href="#StringWriter" class="headerlink" title="StringWriter"></a>StringWriter</h2><p>字符串写入</p>
+<h2 id="Stream"><a href="#Stream" class="headerlink" title="Stream:"></a>Stream:</h2><p>BufferedStream //提供针对Stream的包装功能，使Stream支持缓存读写功能<br>MemoryStream   //提供对内存中一块数据的读写<br>FileStream     //提供基本的对文件进行二进制流读写的功能，与文件的类型无关<br>UnmanagedMemoryStream //提供从托管代码访问非托管内存块的能力</p>
+<h2 id="文件操作注意事项："><a href="#文件操作注意事项：" class="headerlink" title="文件操作注意事项："></a>文件操作注意事项：</h2><p>不要将文件流一次性读取到内存中，这样很容易造成内存泄漏<br>一定要保证文件流被关闭，可以使用using和try…finallya两种方式<br>用流读写数据时需要注意读写的长度是否准确，避免读写空字符<br>判断StreamReader是否读写结束不可直接判断读取string是否为空<br>StreamReader和StteramWriter是对文本的操作，应注明编码格式</p>
+<h2 id="对内存中一块数据的读写"><a href="#对内存中一块数据的读写" class="headerlink" title="对内存中一块数据的读写"></a>对内存中一块数据的读写</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public static void ShowMemoryString(string testString)</span><br><span class="line">&#123;</span><br><span class="line">    using (MemoryStream stream = new MemoryStream())</span><br><span class="line">    &#123;</span><br><span class="line">        if (stream.CanWrite)</span><br><span class="line">        &#123;</span><br><span class="line">            byte[] buffer = Encoding.Default.GetBytes(testString);</span><br><span class="line">            stream.Write(buffer, 0, buffer.Length);</span><br><span class="line">            byte[] resultBuffer = stream.ToArray();</span><br><span class="line">            string resultString = Encoding.UTF8.GetString(resultBuffer);</span><br><span class="line">            Console.WriteLine(resultString);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="FileStream对文件进行字节流读写的功能，与文件的类型无关"><a href="#FileStream对文件进行字节流读写的功能，与文件的类型无关" class="headerlink" title="FileStream对文件进行字节流读写的功能，与文件的类型无关"></a>FileStream对文件进行字节流读写的功能，与文件的类型无关</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public static void ShowFileContent(string filePath)</span><br><span class="line">&#123;</span><br><span class="line">    FileStream fileStream = File.Open(filePath, FileMode.Open);</span><br><span class="line">    byte[] fileContentBuffer = new byte[fileStream.Length];</span><br><span class="line">    fileStream.Read(fileContentBuffer, 0, fileContentBuffer.Length);</span><br><span class="line">    fileStream.Close();</span><br><span class="line">    string fileContent = Encoding.Default.GetString(fileContentBuffer);</span><br><span class="line">    Console.WriteLine(fileContent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用using语法糖省略文件流关闭操作"><a href="#使用using语法糖省略文件流关闭操作" class="headerlink" title="使用using语法糖省略文件流关闭操作"></a>使用using语法糖省略文件流关闭操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public static void ShowFileContent(string filePath)</span><br><span class="line">&#123;</span><br><span class="line">    byte[] fileContentBuffer;</span><br><span class="line">    using(FileStream fileStream = File.Open(filePath, FileMode.OpenOrCreate))</span><br><span class="line">    &#123;</span><br><span class="line">        fileContentBuffer = new byte[fileStream.Length];</span><br><span class="line">        fileStream.Read(fileContentBuffer,0,fileContentBuffer.Length);</span><br><span class="line">    &#125;</span><br><span class="line">    string fileContent = Encoding.Default.GetString(fileContentBuffer);</span><br><span class="line">    Console.WriteLine(fileContent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="分批次读入文件的内容"><a href="#分批次读入文件的内容" class="headerlink" title="分批次读入文件的内容"></a>分批次读入文件的内容</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public static void CopyFileContent(string sourceFilePath, string destinationFilePath)</span><br><span class="line">&#123;</span><br><span class="line">    using (FileStream destinationFileStream = File.Open(destinationFilePath, FileMode.Create, FileAccess.Write))</span><br><span class="line">    &#123;</span><br><span class="line">        const int bufferSize = 4 * 1024 * 1024;</span><br><span class="line">        byte[] fileContentBuffer = new byte[bufferSize];</span><br><span class="line">        using (FileStream sourceFileStream = File.Open(sourceFilePath, FileMode.Open, FileAccess.Read))</span><br><span class="line">        &#123;</span><br><span class="line">            int data;</span><br><span class="line">            do</span><br><span class="line">            &#123;</span><br><span class="line">                data = sourceFileStream.Read(fileContentBuffer, 0, fileContentBuffer.Length);</span><br><span class="line">                destinationFileStream.Write(fileContentBuffer, 0, data);</span><br><span class="line">            &#125; while (data &gt; 0);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="FileMode-定义了四种打开文件的方法："><a href="#FileMode-定义了四种打开文件的方法：" class="headerlink" title="FileMode 定义了四种打开文件的方法："></a>FileMode 定义了四种打开文件的方法：</h2><p>Append: 打开一个已有文件，并将光标放置在文件的末尾，如果文件不存在，则创建文件<br>Create: 创建一个新的文件，如果文件已存在，则删除旧文件，然后创建新文件<br>CreateNew：创建一个新文件，如果文件已存在，则抛出异常<br>Open：打开一个已有的文件，如果文件不存在，则抛出异常<br>FileAccess成员有Read, ReadWrite 和Write</p>
+
+      
+    </div>
+    
+    
+    
+    
+      <div>
+        
+    <div style="text-align:center;color: #ccc;font-size:14px;">
+        ------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+    
+      </div>
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Ike
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://qiyanan.com/2019/07/28/C-文件操作/" title="C#-文件操作">https://qiyanan.com/2019/07/28/C-文件操作/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://qiyanan.com/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C-高级/" rel="tag"># C#高级</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/28/C-关键字/" rel="next" title="C#-关键字">
+                <i class="fa fa-chevron-left"></i> C#-关键字
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/28/C-运算符重载/" rel="prev" title="C#-运算符重载">
+                C#-运算符重载 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/blog-logo.jpg" alt="Ike">
+            
+              <p class="site-author-name" itemprop="name">Ike</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/rss2.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://nap7.com/" title="Hendry's Blog" target="_blank">Hendry's Blog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.zzboy.cn/" title="Patrick Jun's Blog" target="_blank">Patrick Jun's Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#File-I-O"><span class="nav-number">1.</span> <span class="nav-text">File I/O</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Directory-类的常用属性"><span class="nav-number">1.1.</span> <span class="nav-text">Directory 类的常用属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directory-类的常用方法"><span class="nav-number">1.2.</span> <span class="nav-text">Directory 类的常用方法:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DirectoryInfo类的常用属性"><span class="nav-number">1.3.</span> <span class="nav-text">DirectoryInfo类的常用属性:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DirectoryInfo类的常用方法"><span class="nav-number">1.4.</span> <span class="nav-text">DirectoryInfo类的常用方法:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#File与FileInfo的区别："><span class="nav-number">1.5.</span> <span class="nav-text">File与FileInfo的区别：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#File常用方法："><span class="nav-number">1.6.</span> <span class="nav-text">File常用方法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FileInfo类常用属性"><span class="nav-number">1.7.</span> <span class="nav-text">FileInfo类常用属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FileInfo类的常用方法"><span class="nav-number">1.8.</span> <span class="nav-text">FileInfo类的常用方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件内容操作"><span class="nav-number">2.</span> <span class="nav-text">文件内容操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Strean"><span class="nav-number">2.1.</span> <span class="nav-text">Strean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FileStream"><span class="nav-number">2.2.</span> <span class="nav-text">FileStream</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FileStream-类中常用属性"><span class="nav-number">2.3.</span> <span class="nav-text">FileStream 类中常用属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StreamReader"><span class="nav-number">2.4.</span> <span class="nav-text">StreamReader</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StreamReader-String"><span class="nav-number">2.5.</span> <span class="nav-text">StreamReader(String)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StreamReader-Stream-Encoding"><span class="nav-number">2.6.</span> <span class="nav-text">StreamReader(Stream, Encoding)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StringReader"><span class="nav-number">2.7.</span> <span class="nav-text">StringReader</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StreamWriter"><span class="nav-number">2.8.</span> <span class="nav-text">StreamWriter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StringWriter"><span class="nav-number">2.9.</span> <span class="nav-text">StringWriter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stream"><span class="nav-number">2.10.</span> <span class="nav-text">Stream:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件操作注意事项："><span class="nav-number">2.11.</span> <span class="nav-text">文件操作注意事项：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对内存中一块数据的读写"><span class="nav-number">2.12.</span> <span class="nav-text">对内存中一块数据的读写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FileStream对文件进行字节流读写的功能，与文件的类型无关"><span class="nav-number">2.13.</span> <span class="nav-text">FileStream对文件进行字节流读写的功能，与文件的类型无关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用using语法糖省略文件流关闭操作"><span class="nav-number">2.14.</span> <span class="nav-text">使用using语法糖省略文件流关闭操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分批次读入文件的内容"><span class="nav-number">2.15.</span> <span class="nav-text">分批次读入文件的内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FileMode-定义了四种打开文件的方法："><span class="nav-number">2.16.</span> <span class="nav-text">FileMode 定义了四种打开文件的方法：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ike</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by </div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+<span id="sitetime"></span>
+<script language="javascript">
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2018,02,13,15,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+<div class="BbeiAn-info">
+   	陇ICP备 -
+    <a target="_blank" href="http://www.miitbeian.gov.cn/" style="color:#f0d784" rel="nofollow">19001014</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->| 
+</div>
+
+  <div class="theme-info">Theme &mdash;  v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://qiyanan.com/2019/07/28/C-文件操作/';
+          this.page.identifier = '2019/07/28/C-文件操作/';
+          this.page.title = 'C#-文件操作';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '8phgyOc9NTPl82Iwp9Tt0tFe-gzGzoHsz',
+        appKey: 'deCUTN2WJ6SuTw31YPXRUDAR',
+        placeholder: 'Just go go',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("8phgyOc9NTPl82Iwp9Tt0tFe-gzGzoHsz", "deCUTN2WJ6SuTw31YPXRUDAR");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
